@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WoofTwo
+namespace WoofTwo.Classes
 {
-    public class Class1
+    class Poop
     {
-        public int MyProperty { get; set; }
+        public int PoopId { get; set; }
+        public int PoopPoints { get; set; }
     }
 }
