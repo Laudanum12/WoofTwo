@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WoofTwo.Classes
 {
-    class Sleep
+    public class Sleep
     {
         public int SleepId { get; set; }
         public int SleepPoints { get; set; }

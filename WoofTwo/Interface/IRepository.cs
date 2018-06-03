@@ -7,7 +7,7 @@ using WoofTwo.Classes;
 
 namespace WoofTwo
 {
-    interface IRepository
+    public interface IRepository
     {
         List<Person> People { get;  }
         List<Animal> Animals { get;  }

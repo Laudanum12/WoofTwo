@@ -138,5 +138,11 @@
   <ItemGroup>
     <Folder Include="Images\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WoofTwo\WoofTwo.csproj">
+      <Project>{c2462813-393f-473f-9661-4200c280f499}</Project>
+      <Name>WoofTwo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

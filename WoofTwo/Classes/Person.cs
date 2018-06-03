@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WoofTwo.Classes
 {
-    class Person
+    public class Person
     {
         public int PersonId { get; set; }
         public string Name { get; set; }
@@ -14,6 +14,7 @@ namespace WoofTwo.Classes
         public string Password { get; set; }
         public string Email { get; set; }
         public int Level { get; set; }
+        public DateTime DateOfRegistration { get; set; }
         //public int Age { get; set; }
     }
 }

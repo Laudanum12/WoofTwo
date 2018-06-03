@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace WoofTwo.Classes
 {
-    class Species
+    public class Species
     {
         public int SpeciesId { get; set; }
         public string SpeciesName { get; set; }
         public Needs Needs { get; set; }
+      //  public Need Food { get; set; }
+      //  public Need Poop { get; set; }
+      //  public Need Sleep { get; set; }
     }
 }

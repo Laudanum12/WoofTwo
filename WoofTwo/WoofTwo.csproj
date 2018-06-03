@@ -46,7 +46,7 @@
     <Compile Include="Classes\Animal.cs" />
     <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Needs\Food.cs" />
-    <Compile Include="Classes\Need.cs" />
+    <Compile Include="Helpers\Need.cs" />
     <Compile Include="Classes\Needs.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Needs\Poop.cs" />
