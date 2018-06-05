@@ -16,15 +16,23 @@ using System.Windows.Shapes;
 namespace Woof.UI
 {
     /// <summary>
-    /// Логика взаимодействия для WelcomePage.xaml
+    /// Логика взаимодействия для SigningUp.xaml
     /// </summary>
-    public partial class LogIn : Page
+    public partial class SigningUp : Page
     {
-        public LogIn()
+        public SigningUp()
         {
             InitializeComponent();
-            
-            ShowsNavigationUI = false;
+        }
+
+        private void signingupButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new LogIn());
         }
 
         private void pswrdCheckBox_Click(object sender, RoutedEventArgs e)
@@ -42,16 +50,6 @@ namespace Woof.UI
                 pswrdTextBox.Visibility = Visibility.Hidden;
                 pswrdPasswordBox.Visibility = Visibility.Visible;
             }
-        }
-
-        private void loginButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void signupButton_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new SigningUp());
         }
     }
 }

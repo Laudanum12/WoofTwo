@@ -5,10 +5,47 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Woof.UI"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-      Title="WelcomePage">
-
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="LogIn" ShowsNavigationUI="False">
+    <Page.Background>
+        <ImageBrush ImageSource="Images/стартовая.png"></ImageBrush>
+    </Page.Background>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="0" Content="Glad to see you!" FontSize="72" FontFamily="Matura MT Script Capitals"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" Name="Login" HorizontalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="48">
+                Login
+        </TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="2" Name="loginTextBox" Margin="60 10" AcceptsReturn="True">
+
+        </TextBox>
+        <TextBlock Grid.Column="1" Grid.Row="3" Name="Password" HorizontalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="48">
+                Password
+        </TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="4" Name="pswrdTextBox" Margin="60 10" AcceptsReturn="True"
+                     Visibility="Hidden">
+        </TextBox>
+        <PasswordBox Grid.Column="1" Grid.Row="4" Name="pswrdPasswordBox" PasswordChar="*" Margin="60 10"/>
+        <CheckBox Margin="0 0 20 0" Grid.Column="1" Grid.Row="5" Name="pswrdCheckBox" Content="Show password" 
+                  HorizontalAlignment="Right" FontFamily="Matura MT Script Capitals" FontSize="20" Click="pswrdCheckBox_Click"/>
+        <StackPanel Margin="30" Grid.Column="1" Grid.Row="6" Orientation="Vertical">
+            <Button Name="loginButton" Margin="5" Content="Log in" Width="200" FontFamily="Matura MT Script Capitals" FontSize="18" Click="loginButton_Click"/>
+            <Button Name="signupButton" Margin="5" Content="Sign Up" Width="200" FontFamily="Matura MT Script Capitals" FontSize="18" Click="signupButton_Click"/>
+        </StackPanel>
+
     </Grid>
 </Page>
