@@ -1,0 +1,22 @@
+[
+  {
+    "FoodId": 1,
+    "FoodPoints": 10
+  },
+  {
+    "FoodId": 2,
+    "FoodPoints": 15
+  },
+  {
+    "FoodId": 3,
+    "FoodPoints": 20
+  },
+  {
+    "FoodId": 4,
+    "FoodPoints": 25
+  },
+  {
+    "FoodId": 5,
+    "FoodPoints": 30
+  }
+]

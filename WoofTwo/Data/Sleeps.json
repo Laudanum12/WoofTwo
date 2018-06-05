@@ -1,0 +1,30 @@
+[
+  {
+    "SleepId": 1,
+    "SleepPoints": 10
+  },
+  {
+    "SleepId": 2,
+    "SleepPoints": 15
+  },
+  {
+    "SleepId": 3,
+    "SleepPoints": 20
+  },
+  {
+    "SleepId": 4,
+    "SleepPoints": 25
+  },
+  {
+    "SleepId": 5,
+    "SleepPoints": 30
+  },
+  {
+    "SleepId": 6,
+    "SleepPoints": 35
+  },
+  {
+    "SleepId": 7,
+    "SleepPoints": 40
+  }
+]

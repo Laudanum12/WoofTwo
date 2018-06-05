@@ -21,6 +21,7 @@ namespace Woof.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        Repository _repository = new Repository();
         public MainWindow()
         {
             InitializeComponent();
