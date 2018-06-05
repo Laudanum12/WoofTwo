@@ -25,6 +25,7 @@ namespace Woof.UI
         public MainWindow()
         {
             InitializeComponent();
+            Window1.NavigationUIVisibility = NavigationUIVisibility.Hidden;
             Window1.Navigate(new LogIn());
         }
     }

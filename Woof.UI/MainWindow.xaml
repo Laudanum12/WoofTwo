@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Woof.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Frame Name="Window1"></Frame>
+        Title="MainWindow" Height="600" Width="800" ResizeMode="NoResize">
+    <Frame Name="Window1" NavigationUIVisibility="Hidden"></Frame>
 </Window>

@@ -67,8 +67,8 @@
     <Compile Include="Kitchen.xaml.cs">
       <DependentUpon>Kitchen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SignUp.xaml.cs">
-      <DependentUpon>SignUp.xaml</DependentUpon>
+    <Compile Include="SigningUp.xaml.cs">
+      <DependentUpon>SigningUp.xaml</DependentUpon>
     </Compile>
     <Compile Include="LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
@@ -99,7 +99,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SignUp.xaml">
+    <Page Include="SigningUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,13 +144,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
+    <Resource Include="Images\рег.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WoofTwo\WoofTwo.csproj">
       <Project>{c2462813-393f-473f-9661-4200c280f499}</Project>
       <Name>WoofTwo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\стартовая.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
