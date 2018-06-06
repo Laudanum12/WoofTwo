@@ -27,7 +27,7 @@ namespace Woof.UI
 
         private void signingupButton_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new PetsChoosing());
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
@@ -50,6 +50,11 @@ namespace Woof.UI
                 pswrdTextBox.Visibility = Visibility.Hidden;
                 pswrdPasswordBox.Visibility = Visibility.Visible;
             }
+        }
+
+        private void cityComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

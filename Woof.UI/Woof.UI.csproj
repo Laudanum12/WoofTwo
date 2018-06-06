@@ -67,6 +67,12 @@
     <Compile Include="Kitchen.xaml.cs">
       <DependentUpon>Kitchen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NameGiving.xaml.cs">
+      <DependentUpon>NameGiving.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PetsChoosing.xaml.cs">
+      <DependentUpon>PetsChoosing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SigningUp.xaml.cs">
       <DependentUpon>SigningUp.xaml</DependentUpon>
     </Compile>
@@ -99,6 +105,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NameGiving.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PetsChoosing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SigningUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,7 +158,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\рег.jpg" />
+    <Resource Include="Images\backgrounds\рег.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WoofTwo\WoofTwo.csproj">
@@ -153,7 +167,27 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\стартовая.png" />
+    <Resource Include="Images\backgrounds\стартовая.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\backgrounds\кухня.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\backgrounds\гостиная1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\backgrounds\стена.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pets\динозавр.png" />
+    <Resource Include="Images\pets\котожук.png" />
+    <Resource Include="Images\pets\кролик.png" />
+    <Resource Include="Images\pets\лиса.png" />
+    <Resource Include="Images\pets\олень.png" />
+    <Resource Include="Images\pets\скотч.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\backgrounds\бэк.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
