@@ -5,9 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Woof.UI"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="SittingRoom">
-
+    <Page.Background>
+        <ImageBrush ImageSource="Images/backgrounds/гостиная1.jpg"></ImageBrush>
+    </Page.Background>
+    
     <Grid>
         
     </Grid>

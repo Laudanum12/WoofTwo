@@ -19,138 +19,138 @@ namespace WoofTwo.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
-            {
-                FoodPoints = 10
-            });
-            context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
-            {
-                FoodPoints = 15
-            });
-            context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
-            {
-                FoodPoints = 20
-            });
-            context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
-            {
-                
-                FoodPoints = 25
-            });
-            context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
-            {
-                FoodPoints = 30
-            });
-            context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
-            {
-                FoodPoints = 35
-            });
-            context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
-            {
-                PoopPoints = 10
-            }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
-            {
-                PoopPoints = 15
-            }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
-            {
-                PoopPoints = 20
-            }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
-            {
-                PoopPoints = 25
-            }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
-            {
-                PoopPoints = 30
-            }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
-            {
-                PoopPoints = 35
-            });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 10
-            });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 15
-            });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 20
-            });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 25
-            });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 30
-            });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 35
-            });
+            //    context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
+            //    {
+            //        FoodPoints = 10
+            //    });
+            //    context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
+            //    {
+            //        FoodPoints = 15
+            //    });
+            //    context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
+            //    {
+            //        FoodPoints = 20
+            //    });
+            //    context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
+            //    {
 
-           
-            context.NeedsTable.AddOrUpdate(new Relations.NeedsRelations
-            {
-                FoodIdFK = 1,
-                NeedsIdFK = 1,
-                PoopIdFK = 1,
-                SleepIdFK = 1
-            });
+            //        FoodPoints = 25
+            //    });
+            //    context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
+            //    {
+            //        FoodPoints = 30
+            //    });
+            //    context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
+            //    {
+            //        FoodPoints = 35
+            //    });
+            //    context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
+            //    {
+            //        PoopPoints = 10
+            //    }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
+            //    {
+            //        PoopPoints = 15
+            //    }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
+            //    {
+            //        PoopPoints = 20
+            //    }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
+            //    {
+            //        PoopPoints = 25
+            //    }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
+            //    {
+            //        PoopPoints = 30
+            //    }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
+            //    {
+            //        PoopPoints = 35
+            //    });
+            //    context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
+            //    {
+            //        SleepPoints = 10
+            //    });
+            //    context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
+            //    {
+            //        SleepPoints = 15
+            //    });
+            //    context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
+            //    {
+            //        SleepPoints = 20
+            //    });
+            //    context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
+            //    {
+            //        SleepPoints = 25
+            //    });
+            //    context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
+            //    {
+            //        SleepPoints = 30
+            //    });
+            //    context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
+            //    {
+            //        SleepPoints = 35
+            //    });
 
-            context.SpeciesTable.AddOrUpdate(x => x.SpeciesName, new Classes.Species
-            {
-                SpeciesName = "Hedgehog"
-            });
 
-            context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
-            {
-                Name = "Kitty",
-                SpeciesId = 1
-            });
-            context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
-            {
-                Name = "Jin",
-                SpeciesId = 1
-            });
-            context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
-            {
-                Name = "Holly",
-                SpeciesId = 1
-            });
-            context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
-            {
+            //    context.NeedsTable.AddOrUpdate(new Relations.NeedsRelations
+            //    {
+            //        FoodIdFK = 1,
+            //        NeedsIdFK = 1,
+            //        PoopIdFK = 1,
+            //        SleepIdFK = 1
+            //    });
 
-                Name = "Hel",
-                SpeciesId = 1
-            });
-            context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
-            {
-                Name = "help0ds",
+            //    context.SpeciesTable.AddOrUpdate(x => x.SpeciesName, new Classes.Species
+            //    {
+            //        SpeciesName = "Hedgehog"
+            //    });
 
-                Level = 1,
-                DateOfRegistration = DateTime.Now.AddDays(1),
+            //    context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
+            //    {
+            //        Name = "Kitty",
+            //        SpeciesId = 1
+            //    });
+            //    context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
+            //    {
+            //        Name = "Jin",
+            //        SpeciesId = 1
+            //    });
+            //    context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
+            //    {
+            //        Name = "Holly",
+            //        SpeciesId = 1
+            //    });
+            //    context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
+            //    {
 
-            });
-            context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
-            {
-                Level = 1,
-                Name = "help9",
+            //        Name = "Hel",
+            //        SpeciesId = 1
+            //    });
+            //    context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
+            //    {
+            //        Name = "help0ds",
 
-                DateOfRegistration = DateTime.Now.AddDays(1),
+            //        Level = 1,
+            //        DateOfRegistration = DateTime.Now.AddDays(1),
 
-            }); context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
-            {
-                Name = "help0",
-                Level = 1,
-                DateOfRegistration = DateTime.Now.AddDays(1),
+            //    });
+            //    context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
+            //    {
+            //        Level = 1,
+            //        Name = "help9",
 
-            });
-            context.UserTable.AddOrUpdate(x => x.UserId, new Classes.User
-            {
-                Level = 1,
-                DateOfRegistration = DateTime.Now.AddDays(1),
+            //        DateOfRegistration = DateTime.Now.AddDays(1),
 
-            });
+            //    }); context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
+            //    {
+            //        Name = "help0",
+            //        Level = 1,
+            //        DateOfRegistration = DateTime.Now.AddDays(1),
+
+            //    });
+            //    context.UserTable.AddOrUpdate(x => x.UserId, new Classes.User
+            //    {
+            //        Level = 1,
+            //        DateOfRegistration = DateTime.Now.AddDays(1),
+
+            //    });
         }
     }
 }
