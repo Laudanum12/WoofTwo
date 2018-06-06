@@ -49,7 +49,8 @@ namespace WoofTwo
                             Level = item.Level,
                             Name = item.Name,
                             Password = item.Password,
-                            UserId = item.UserId
+                            UserId = item.UserId,
+                            Animal = item.Animal
                         };
                         users.Add(user);
                     }

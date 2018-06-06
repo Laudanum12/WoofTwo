@@ -64,12 +64,6 @@ namespace WoofTwo
             base.OnModelCreating(modelBuilder);
         }
 
-        //public class FoodConfiguration : EntityTypeConfiguration<Food>
-        //{
-        //    public FoodConfiguration()
-        //    {
-
-        //    }
-        //}
+      
     }
 }
