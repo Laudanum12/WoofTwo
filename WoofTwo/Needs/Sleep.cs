@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WoofTwo.Relations;
 
 namespace WoofTwo.Classes
 {
@@ -10,5 +11,8 @@ namespace WoofTwo.Classes
     {
         public int SleepId { get; set; }
         public int SleepPoints { get; set; }
+        public virtual List<NeedsRelations> NeedsRelation { get; set; }
+
+
     }
 }
