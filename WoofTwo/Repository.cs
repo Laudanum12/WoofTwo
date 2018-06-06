@@ -11,7 +11,7 @@ namespace WoofTwo
 {
     public class Repository 
     {
-        public List<Person> _personRepository { get; set; }
+        public List<User> _personRepository { get; set; }
         public List<Animal> _animalRepository { get; set; }
         public List<Species> _speciesRepository { get; set; }
 

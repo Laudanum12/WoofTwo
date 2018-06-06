@@ -11,5 +11,6 @@ namespace WoofTwo.Classes
         public int SpeciesId { get; set; }
         public string SpeciesName { get; set; }
         public Needs Needs { get; set; }
+        public List<Animal> Animals { get; set; }
     }
 }

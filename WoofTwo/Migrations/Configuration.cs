@@ -119,6 +119,63 @@ namespace WoofTwo.Migrations
                 SleepIdFK = 1
             });
 
+            context.SpeciesTable.AddOrUpdate(new Classes.Species
+            {
+                SpeciesId = 1,
+                SpeciesName = "Hedgehog"
+            });
+
+            context.AnimalTable.AddOrUpdate(new Classes.Animal
+            {
+                AnimalId = 1,
+                Name = "Kitty",
+                SpeciesId = 1
+            });
+            context.AnimalTable.AddOrUpdate(new Classes.Animal
+            {
+                AnimalId = 2,
+                Name = "Jin",
+                SpeciesId = 1
+            });
+            context.AnimalTable.AddOrUpdate(new Classes.Animal
+            {
+                AnimalId = 3,
+                Name = "Holly",
+                SpeciesId = 1
+            });
+            context.AnimalTable.AddOrUpdate(new Classes.Animal
+            {
+                AnimalId = 4,
+                Name = "Hel",
+                SpeciesId = 1
+            });
+            context.UserTable.AddOrUpdate(x => x.UserId, new Classes.User
+            {
+                UserId = 1,
+                Level = 1,
+                DateOfRegistration = DateTime.Now.AddDays(1),
+
+            });
+            context.UserTable.AddOrUpdate(x => x.UserId, new Classes.User
+            {
+                UserId = 2,
+                Level = 1,
+                DateOfRegistration = DateTime.Now.AddDays(1),
+
+            }); context.UserTable.AddOrUpdate(x => x.UserId, new Classes.User
+            {
+                UserId = 3,
+                Level = 1,
+                DateOfRegistration = DateTime.Now.AddDays(1),
+
+            });
+            context.UserTable.AddOrUpdate(x => x.UserId, new Classes.User
+            {
+                UserId = 4,
+                Level = 1,
+                DateOfRegistration = DateTime.Now.AddDays(1),
+
+            });
         }
     }
 }

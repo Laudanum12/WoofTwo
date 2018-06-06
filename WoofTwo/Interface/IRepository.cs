@@ -9,7 +9,7 @@ namespace WoofTwo
 {
     public interface IRepository
     {
-        List<Person> People { get;  }
+        List<User> People { get;  }
         List<Animal> Animals { get;  }
         List<Species> Species { get;  }
     }
