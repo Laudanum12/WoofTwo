@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WoofTwo.Helpers;
 
 namespace WoofTwo.Classes
 {
@@ -17,7 +19,18 @@ namespace WoofTwo.Classes
         public string City { get; set; }
         //public int Age { get; set; }
 
-        //public Animal Animal { get; set; }
+        public User() { }
+        public User(string name, string password, string email, DateTime dateTime, int level, string city)
+        {
+            Name = name;
+            Password = PasswordHelper.GetHash(password);
+            Email = email;
+            Level = level;
+            DateOfRegistration = dateTime;
+            City = city;
+            Animal = new Animal();
+        }
+        public Animal Animal { get; set; }
 
     }
 }

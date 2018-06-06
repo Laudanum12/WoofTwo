@@ -15,6 +15,6 @@ namespace WoofTwo.Classes
         public Species Species { get; set; }
         public int SpeciesId { get; set; }
 
-        //public User User { get; set; }
+        public User User { get; set; }
     }
 }

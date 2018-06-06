@@ -57,9 +57,9 @@ namespace WoofTwo
                         .WithRequired(p => p.Species)
                         .HasForeignKey(c => c.SpeciesId);
 
-            //modelBuilder.Entity<User>()
-            //    .HasRequired(c => c.Animal)
-            //    .WithRequiredPrincipal(c => c.User);
+            modelBuilder.Entity<User>()
+                .HasRequired(c => c.Animal)
+                .WithRequiredPrincipal(c => c.User);
 
             base.OnModelCreating(modelBuilder);
         }

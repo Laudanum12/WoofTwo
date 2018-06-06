@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Classes\Animal.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="Factory.cs" />
     <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Migrations\201806060554336_Initial.cs" />
     <Compile Include="Migrations\201806060554336_Initial.Designer.cs">
@@ -88,6 +89,10 @@
     <Compile Include="Migrations\201806060951548_UserRelation.cs" />
     <Compile Include="Migrations\201806060951548_UserRelation.Designer.cs">
       <DependentUpon>201806060951548_UserRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806061016514_UserRelation1.cs" />
+    <Compile Include="Migrations\201806061016514_UserRelation1.Designer.cs">
+      <DependentUpon>201806061016514_UserRelation1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Needs\Food.cs" />
@@ -142,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806060951548_UserRelation.resx">
       <DependentUpon>201806060951548_UserRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806061016514_UserRelation1.resx">
+      <DependentUpon>201806061016514_UserRelation1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
