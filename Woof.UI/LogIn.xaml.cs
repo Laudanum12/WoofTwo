@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WoofTwo;
+using WoofTwo.Helpers;
 
 namespace Woof.UI
 {
@@ -20,6 +22,7 @@ namespace Woof.UI
     /// </summary>
     public partial class LogIn : Page
     {
+        IRepository _storage = Factory.Instance.GetStorage();
         public LogIn()
         {
             InitializeComponent();
@@ -46,7 +49,9 @@ namespace Woof.UI
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var login = loginTextBox.Text;
+            var pswrd = pswrdPasswordBox.Password;
+            _storage.UserInStorage(login, pswrd);
         }
 
         private void signupButton_Click(object sender, RoutedEventArgs e)

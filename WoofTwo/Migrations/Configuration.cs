@@ -7,6 +7,7 @@ namespace WoofTwo.Migrations
 
     internal sealed class Configuration : DbMigrationsConfiguration<WoofTwo.Context>
     {
+
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
@@ -86,40 +87,90 @@ namespace WoofTwo.Migrations
             {
                 SleepPoints = 35
             });
+            //context.Needs.AddOrUpdate(new Classes.Needs
+            //{
+            //    NeedsId = 1,
+            //});
+
+            //context.NeedsTable.AddOrUpdate(new Relations.NeedsRelations
+            //{
+            //    FoodIdFK = 1,
+            //    NeedsIdFK = 1,
+            //    PoopIdFK = 1,
+            //    SleepIdFK = 1
+            //});
+
+            context.SpeciesTable.AddOrUpdate(x => x.SpeciesName, new Classes.Species
+            {
+                SpeciesName = "Hedgehog"
+            });
             context.SaveChanges();
 
-            
-            context.SpeciesTable.AddOrUpdate(new Classes.Species
+            var user = new Classes.User
             {
-                SpeciesName = "Fox"
-            });
-           
-            context.NeedsTable.AddOrUpdate(new Relations.NeedsRelations
-            {
-                FoodIdFK = 1,
-                PoopIdFK = 1,
-                SleepIdFK = 1
-
-            });
+                Name = "n",
+                DateOfRegistration = new DateTime(2000, 1, 1)
+            };
             context.SaveChanges();
 
-            context.UserTable.AddOrUpdate(new Classes.User
+            var animal = new Classes.Animal
             {
-                City = "A",
-                DateOfRegistration = DateTime.Now.AddDays(1),
-                Email = "sa",
-                Level = 1,
-                Password = "asa",
-                Name = "aaaa"
+                AnimalId = user.UserId,
+                User = user,
+                Species = context.SpeciesTable.First(s => s.SpeciesName == "Hedgehog")
+            };
+            context.AnimalTable.Add(animal);
 
-            });
 
-            context.AnimalTable.AddOrUpdate(new Classes.Animal
-            {
-                Name = "Foxxy",
-                SpeciesId = 1,
+            //context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
+            //{
+            //    Name = "Kitty",
+            //    SpeciesId = 1
+            //});
+            //context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
+            //{
+            //    Name = "Jin",
+            //    SpeciesId = 1
+            //});
+            //context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
+            //{
+            //    Name = "Holly",
+            //    SpeciesId = 1
+            //});
+            //context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
+            //{
 
-            });
+            //    Name = "Hel",
+            //    SpeciesId = 1
+            //});
+            //context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
+            //{
+            //    Name = "help0ds",
+
+            //    Level = 1,
+            //    DateOfRegistration = DateTime.Now.AddDays(1),
+
+            //});
+            //context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
+            //{
+            //    Level = 1,
+            //    Name = "help9",
+
+            //    DateOfRegistration = DateTime.Now.AddDays(1),
+
+            //}); context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
+            //{
+            //    Name = "help0",
+            //    Level = 1,
+            //    DateOfRegistration = DateTime.Now.AddDays(1),
+
+            //});
+            //context.UserTable.AddOrUpdate(x => x.UserId, new Classes.User
+            //{
+            //    Level = 1,
+            //    DateOfRegistration = DateTime.Now.AddDays(1),
+
+            //});
         }
     }
 }

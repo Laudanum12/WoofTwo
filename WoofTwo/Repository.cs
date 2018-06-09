@@ -141,7 +141,6 @@ namespace WoofTwo
                 db.UserTable.Add(person);
                 db.SaveChanges();
             }
-
         }
 
         public string FindImages()

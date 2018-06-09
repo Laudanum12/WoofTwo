@@ -27,14 +27,14 @@
         </Grid.ColumnDefinitions>
         <Label Foreground="White" Margin="15" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="Welcome to Woof! Please enter your personal data to create an account!"
                FontFamily="Matura MT Script Capitals" FontSize="24" Cursor="IBeam"/>
-        <TextBlock HorizontalAlignment="Center" Foreground="White" Name="fullnameTextBlock" Grid.Row="1" Grid.Column="0" FontFamily="Matura MT Script Capitals" FontSize="36">
-            Full name
+        <TextBlock HorizontalAlignment="Center" Foreground="White" Name="loginTextBlock" Grid.Row="1" Grid.Column="0" FontFamily="Matura MT Script Capitals" FontSize="36">
+            Login
         </TextBlock>
-        <TextBox Margin="10" Name="fullnameTextBox" Grid.Row="1" Grid.Column="1"/>
+        <TextBox Margin="10" Name="loginTextBox" Grid.Row="1" Grid.Column="1"/>
         <TextBlock Foreground="White" Name="emailTextBlock" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" FontFamily="Matura MT Script Capitals" FontSize="36">
             Email
         </TextBlock>
-        <TextBox Margin="10" Name="loginTextBox" Grid.Row="1" Grid.Column="3"/>
+        <TextBox Margin="10" Name="emailTextBox" Grid.Row="1" Grid.Column="3"/>
         <TextBlock Foreground="White" Name="pswrdTextBlock" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" FontFamily="Matura MT Script Capitals" FontSize="36">
             Password
         </TextBlock>
