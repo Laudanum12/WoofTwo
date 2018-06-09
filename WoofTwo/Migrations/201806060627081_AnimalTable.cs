@@ -11,7 +11,7 @@ namespace WoofTwo.Migrations
                 "dbo.Animals",
                 c => new
                     {
-                        AnimalId = c.Int(nullable: false, identity: true),
+                        AnimalId = c.Int(nullable: false, identity: false),
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.AnimalId);

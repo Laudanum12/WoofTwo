@@ -139,12 +139,10 @@ namespace WoofTwo
         {
             using (var db = new Context())
             {
-                
                 var person = new User(name.Trim(),password, email.Trim(), dateTime, level,city);
                 db.UserTable.Add(person);
                 db.SaveChanges();
             }
-
         }
     }
 }

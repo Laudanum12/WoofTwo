@@ -98,10 +98,6 @@
     <Compile Include="Migrations\201806061209188_New.Designer.cs">
       <DependentUpon>201806061209188_New.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806061243111_New1.cs" />
-    <Compile Include="Migrations\201806061243111_New1.Designer.cs">
-      <DependentUpon>201806061243111_New1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Needs\Food.cs" />
     <Compile Include="Helpers\Need.cs" />
@@ -161,9 +157,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806061209188_New.resx">
       <DependentUpon>201806061209188_New.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806061243111_New1.resx">
-      <DependentUpon>201806061243111_New1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

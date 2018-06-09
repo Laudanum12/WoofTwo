@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WoofTwo;
+using WoofTwo.Helpers;
 
 namespace Woof.UI
 {
@@ -20,6 +22,7 @@ namespace Woof.UI
     /// </summary>
     public partial class SigningUp : Page
     {
+        IRepository _storage = Factory.Instance.GetStorage();
         public SigningUp()
         {
             InitializeComponent();
@@ -27,7 +30,24 @@ namespace Woof.UI
 
         private void signingupButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new PetsChoosing());
+            
+            var login = loginTextBox.Text;
+            var email = emailTextBox.Text;
+            var pswrd = PasswordHelper.GetHash(pswrdPasswordBox.Password);
+            var city = cityComboBox.SelectedItem.ToString();
+            var now = DateTime.Now;
+            var level = 1;
+            if (login == "" || email == "" || pswrd == "")
+                MessageBox.Show("You can't leave this field empty!", "Oops",
+                    MessageBoxButton.OK);
+            if (_storage.CanAddUser(login) == true)
+            {
+                _storage.AddUser(login, email, pswrd, city, now, level);
+                NavigationService.Navigate(new PetsChoosing());
+            }
+            else MessageBox.Show("This login already exists", "Oops",
+                MessageBoxButton.OK);
+            
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
