@@ -18,11 +18,9 @@ namespace WoofTwo.Migrations
                         SleepIdFK = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.NeedsRelationId)
-                .ForeignKey("dbo.Needs", t => t.NeedsIdFK, cascadeDelete: true)
                 .ForeignKey("dbo.Poops", t => t.PoopIdFK, cascadeDelete: true)
                 .ForeignKey("dbo.Sleeps", t => t.SleepIdFK, cascadeDelete: true)
                 .ForeignKey("dbo.Foods", t => t.FoodIdFK, cascadeDelete: true)
-                .Index(t => t.NeedsIdFK)
                 .Index(t => t.FoodIdFK)
                 .Index(t => t.PoopIdFK)
                 .Index(t => t.SleepIdFK);

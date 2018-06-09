@@ -21,7 +21,6 @@ namespace Woof.UI
     /// </summary>
     public partial class MainWindow : Window
     {
-        IRepository _storage = Factory.Instance.GetStorage();
         public MainWindow()
         {
             InitializeComponent();

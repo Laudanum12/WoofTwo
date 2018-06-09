@@ -10,7 +10,6 @@ namespace WoofTwo.Classes
 {
     public class Needs
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int NeedsId { get; set; }
         [NotMapped]
         public List<Food> Foods { get; set; }

@@ -18,7 +18,7 @@ namespace WoofTwo
         void AddUser(string name, string email, string password, string city, DateTime dateTime, int level);
         User UserInStorage(string name, string password);
         void RestoreInfo();
-
+        string FindImages();
 
 
 

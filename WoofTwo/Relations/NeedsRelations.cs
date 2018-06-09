@@ -13,9 +13,6 @@ namespace WoofTwo.Relations
         [Key]
         public int NeedsRelationId { get; set; }
 
-        public int NeedsIdFK { get; set; }
-        public virtual Needs Needs { get; set; }
-
         public int FoodIdFK { get; set; }
         public virtual Food Food { get; set; }
 
@@ -25,6 +22,7 @@ namespace WoofTwo.Relations
         public int SleepIdFK { get; set; }
         public virtual Sleep Sleep { get; set; }
 
+        public Species Species { get; set; }
 
     }
 }

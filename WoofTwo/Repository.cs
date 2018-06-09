@@ -25,12 +25,13 @@ namespace WoofTwo
         public void RestoreUsers()
         {
             _userRepository = Users;
+            _animalRepository = Animals;
+            _speciesRepository = Species;
         }
 
         public void RestoreInfo()
         {
-            _animalRepository = Animals;
-            _speciesRepository = Species;
+            
         }
         public List<User> Users
         {
@@ -54,7 +55,6 @@ namespace WoofTwo
                         };
                         users.Add(user);
                     }
-                    //_userRepository = users;
                     return users;
                 }
             }
@@ -77,7 +77,6 @@ namespace WoofTwo
                         };
                         animals.Add(animal);
                     }
-                    // _animalRepository = animals;
                     return animals;
                 }
             }
@@ -101,7 +100,6 @@ namespace WoofTwo
                         };
                         species.Add(_species);
                     }
-                    //_speciesRepository = species;
                     return species;
                 }
 
@@ -139,12 +137,28 @@ namespace WoofTwo
         {
             using (var db = new Context())
             {
-                
                 var person = new User(name.Trim(),password, email.Trim(), dateTime, level,city);
                 db.UserTable.Add(person);
                 db.SaveChanges();
             }
 
         }
+
+        public string FindImages()
+        {
+           using (var db = new Context())
+            {
+                if (_userRepository.First().Animal.Species.SpeciesName == "Hedgehog")
+                {
+                    string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
+                    return imgPath;
+                }
+                return null;
+            }
+            
+        }
+        //формирование соответствия png 
+        //api city time the on 
+        //про
     }
 }

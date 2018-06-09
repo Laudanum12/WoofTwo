@@ -16,13 +16,7 @@ namespace WoofTwo.Migrations
                     })
                 .PrimaryKey(t => t.FoodId);
             
-            CreateTable(
-                "dbo.Needs",
-                c => new
-                    {
-                        NeedsId = c.Int(nullable: false, identity: true),
-                    })
-                .PrimaryKey(t => t.NeedsId);
+          
             
             CreateTable(
                 "dbo.Poops",

@@ -27,7 +27,7 @@
                 <TextBlock Name="dinosaurTextBlock" VerticalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="30" >
                     Dinosaur
                 </TextBlock>
-                <Image Source ="Images/pets/динозавр.png">
+                <Image Source="Images/pets/динозавр.png">
                 </Image>
             </StackPanel>
         </Button>
@@ -36,7 +36,7 @@
                 <TextBlock Name="catbugTextBlock" VerticalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="30" >
                     Catbug
                 </TextBlock>
-                <Image Source ="Images/pets/котожук.png">
+                <Image Source="Images/pets/котожук.png">
                 </Image>
             </StackPanel>
         </Button>
@@ -45,7 +45,7 @@
                 <TextBlock Name="rabbitTextBlock" VerticalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="30" >
                     Rabbit
                 </TextBlock>
-                <Image Source ="Images/pets/кролик.png">
+                <Image Source="Images/pets/кролик.png">
                 </Image>
             </StackPanel>
         </Button>
@@ -54,7 +54,7 @@
                 <TextBlock Name="foxTextBlock" VerticalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="30" >
                     Fox
                 </TextBlock>
-                <Image Source ="Images/pets/лиса.png">
+                <Image Source="Images/pets/лиса.png">
                 </Image>
             </StackPanel>
         </Button>
@@ -63,7 +63,7 @@
                 <TextBlock Name="dogTextBlock" VerticalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="30" >
                     Dog
                 </TextBlock>
-                <Image Source ="Images/pets/скотч.png">
+                <Image Source="Images/pets/скотч.png">
                 </Image>
             </StackPanel>
         </Button>
@@ -72,7 +72,7 @@
                 <TextBlock Name="deerTextBlock" VerticalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="30" >
                     Deer
                 </TextBlock>
-                <Image Source ="Images/pets/олень.png">
+                <Image Source="Images/pets/олень.png">
                 </Image>
             </StackPanel>
         </Button>
