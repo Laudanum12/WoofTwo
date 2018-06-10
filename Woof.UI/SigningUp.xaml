@@ -10,6 +10,13 @@
     <Page.Background>
         <ImageBrush ImageSource="Images/backgrounds/рег.jpg"></ImageBrush>
     </Page.Background>
+    <Page.Resources>
+        <Style x:Key="TextBlockStyle">
+            <Setter Property="Control.FontSize" Value="36"/>
+            <Setter Property="Control.FontFamily" Value="Matura MT Script Capitals"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -27,22 +34,22 @@
         </Grid.ColumnDefinitions>
         <Label Foreground="White" Margin="15" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="Welcome to Woof! Please enter your personal data to create an account!"
                FontFamily="Matura MT Script Capitals" FontSize="24" Cursor="IBeam"/>
-        <TextBlock HorizontalAlignment="Center" Foreground="White" Name="loginTextBlock" Grid.Row="1" Grid.Column="0" FontFamily="Matura MT Script Capitals" FontSize="36">
+        <TextBlock Style="{StaticResource TextBlockStyle}" HorizontalAlignment="Center" Name="loginTextBlock" Grid.Row="1" Grid.Column="0">
             Login
         </TextBlock>
         <TextBox Margin="10" Name="loginTextBox" Grid.Row="1" Grid.Column="1"/>
-        <TextBlock Foreground="White" Name="emailTextBlock" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" FontFamily="Matura MT Script Capitals" FontSize="36">
+        <TextBlock Style="{StaticResource TextBlockStyle}"  Name="emailTextBlock" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2">
             Email
         </TextBlock>
         <TextBox Margin="10" Name="emailTextBox" Grid.Row="1" Grid.Column="3"/>
-        <TextBlock Foreground="White" Name="pswrdTextBlock" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" FontFamily="Matura MT Script Capitals" FontSize="36">
+        <TextBlock Style="{StaticResource TextBlockStyle}"  Name="pswrdTextBlock" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0">
             Password
         </TextBlock>
         <TextBox Margin="10" Name="pswrdTextBox" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Visibility="Hidden"/>
         <PasswordBox Name="pswrdPasswordBox" PasswordChar="*" Margin="10" Grid.Row="2" Grid.Column="1"/>
         <CheckBox Foreground="White" Margin="10" Name="pswrdCheckBox" Content="Show password" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" 
                   FontFamily="Matura MT Script Capitals" FontSize="20" Click="pswrdCheckBox_Click"/>
-        <TextBlock Foreground="White" Name="cityTextBlock" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" FontFamily="Matura MT Script Capitals" FontSize="36">
+        <TextBlock Style="{StaticResource TextBlockStyle}"  Name="cityTextBlock" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2">
             City
         </TextBlock>
         <ComboBox Grid.Row="2" Grid.Column="3" Margin="10" Name="cityComboBox" SelectionChanged="cityComboBox_SelectionChanged" Text="Choose your city"
