@@ -12,6 +12,6 @@
     </Page.Background>
     
     <Grid>
-        
+        <Image/>
     </Grid>
 </Page>

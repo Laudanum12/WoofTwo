@@ -11,6 +11,21 @@
         <ImageBrush ImageSource="Images/backgrounds/кухня.jpg"></ImageBrush>
     </Page.Background>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image/>
+        <Button Name="foodButton" Click="foodButton_Click" Width="Auto" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Margin="50" VerticalAlignment="Center" Cursor="Hand">
+            <StackPanel Orientation="Horizontal">
+                <Label VerticalAlignment="Center" Content="Hungry?" FontFamily="Matura MT Script Capitals" FontSize="22"/>
+                <Image Source="Images/food/еда.png" Width="70" Margin="15"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>

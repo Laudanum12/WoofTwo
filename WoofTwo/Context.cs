@@ -28,40 +28,40 @@ namespace WoofTwo
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Needs>()
-                       .HasMany(p => p.NeedsRelation)
-                       .WithRequired(c => c.Needs)
-                       .HasForeignKey(k => k.NeedsIdFK);
+            //modelBuilder.Entity<Needs>()
+            //           .HasMany(p => p.NeedsRelation)
+            //           .WithRequired(c => c.Needs)
+            //           .HasForeignKey(k => k.NeedsIdFK);
 
-            modelBuilder.Entity<Food>()
-                        .HasMany(te => te.NeedsRelation)
-                        .WithRequired(t => t.Food)
-                        .HasForeignKey(tr => tr.FoodIdFK);
+            //modelBuilder.Entity<Food>()
+            //            .HasMany(te => te.NeedsRelation)
+            //            .WithRequired(t => t.Food)
+            //            .HasForeignKey(tr => tr.FoodIdFK);
 
-            modelBuilder.Entity<Poop>()
-                        .HasMany(c => c.NeedsRelation)
-                        .WithRequired(c => c.Poop)
-                        .HasForeignKey(c => c.PoopIdFK);
+            //modelBuilder.Entity<Poop>()
+            //            .HasMany(c => c.NeedsRelation)
+            //            .WithRequired(c => c.Poop)
+            //            .HasForeignKey(c => c.PoopIdFK);
 
-            modelBuilder.Entity<Sleep>()
-                        .HasMany(c => c.NeedsRelation)
-                        .WithRequired(c => c.Sleep)
-                        .HasForeignKey(c => c.SleepIdFK);
+            //modelBuilder.Entity<Sleep>()
+            //            .HasMany(c => c.NeedsRelation)
+            //            .WithRequired(c => c.Sleep)
+            //            .HasForeignKey(c => c.SleepIdFK);
 
-            modelBuilder.Entity<Species>()
-                        .HasRequired(c => c.Needs)
-                        .WithRequiredPrincipal(c => c.Species);
+            //modelBuilder.Entity<Species>()
+            //            .HasRequired(c => c.Needs)
+            //            .WithRequiredPrincipal(c => c.Species);
 
-            modelBuilder.Entity<Species>()
-                        .HasMany(c => c.Animals)
-                        .WithRequired(p => p.Species)
-                        .HasForeignKey(c => c.SpeciesId);
+            //modelBuilder.Entity<Species>()
+            //            .HasMany(c => c.Animals)
+            //            .WithRequired(p => p.Species)
+            //            .HasForeignKey(c => c.SpeciesId);
 
-            //modelBuilder.Entity<User>()
-            //    .HasRequired(c => c.Animal)
-            //    .WithRequiredPrincipal(c => c.User);
+            ////modelBuilder.Entity<User>()
+            ////    .HasRequired(c => c.Animal)
+            ////    .WithRequiredPrincipal(c => c.User);
 
-            base.OnModelCreating(modelBuilder);
+            //base.OnModelCreating(modelBuilder);
         }
 
       

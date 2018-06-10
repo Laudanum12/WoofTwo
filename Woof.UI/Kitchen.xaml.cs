@@ -24,5 +24,10 @@ namespace Woof.UI
         {
             InitializeComponent();
         }
+
+        private void foodButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

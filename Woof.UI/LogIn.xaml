@@ -26,7 +26,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-
+        
         <Label Grid.Column="1" Grid.Row="0" Content="Glad to see you!" FontSize="72" FontFamily="Matura MT Script Capitals"/>
         <TextBlock Grid.Column="1" Grid.Row="1" Name="Login" HorizontalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="48">
                 Login
