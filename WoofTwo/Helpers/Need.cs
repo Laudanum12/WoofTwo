@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WoofTwo.Classes
 {
-    public class Need<T>
+    public class Need
     {
         public int Id { get; set; }
         public int Quantity { get; set; }

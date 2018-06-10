@@ -12,7 +12,7 @@ namespace WoofTwo.Classes
 
         public int FoodId { get; set; }
         public int FoodPoints { get; set; }
-        public virtual List<NeedsRelations> NeedsRelation { get; set; }
+        public virtual List<Needs> NeedsRelation { get; set; }
 
         
     }

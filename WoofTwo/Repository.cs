@@ -31,7 +31,7 @@ namespace WoofTwo
 
         public void RestoreInfo()
         {
-            
+
         }
         public List<User> Users
         {
@@ -40,7 +40,7 @@ namespace WoofTwo
                 using (var db = new Context())
                 {
                     List<User> users = new List<User>();
-                    foreach(var item in db.UserTable)
+                    foreach (var item in db.UserTable)
                     {
                         User user = new User
                         {
@@ -58,15 +58,15 @@ namespace WoofTwo
                     return users;
                 }
             }
-        } 
+        }
         public List<Animal> Animals
         {
             get
             {
-                using( var db = new Context())
+                using (var db = new Context())
                 {
                     List<Animal> animals = new List<Animal>();
-                    foreach(var item in db.AnimalTable)
+                    foreach (var item in db.AnimalTable)
                     {
                         Animal animal = new Animal
                         {
@@ -86,10 +86,10 @@ namespace WoofTwo
         {
             get
             {
-                using(var db = new Context())
+                using (var db = new Context())
                 {
                     List<Species> species = new List<Species>();
-                    foreach(var item in db.SpeciesTable)
+                    foreach (var item in db.SpeciesTable)
                     {
                         Species _species = new Species
                         {
@@ -133,11 +133,11 @@ namespace WoofTwo
             }
         }
 
-        public void AddUser(string name, string email, string password,string city, DateTime dateTime, int level)
+        public void AddUser(string name, string email, string password, string city, DateTime dateTime, int level)
         {
             using (var db = new Context())
             {
-                var person = new User(name.Trim(),password, email.Trim(), dateTime, level,city);
+                var person = new User(name.Trim(), password, email.Trim(), dateTime, level, city);
                 db.UserTable.Add(person);
                 db.SaveChanges();
             }
@@ -145,16 +145,19 @@ namespace WoofTwo
 
         public string FindImages()
         {
-           using (var db = new Context())
+            using (var db = new Context())
             {
-                if (_userRepository.First().Animal.Species.SpeciesName == "Hedgehog")
+                var t = db.UserTable.First();
+                var y = db.SpeciesTable.First().Needs;
+               // var i = db.UserTable.First().Animal.AnimalId;
+                if (db.UserTable.First().Animal.Species.SpeciesName == "Fox")
                 {
                     string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
                     return imgPath;
                 }
                 return null;
             }
-            
+
         }
         //формирование соответствия png 
         //api city time the on 

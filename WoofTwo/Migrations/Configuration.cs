@@ -4,10 +4,10 @@ namespace WoofTwo.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using WoofTwo.Classes;
 
     internal sealed class Configuration : DbMigrationsConfiguration<WoofTwo.Context>
     {
-
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
@@ -15,162 +15,107 @@ namespace WoofTwo.Migrations
 
         protected override void Seed(WoofTwo.Context context)
         {
-            //  This method will be called after migrating to the latest version.
+            
+            AddFood(context, 10);
+            AddFood(context, 15);
+            AddFood(context, 20);
+            AddFood(context, 25);
+            AddFood(context, 30);
+            AddFood(context, 35);
+            AddPoop(context, 10);
+            AddPoop(context, 15);
+            AddPoop(context, 20);
+            AddPoop(context, 25);
+            AddPoop(context, 30);
+            AddSleep(context, 35);
+            AddSleep(context, 10);
+            AddSleep(context, 15);
+            AddSleep(context, 20);
+            AddSleep(context, 25);
+            AddSleep(context, 30);
+            AddSleep(context, 35);
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
-            context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
-            {
-                FoodPoints = 10
-            });
-            context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
-            {
-                FoodPoints = 15
-            });
-            context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
-            {
-                FoodPoints = 20
-            });
-            context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
-            {
+            AddSpeciesAndNeeds(context, "Dinosaur", 1, 1, 1);
+            AddSpeciesAndNeeds(context, "Catbug", 1, 3, 2);
+            AddSpeciesAndNeeds(context, "Rabbit", 4, 3, 2);
+            AddSpeciesAndNeeds(context, "Dog", 3, 1, 4);
+            AddSpeciesAndNeeds(context, "Fox", 1, 4, 2);
+            AddSpeciesAndNeeds(context, "Deer", 2, 3, 2);
 
-                FoodPoints = 25
-            });
+           
+            AddUSerAndAnimal(context, "Moscow", DateTime.Now.AddDays(1), "email", 1, "a", "Alex", 1, "Foxxy", 5);
+
+
+        }
+
+        private void AddFood(WoofTwo.Context context, int _foodPoint)
+        {
             context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
             {
-                FoodPoints = 30
+                FoodPoints = _foodPoint
             });
-            context.FoodTable.AddOrUpdate(x => x.FoodPoints, new Classes.Food
-            {
-                FoodPoints = 35
-            });
+            context.SaveChanges();
+        }
+
+        private void AddPoop(WoofTwo.Context context, int _poopPoints)
+        {
             context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
             {
-                PoopPoints = 10
-            }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
-            {
-                PoopPoints = 15
-            }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
-            {
-                PoopPoints = 20
-            }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
-            {
-                PoopPoints = 25
-            }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
-            {
-                PoopPoints = 30
-            }); context.PoopTable.AddOrUpdate(x => x.PoopPoints, new Classes.Poop
-            {
-                PoopPoints = 35
+                PoopPoints = _poopPoints
             });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 10
-            });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 15
-            });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 20
-            });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 25
-            });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 30
-            });
-            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
-            {
-                SleepPoints = 35
-            });
-            //context.Needs.AddOrUpdate(new Classes.Needs
-            //{
-            //    NeedsId = 1,
-            //});
+            context.SaveChanges();
+        }
 
-            //context.NeedsTable.AddOrUpdate(new Relations.NeedsRelations
-            //{
-            //    FoodIdFK = 1,
-            //    NeedsIdFK = 1,
-            //    PoopIdFK = 1,
-            //    SleepIdFK = 1
-            //});
+        private void AddSleep(WoofTwo.Context context, int _sleepPoints)
+        {
+            context.SleepTable.AddOrUpdate(x => x.SleepPoints, new Classes.Sleep
+            {
+                SleepPoints = _sleepPoints
+            });
+            context.SaveChanges();
+        }
 
+        private void AddSpeciesAndNeeds(WoofTwo.Context context, string _speciesName, int _foodIdFK, int _poopIdFK, int _sleepIdFK)
+        {
             context.SpeciesTable.AddOrUpdate(x => x.SpeciesName, new Classes.Species
             {
-                SpeciesName = "Hedgehog"
+                SpeciesName = _speciesName
+            });
+
+            context.NeedsTable.AddOrUpdate(x => new { x.FoodIdFK, x.PoopIdFK, x.SleepIdFK }, new Relations.Needs
+            {
+                FoodIdFK = _foodIdFK,
+                PoopIdFK = _poopIdFK,
+                SleepIdFK = _sleepIdFK
+
+            });
+            context.SaveChanges();
+            
+        }
+
+        private void AddUSerAndAnimal(WoofTwo.Context context, string _city, DateTime _dateOfRegistration, string _email,
+            int _level, string _password, string _name, int _animalId, string _animalName, int _speciesId)
+        {
+            context.UserTable.AddOrUpdate(x => new { x.Name, x.Password }, new Classes.User
+            {
+                City = _city,
+                DateOfRegistration = _dateOfRegistration,
+                Email = _email,
+                Level = _level,
+                Password = _password,
+                Name = _name,
+                
+
             });
             context.SaveChanges();
 
-            var user = new Classes.User
+            context.AnimalTable.AddOrUpdate(x => new { x.Name, x.SpeciesId }, new Classes.Animal
             {
-                Name = "n",
-                DateOfRegistration = new DateTime(2000, 1, 1)
-            };
+                AnimalId = _animalId,
+                Name =_animalName,
+                SpeciesId = _speciesId
+            });
             context.SaveChanges();
-
-            var animal = new Classes.Animal
-            {
-                AnimalId = user.UserId,
-                User = user,
-                Species = context.SpeciesTable.First(s => s.SpeciesName == "Hedgehog")
-            };
-            context.AnimalTable.Add(animal);
-
-
-            //context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
-            //{
-            //    Name = "Kitty",
-            //    SpeciesId = 1
-            //});
-            //context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
-            //{
-            //    Name = "Jin",
-            //    SpeciesId = 1
-            //});
-            //context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
-            //{
-            //    Name = "Holly",
-            //    SpeciesId = 1
-            //});
-            //context.AnimalTable.AddOrUpdate(x => x.Name, new Classes.Animal
-            //{
-
-            //    Name = "Hel",
-            //    SpeciesId = 1
-            //});
-            //context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
-            //{
-            //    Name = "help0ds",
-
-            //    Level = 1,
-            //    DateOfRegistration = DateTime.Now.AddDays(1),
-
-            //});
-            //context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
-            //{
-            //    Level = 1,
-            //    Name = "help9",
-
-            //    DateOfRegistration = DateTime.Now.AddDays(1),
-
-            //}); context.UserTable.AddOrUpdate(x => x.Name, new Classes.User
-            //{
-            //    Name = "help0",
-            //    Level = 1,
-            //    DateOfRegistration = DateTime.Now.AddDays(1),
-
-            //});
-            //context.UserTable.AddOrUpdate(x => x.UserId, new Classes.User
-            //{
-            //    Level = 1,
-            //    DateOfRegistration = DateTime.Now.AddDays(1),
-
-            //});
         }
     }
 }

@@ -3,7 +3,7 @@ namespace WoofTwo.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -31,20 +31,20 @@ namespace WoofTwo.Migrations
                 .PrimaryKey(t => t.SpeciesId);
             
             CreateTable(
-                "dbo.NeedsRelations",
+                "dbo.Needs",
                 c => new
                     {
-                        NeedsRelationId = c.Int(nullable: false),
+                        NeedsId = c.Int(nullable: false),
                         FoodIdFK = c.Int(nullable: false),
                         PoopIdFK = c.Int(nullable: false),
                         SleepIdFK = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.NeedsRelationId)
+                .PrimaryKey(t => t.NeedsId)
                 .ForeignKey("dbo.Foods", t => t.FoodIdFK, cascadeDelete: true)
                 .ForeignKey("dbo.Poops", t => t.PoopIdFK, cascadeDelete: true)
                 .ForeignKey("dbo.Sleeps", t => t.SleepIdFK, cascadeDelete: true)
-                .ForeignKey("dbo.Species", t => t.NeedsRelationId)
-                .Index(t => t.NeedsRelationId)
+                .ForeignKey("dbo.Species", t => t.NeedsId)
+                .Index(t => t.NeedsId)
                 .Index(t => t.FoodIdFK)
                 .Index(t => t.PoopIdFK)
                 .Index(t => t.SleepIdFK);
@@ -95,22 +95,22 @@ namespace WoofTwo.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Animals", "AnimalId", "dbo.Users");
-            DropForeignKey("dbo.NeedsRelations", "NeedsRelationId", "dbo.Species");
-            DropForeignKey("dbo.NeedsRelations", "SleepIdFK", "dbo.Sleeps");
-            DropForeignKey("dbo.NeedsRelations", "PoopIdFK", "dbo.Poops");
-            DropForeignKey("dbo.NeedsRelations", "FoodIdFK", "dbo.Foods");
+            DropForeignKey("dbo.Needs", "NeedsId", "dbo.Species");
+            DropForeignKey("dbo.Needs", "SleepIdFK", "dbo.Sleeps");
+            DropForeignKey("dbo.Needs", "PoopIdFK", "dbo.Poops");
+            DropForeignKey("dbo.Needs", "FoodIdFK", "dbo.Foods");
             DropForeignKey("dbo.Animals", "SpeciesId", "dbo.Species");
-            DropIndex("dbo.NeedsRelations", new[] { "SleepIdFK" });
-            DropIndex("dbo.NeedsRelations", new[] { "PoopIdFK" });
-            DropIndex("dbo.NeedsRelations", new[] { "FoodIdFK" });
-            DropIndex("dbo.NeedsRelations", new[] { "NeedsRelationId" });
+            DropIndex("dbo.Needs", new[] { "SleepIdFK" });
+            DropIndex("dbo.Needs", new[] { "PoopIdFK" });
+            DropIndex("dbo.Needs", new[] { "FoodIdFK" });
+            DropIndex("dbo.Needs", new[] { "NeedsId" });
             DropIndex("dbo.Animals", new[] { "SpeciesId" });
             DropIndex("dbo.Animals", new[] { "AnimalId" });
             DropTable("dbo.Users");
             DropTable("dbo.Sleeps");
             DropTable("dbo.Poops");
             DropTable("dbo.Foods");
-            DropTable("dbo.NeedsRelations");
+            DropTable("dbo.Needs");
             DropTable("dbo.Species");
             DropTable("dbo.Animals");
         }

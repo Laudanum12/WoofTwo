@@ -51,7 +51,7 @@ namespace Woof.UI
         {
             var login = loginTextBox.Text;
             var pswrd = pswrdPasswordBox.Password;
-            _storage.UserInStorage(login, pswrd);
+            //_storage.UserInStorage(login, pswrd);
         }
 
         private void signupButton_Click(object sender, RoutedEventArgs e)

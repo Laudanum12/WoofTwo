@@ -9,9 +9,9 @@ namespace WoofTwo
 {
     public interface IRepository
     {
-        List<User> Users { get;  }
-        List<Animal> Animals { get;  }
-        List<Species> Species { get;  }
+        List<User> Users { get; }
+        List<Animal> Animals { get; }
+        List<Species> Species { get; }
         User CurrentUser { get; set; }
 
         bool CanAddUser(string name);

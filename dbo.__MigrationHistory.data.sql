@@ -1,0 +1,8 @@
+﻿INSERT INTO [dbo].[__MigrationHistory] ([MigrationId], [ContextKey], [Model], [ProductVersion]) VALUES (N'201806091509106_IninitalTables', N'WoofTwo.Migrations.Configuration', <Binary Data>, N'6.2.0-61023')
+INSERT INTO [dbo].[__MigrationHistory] ([MigrationId], [ContextKey], [Model], [ProductVersion]) VALUES (N'201806091512316_NeedsRelation', N'WoofTwo.Migrations.Configuration', <Binary Data>, N'6.2.0-61023')
+INSERT INTO [dbo].[__MigrationHistory] ([MigrationId], [ContextKey], [Model], [ProductVersion]) VALUES (N'201806091513486_Species', N'WoofTwo.Migrations.Configuration', <Binary Data>, N'6.2.0-61023')
+INSERT INTO [dbo].[__MigrationHistory] ([MigrationId], [ContextKey], [Model], [ProductVersion]) VALUES (N'201806091515076_SpeciesRelation', N'WoofTwo.Migrations.Configuration', <Binary Data>, N'6.2.0-61023')
+INSERT INTO [dbo].[__MigrationHistory] ([MigrationId], [ContextKey], [Model], [ProductVersion]) VALUES (N'201806091519031_AnimalTable', N'WoofTwo.Migrations.Configuration', <Binary Data>, N'6.2.0-61023')
+INSERT INTO [dbo].[__MigrationHistory] ([MigrationId], [ContextKey], [Model], [ProductVersion]) VALUES (N'201806091520243_AnimalRelationWithSpecies', N'WoofTwo.Migrations.Configuration', <Binary Data>, N'6.2.0-61023')
+INSERT INTO [dbo].[__MigrationHistory] ([MigrationId], [ContextKey], [Model], [ProductVersion]) VALUES (N'201806091525592_UserTable', N'WoofTwo.Migrations.Configuration', <Binary Data>, N'6.2.0-61023')
+INSERT INTO [dbo].[__MigrationHistory] ([MigrationId], [ContextKey], [Model], [ProductVersion]) VALUES (N'201806091531099_UserRelationAnimal', N'WoofTwo.Migrations.Configuration', <Binary Data>, N'6.2.0-61023')

@@ -52,5 +52,6 @@
             <Button Name="cancelButton" Click="cancelButton_Click" Margin="10" Background="Black" Foreground="White" Content="Cancel" FontFamily="Matura MT Script Capitals" FontSize="22"/>
         </StackPanel>
         <Image Name="pet"  Grid.Row="4" Grid.Column="1"  Grid.ColumnSpan="2" Margin="97,161,103,-161"></Image>
+        <ProgressBar Minimum="0" Maximum="100" Name="progress"></ProgressBar>
     </Grid>
 </Page>

@@ -11,7 +11,7 @@ namespace WoofTwo.Classes
     {
         public int PoopId { get; set; }
         public int PoopPoints { get; set; }
-        public virtual List<NeedsRelations> NeedsRelation { get; set; }
+        public virtual List<Needs> NeedsRelation { get; set; }
 
     }
 }

@@ -15,8 +15,8 @@ namespace WoofTwo
         public DbSet<Food> FoodTable { get; set; }
         public DbSet<Sleep> SleepTable { get; set; }
         public DbSet<Poop> PoopTable { get; set; }
-        public DbSet<Needs> Needs { get; set; }
-        public DbSet<NeedsRelations> NeedsTable { get; set; }
+        public DbSet<Needs> NeedsTable { get; set; }
+       // public DbSet<NeedsRelations> NeedRelationTable { get; set; }
         public DbSet<Species> SpeciesTable { get; set; }
         public DbSet<Animal> AnimalTable { get; set; }
         public DbSet<User> UserTable { get; set; }
@@ -28,11 +28,6 @@ namespace WoofTwo
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Needs>()
-                       .HasMany(p => p.NeedsRelation)
-                       .WithRequired(c => c.Needs)
-                       .HasForeignKey(k => k.NeedsIdFK);
-
             modelBuilder.Entity<Food>()
                         .HasMany(te => te.NeedsRelation)
                         .WithRequired(t => t.Food)
@@ -57,13 +52,13 @@ namespace WoofTwo
                         .WithRequired(p => p.Species)
                         .HasForeignKey(c => c.SpeciesId);
 
-            //modelBuilder.Entity<User>()
-            //    .HasRequired(c => c.Animal)
-            //    .WithRequiredPrincipal(c => c.User);
+            modelBuilder.Entity<User>()
+                        .HasOptional(c => c.Animal)
+                        .WithRequired(c => c.User);
 
             base.OnModelCreating(modelBuilder);
         }
 
-      
+
     }
 }

@@ -30,7 +30,7 @@ namespace WoofTwo.Classes
             City = city;
             Animal = new Animal();
         }
-        public Animal Animal { get; set; }
+        public virtual Animal Animal { get; set; }
 
     }
 }

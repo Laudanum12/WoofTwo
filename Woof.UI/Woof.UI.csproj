@@ -67,51 +67,6 @@
     <Compile Include="Kitchen.xaml.cs">
       <DependentUpon>Kitchen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806060554336_Initial.cs" />
-    <Compile Include="Migrations\201806060554336_Initial.Designer.cs">
-      <DependentUpon>201806060554336_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806060556413_NeedsTable.cs" />
-    <Compile Include="Migrations\201806060556413_NeedsTable.Designer.cs">
-      <DependentUpon>201806060556413_NeedsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806060617490_SpeciesTable.cs" />
-    <Compile Include="Migrations\201806060617490_SpeciesTable.Designer.cs">
-      <DependentUpon>201806060617490_SpeciesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806060620069_SpeciesRelation.cs" />
-    <Compile Include="Migrations\201806060620069_SpeciesRelation.Designer.cs">
-      <DependentUpon>201806060620069_SpeciesRelation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806060627081_AnimalTable.cs" />
-    <Compile Include="Migrations\201806060627081_AnimalTable.Designer.cs">
-      <DependentUpon>201806060627081_AnimalTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806060744049_AnimalTableAnother.cs" />
-    <Compile Include="Migrations\201806060744049_AnimalTableAnother.Designer.cs">
-      <DependentUpon>201806060744049_AnimalTableAnother.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806060745025_AnimalRealation.cs" />
-    <Compile Include="Migrations\201806060745025_AnimalRealation.Designer.cs">
-      <DependentUpon>201806060745025_AnimalRealation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806060833571_UserTable.cs" />
-    <Compile Include="Migrations\201806060833571_UserTable.Designer.cs">
-      <DependentUpon>201806060833571_UserTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806060951548_UserRelation.cs" />
-    <Compile Include="Migrations\201806060951548_UserRelation.Designer.cs">
-      <DependentUpon>201806060951548_UserRelation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806061016514_UserRelation1.cs" />
-    <Compile Include="Migrations\201806061016514_UserRelation1.Designer.cs">
-      <DependentUpon>201806061016514_UserRelation1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806061209188_New.cs" />
-    <Compile Include="Migrations\201806061209188_New.Designer.cs">
-      <DependentUpon>201806061209188_New.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NameGiving.xaml.cs">
       <DependentUpon>NameGiving.xaml</DependentUpon>
     </Compile>
@@ -189,39 +144,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201806060554336_Initial.resx">
-      <DependentUpon>201806060554336_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060556413_NeedsTable.resx">
-      <DependentUpon>201806060556413_NeedsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060617490_SpeciesTable.resx">
-      <DependentUpon>201806060617490_SpeciesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060620069_SpeciesRelation.resx">
-      <DependentUpon>201806060620069_SpeciesRelation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060627081_AnimalTable.resx">
-      <DependentUpon>201806060627081_AnimalTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060744049_AnimalTableAnother.resx">
-      <DependentUpon>201806060744049_AnimalTableAnother.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060745025_AnimalRealation.resx">
-      <DependentUpon>201806060745025_AnimalRealation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060833571_UserTable.resx">
-      <DependentUpon>201806060833571_UserTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806060951548_UserRelation.resx">
-      <DependentUpon>201806060951548_UserRelation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806061016514_UserRelation1.resx">
-      <DependentUpon>201806061016514_UserRelation1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806061209188_New.resx">
-      <DependentUpon>201806061209188_New.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
