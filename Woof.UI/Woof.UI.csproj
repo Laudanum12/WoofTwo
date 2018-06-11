@@ -64,6 +64,9 @@
     <Compile Include="BedRoom.xaml.cs">
       <DependentUpon>BedRoom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Food.xaml.cs">
+      <DependentUpon>Food.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Kitchen.xaml.cs">
       <DependentUpon>Kitchen.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
       <DependentUpon>WC.xaml</DependentUpon>
     </Compile>
     <Page Include="BedRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Food.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,6 +216,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\food\еда.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\backgrounds\холод.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\food\оладушки.png" />
+    <Resource Include="Images\food\печенье с молоком.png" />
+    <Resource Include="Images\food\пицца.png" />
+    <Resource Include="Images\food\суши.png" />
+    <Resource Include="Images\food\фастфуд.png" />
+    <Resource Include="Images\food\яичница.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

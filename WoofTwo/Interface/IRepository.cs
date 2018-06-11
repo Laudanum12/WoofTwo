@@ -19,6 +19,8 @@ namespace WoofTwo
         User UserInStorage(string name, string password);
         void RestoreInfo();
         string FindImages();
+        Species FindSpecies(string name);
+        void AddAnAnimal(Animal animal);
 
 
 

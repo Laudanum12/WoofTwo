@@ -10,8 +10,26 @@
     <Page.Background>
         <ImageBrush ImageSource="Images/backgrounds/гостиная1.jpg"></ImageBrush>
     </Page.Background>
-    
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Image/>
+        <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="100" Name="ProgressFood"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Hunger" FontFamily="Matura MT Script Capitals" FontSize="48"/>
+        <ProgressBar Margin="20" Grid.Row="0" Grid.Column="1" Minimum="0" Maximum="100" Name="ProgressSleep"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Text="Sleep" FontFamily="Matura MT Script Capitals" FontSize="48"/>
+        <ProgressBar Margin="20" Grid.Row="0" Grid.Column="2" Minimum="0" Maximum="100" Name="ProgressPoop"/>
+        <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Text="Poop" FontFamily="Matura MT Script Capitals" FontSize="48"/>
+
     </Grid>
 </Page>

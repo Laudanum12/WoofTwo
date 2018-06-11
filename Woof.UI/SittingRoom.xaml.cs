@@ -23,6 +23,21 @@ namespace Woof.UI
         public SittingRoom()
         {
             InitializeComponent();
+            //UpdateProgressFood();
+            //UpdateProgressSleep();
+            //UpdateProgressPoop();
+        }
+        public void UpdateProgressFood()
+        {
+            //Progress.Value =
+        }
+        public void UpdateProgressSleep()
+        {
+            //Progress.Value =
+        }
+        public void UpdateProgressPoop()
+        {
+            //Progress.Value =
         }
     }
 }

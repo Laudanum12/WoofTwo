@@ -28,7 +28,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label Content="Please choose your pet!" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="48"/>
-        <Button Name="dinosaurButton" Grid.Row="1" Grid.Column="0" Margin="10" Click="dinosaurButton_Click">
+        <Button Name="Dinosaur" Grid.Row="1" Grid.Column="0" Margin="10" Click="dinosaurButton_Click">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Style="{StaticResource TextBlockStyle}" Name="dinosaurTextBlock" VerticalAlignment="Center">
                     Dinosaur
@@ -37,7 +37,7 @@
                 </Image>
             </StackPanel>
         </Button>
-        <Button Name="catbugButton" Grid.Row="1" Grid.Column="1" Margin="10" Click="catbugButton_Click">
+        <Button Name="Catbug" Grid.Row="1" Grid.Column="1" Margin="10" Click="catbugButton_Click">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Name="catbugTextBlock" VerticalAlignment="Center" Style="{StaticResource TextBlockStyle}">
                     Catbug
@@ -46,7 +46,7 @@
                 </Image>
             </StackPanel>
         </Button>
-        <Button Name="rabbitButton" Grid.Row="2" Grid.Column="0" Margin="10" Click="rabbitButton_Click">
+        <Button Name="Rabbit" Grid.Row="2" Grid.Column="0" Margin="10" Click="rabbitButton_Click">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Name="rabbitTextBlock" VerticalAlignment="Center" Style="{StaticResource TextBlockStyle}">
                     Rabbit
@@ -55,7 +55,7 @@
                 </Image>
             </StackPanel>
         </Button>
-        <Button Name="foxButton" Grid.Row="3" Grid.Column="0" Margin="10" Click="foxButton_Click">
+        <Button Name="Fox" Grid.Row="3" Grid.Column="0" Margin="10" Click="foxButton_Click">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Name="foxTextBlock" VerticalAlignment="Center" Style="{StaticResource TextBlockStyle}">
                     Fox
@@ -64,7 +64,7 @@
                 </Image>
             </StackPanel>
         </Button>
-        <Button Name="dogButton" Grid.Row="2" Grid.Column="1" Margin="10" Click="dogButton_Click">
+        <Button Name="Dog" Grid.Row="2" Grid.Column="1" Margin="10" Click="dogButton_Click">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Name="dogTextBlock" VerticalAlignment="Center" Style="{StaticResource TextBlockStyle}">
                     Dog
@@ -73,7 +73,7 @@
                 </Image>
             </StackPanel>
         </Button>
-        <Button Name="deerButton" Grid.Row="3" Grid.Column="2" Margin="10" Click="deerButton_Click">
+        <Button Name="Deer" Grid.Row="3" Grid.Column="2" Margin="10" Click="deerButton_Click">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Name="deerTextBlock" VerticalAlignment="Center" Style="{StaticResource TextBlockStyle}">
                     Deer

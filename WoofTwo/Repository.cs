@@ -162,5 +162,26 @@ namespace WoofTwo
         //формирование соответствия png 
         //api city time the on 
         //про
+
+        public Species FindSpecies(string name)
+        {
+            using (var db = new Context())
+            {
+                var sp = db.SpeciesTable.FirstOrDefault(x => x.SpeciesName == name);
+                return sp;
+            }
+        }
+        public void AddAnAnimal(Animal animal)
+        {
+            using (var db = new Context())
+            {
+                db.AnimalTable.Add(animal);
+            }
+        }
+        //public int FoodValue()
+        //{
+        //    int value = 0;
+        //    return value;
+        //}
     }
 }

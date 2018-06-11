@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WoofTwo;
+using WoofTwo.Classes;
 
 namespace Woof.UI
 {
@@ -20,9 +22,12 @@ namespace Woof.UI
     /// </summary>
     public partial class NameGiving : Page
     {
-        public NameGiving()
+        IRepository _storage = Factory.Instance.GetStorage();
+        public Animal an { get; set; }
+        public NameGiving(Animal animal)
         {
             InitializeComponent();
+            an = animal;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -32,6 +37,9 @@ namespace Woof.UI
 
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
+            var name = nameTextBox.Text;
+            an.Name = name;
+            _storage.AddAnAnimal(an);
             NavigationService.Navigate(new SittingRoom());
         }
     }

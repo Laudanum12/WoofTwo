@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WoofTwo;
+using WoofTwo.Classes;
 
 namespace Woof.UI
 {
@@ -20,6 +22,7 @@ namespace Woof.UI
     /// </summary>
     public partial class PetsChoosing : Page
     {
+        IRepository _storage = Factory.Instance.GetStorage();
         public PetsChoosing()
         {
             InitializeComponent();
@@ -27,7 +30,12 @@ namespace Woof.UI
 
         private void dinosaurButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new NameGiving());
+            var animal = new Animal
+            {
+                Species = _storage.FindSpecies(Dinosaur.Name),
+                
+            };
+            NavigationService.Navigate(new NameGiving(animal));
         }
 
         private void catbugButton_Click(object sender, RoutedEventArgs e)

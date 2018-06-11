@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace Woof.UI
 {
     /// <summary>
-    /// Логика взаимодействия для Kitchen.xaml
+    /// Логика взаимодействия для Food.xaml
     /// </summary>
-    public partial class Kitchen : Page
+    public partial class Food : Page
     {
-        public Kitchen()
+        public Food()
         {
             InitializeComponent();
-            //UpdateProgressFood();
-        }
-
-        private void foodButton_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Food());
-        }
-        public void UpdateProgressFood()
-        {
-            //ProgressFood.Value =
         }
     }
 }
