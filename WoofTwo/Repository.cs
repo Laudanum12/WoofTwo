@@ -284,7 +284,9 @@ namespace WoofTwo
                 foreach(var animal in db.AnimalTable)
                 {
                     if (animal.Name == us.Animal.Name)
+                    {
                         return animal;
+                    }
                 }
                 return null;
             }

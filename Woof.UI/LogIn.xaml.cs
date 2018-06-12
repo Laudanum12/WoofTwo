@@ -56,8 +56,7 @@ namespace Woof.UI
             var pswrd = pswrdPasswordBox.Password;
             if (_storage.UserInStorage(login, pswrd) != null)
             {
-
-            
+              
                 var animal = _storage.FindAnimal(_storage.CurrentUser);
                 NavigationService.Navigate(new SittingRoom(animal));
             }

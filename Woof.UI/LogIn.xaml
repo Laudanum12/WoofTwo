@@ -31,16 +31,16 @@
         <TextBlock Grid.Column="1" Grid.Row="1" Name="Login" HorizontalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="48">
                 Login
         </TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="2" Name="loginTextBox" Margin="60 10" AcceptsReturn="True">
+        <TextBox Grid.Column="1" Grid.Row="2" Name="loginTextBox" FontFamily="Matura MT Script Capitals" Margin="60 10" AcceptsReturn="True" FontSize="24">
 
         </TextBox>
         <TextBlock Grid.Column="1" Grid.Row="3" Name="Password" HorizontalAlignment="Center" FontFamily="Matura MT Script Capitals" FontSize="48">
                 Password
         </TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="4" Name="pswrdTextBox" Margin="60 10" AcceptsReturn="True"
-                     Visibility="Hidden">
+        <TextBox Grid.Column="1" Grid.Row="4" Name="pswrdTextBox" FontFamily="Matura MT Script Capitals" Margin="60 10" AcceptsReturn="True"
+                     Visibility="Hidden" FontSize="24">
         </TextBox>
-        <PasswordBox Grid.Column="1" Grid.Row="4" Name="pswrdPasswordBox" PasswordChar="*" Margin="60 10"/>
+        <PasswordBox Grid.Column="1" Grid.Row="4" FontFamily="Matura MT Script Capitals" Name="pswrdPasswordBox" PasswordChar="*" Margin="60 10" FontSize="24"/>
         <CheckBox Margin="0 0 20 0" Grid.Column="1" Grid.Row="5" Name="pswrdCheckBox" Content="Show password" 
                   HorizontalAlignment="Right" FontFamily="Matura MT Script Capitals" FontSize="20" Click="pswrdCheckBox_Click"/>
         <StackPanel Margin="30" Grid.Column="1" Grid.Row="6" Orientation="Vertical">
