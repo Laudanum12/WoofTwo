@@ -108,11 +108,11 @@ namespace WoofTwo
 
         public User UserInStorage(string name, string password)
         {
-            string hashPassword = PasswordHelper.GetHash(password);
+           // string hashPassword = PasswordHelper.GetHash(password);
             using (var db = new Context())
             {
                 User User = db.UserTable.FirstOrDefault
-                    (q => q.Name == name && q.Password == hashPassword);
+                    (q => q.Name == name && q.Password == password);
                 CurrentUser = User;
                 return User;
 
@@ -150,13 +150,48 @@ namespace WoofTwo
                 var t = db.UserTable.First();
                 var y = db.SpeciesTable.First().Needs;
                // var i = db.UserTable.First().Animal.AnimalId;
-                if (db.UserTable.First().Animal.Species.SpeciesName == "Fox")
+                if (db.UserTable.First().Animal.Species.SpeciesName == "Dinosaur")
                 {
                     string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
                     return imgPath;
                 }
                 return null;
             }
+
+        }
+        public string GetAPath(string species)
+        {
+            if (species == "Dinosaur")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
+                return imgPath;
+            }
+            else if (species == "Catbug")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\котожук.png");
+                return imgPath;
+            }
+            else if (species == "Rabbit")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\кролик.png");
+                return imgPath;
+            }
+            else if (species == "Fox")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\лиса.png");
+                return imgPath;
+            }
+            else if (species == "Deer")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\олень.png");
+                return imgPath;
+            }
+            else if (species == "Dog")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\скотч.png");
+                return imgPath;
+            }
+            else return null;
 
         }
         //формирование соответствия png 
@@ -171,6 +206,22 @@ namespace WoofTwo
                 return sp;
             }
         }
+        public Animal FindAnimal(User us)
+        {
+            using (var db = new Context())
+            {
+                var an = db.AnimalTable.FirstOrDefault(x => x.Name == us.Animal.Name);
+                return an;
+            }
+        }
+        public string GetImageHelper(Animal an)
+        {
+            using (var db = new Context())
+            {
+                var pp = db.SpeciesTable.FirstOrDefault(x => x.SpeciesId == an.SpeciesId).SpeciesName;
+                return pp;
+            }
+        }
         public void AddAnAnimal(Animal animal)
         {
             using (var db = new Context())
@@ -178,10 +229,15 @@ namespace WoofTwo
                 db.AnimalTable.Add(animal);
             }
         }
-        //public int FoodValue()
+        //public int IncreaseFoodValue(int points)
         //{
-        //    int value = 0;
+        //    using (var db = new Context())
+        //    {
+        //        int value;
+        //        value = db.AnimalTable.Hunger + points;
         //    return value;
+        //    }
+                
         //}
     }
 }

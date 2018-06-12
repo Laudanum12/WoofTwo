@@ -10,7 +10,32 @@
     <Page.Background>
         <ImageBrush ImageSource="Images/backgrounds/туалет.jpg"></ImageBrush>
     </Page.Background>
+    <Page.Resources>
+        <Style x:Key="ButtonStyle">
+            <Setter Property="Control.FontSize" Value="26"/>
+            <Setter Property="Control.FontFamily" Value="Matura MT Script Capitals"/>
+            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Foreground" Value="SteelBlue"/>
+            <Setter Property="Control.Background" Value="Gainsboro"/>
+        </Style>
+    </Page.Resources>
     <Grid>
-        <Image/>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Name="img"/>
+        <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="100" Name="ProgressSleep"/>
+        <TextBlock Foreground="SteelBlue" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Poop" FontFamily="Matura MT Script Capitals" FontSize="48"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <Button Click="totheSittingRoom_Click" Name="totheSittingRoom" Style="{StaticResource ButtonStyle}" Content="Sitting Room"/>
+            <Button Click="totheKitchen_Click" Name="totheKitchen" Style="{StaticResource ButtonStyle}" Content="Bedroom"/>
+            <Button Click="totheBedroom_Click" Name="totheBedroom" Style="{StaticResource ButtonStyle}" Content="WC"/>
+        </StackPanel>
     </Grid>
 </Page>

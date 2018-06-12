@@ -85,6 +85,9 @@
     <Compile Include="SittingRoom.xaml.cs">
       <DependentUpon>SittingRoom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SleepAnimationPage.xaml.cs">
+      <DependentUpon>SleepAnimationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WC.xaml.cs">
       <DependentUpon>WC.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SittingRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SleepAnimationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

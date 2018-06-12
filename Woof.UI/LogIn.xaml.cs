@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WoofTwo;
+using WoofTwo.Classes;
 using WoofTwo.Helpers;
 
 namespace Woof.UI
@@ -23,11 +24,13 @@ namespace Woof.UI
     public partial class LogIn : Page
     {
         IRepository _storage = Factory.Instance.GetStorage();
+        
         public LogIn()
         {
             InitializeComponent();
             
             ShowsNavigationUI = false;
+            
         }
 
         private void pswrdCheckBox_Click(object sender, RoutedEventArgs e)
@@ -51,7 +54,9 @@ namespace Woof.UI
         {
             var login = loginTextBox.Text;
             var pswrd = pswrdPasswordBox.Password;
-            _storage.UserInStorage(login, pswrd);
+            _storage.CurrentUser=_storage.UserInStorage(login, pswrd);
+            var animal = _storage.FindAnimal(_storage.CurrentUser);
+            NavigationService.Navigate(new SittingRoom(animal));
         }
 
         private void signupButton_Click(object sender, RoutedEventArgs e)

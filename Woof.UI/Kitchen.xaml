@@ -10,6 +10,15 @@
     <Page.Background>
         <ImageBrush ImageSource="Images/backgrounds/кухня.jpg"></ImageBrush>
     </Page.Background>
+    <Page.Resources>
+        <Style x:Key="ButtonStyle">
+            <Setter Property="Control.FontSize" Value="26"/>
+            <Setter Property="Control.FontFamily" Value="Matura MT Script Capitals"/>
+            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Foreground" Value="IndianRed"/>
+            <Setter Property="Control.Background" Value="Moccasin"/>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -20,14 +29,19 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image/>
-        <Button Name="foodButton" Click="foodButton_Click" Width="Auto" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="50" VerticalAlignment="Center" Cursor="Hand">
+        <Image Name="img"/>
+        <Button VerticalAlignment="Top" Name="foodButton" Click="foodButton_Click" Width="Auto" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="50" Cursor="Hand">
             <StackPanel Orientation="Horizontal">
-                <Label VerticalAlignment="Center" Content="Hungry?" FontFamily="Matura MT Script Capitals" FontSize="22"/>
+                <Label Foreground="Firebrick" VerticalAlignment="Center" Content="Hungry?" FontFamily="Matura MT Script Capitals" FontSize="22"/>
                 <Image Source="Images/food/еда.png" Width="70" Margin="15"/>
             </StackPanel>
         </Button>
         <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="100" Name="ProgressFood"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Hunger" FontFamily="Matura MT Script Capitals" FontSize="48"/>
+        <TextBlock Foreground="Firebrick" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Hunger" FontFamily="Matura MT Script Capitals" FontSize="48"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <Button Click="totheSittingRoom_Click" Name="totheSittingRoom" Style="{StaticResource ButtonStyle}" Content="Sitting Room"/>
+            <Button Click="totheBedroom_Click" Name="totheBedroom" Style="{StaticResource ButtonStyle}" Content="Bedroom"/>
+            <Button Click="totheWC_Click" Name="totheWC" Style="{StaticResource ButtonStyle}" Content="WC"/>
+        </StackPanel>
     </Grid>
 </Page>
