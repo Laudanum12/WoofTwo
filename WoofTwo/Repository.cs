@@ -202,18 +202,32 @@ namespace WoofTwo
         {
             using (var db = new Context())
             {
-                var sp = db.SpeciesTable.FirstOrDefault(x => x.SpeciesName == name);
-                return sp;
+                foreach(var species in db.SpeciesTable)
+                {
+                    if (species.SpeciesName == name)
+                    {
+                        return species;
+                    }
+                   
+                }
+                return null;
+
             }
         }
+
         public Animal FindAnimal(User us)
         {
             using (var db = new Context())
             {
-                var an = db.AnimalTable.FirstOrDefault(x => x.Name == us.Animal.Name);
-                return an;
+                foreach(var animal in db.AnimalTable)
+                {
+                    if (animal.Name == us.Animal.Name)
+                        return animal;
+                }
+                return null;
             }
         }
+
         public string GetImageHelper(Animal an)
         {
             using (var db = new Context())
@@ -229,6 +243,7 @@ namespace WoofTwo
                 db.AnimalTable.Add(animal);
             }
         }
+
         //public int IncreaseFoodValue(int points)
         //{
         //    using (var db = new Context())
