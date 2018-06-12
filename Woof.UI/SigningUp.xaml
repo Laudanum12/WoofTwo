@@ -37,16 +37,16 @@
         <TextBlock Style="{StaticResource TextBlockStyle}" HorizontalAlignment="Center" Name="loginTextBlock" Grid.Row="1" Grid.Column="0">
             Login
         </TextBlock>
-        <TextBox Margin="10" Name="loginTextBox" Grid.Row="1" Grid.Column="1"/>
+        <TextBox Margin="10" Name="loginTextBox" Grid.Row="1" Grid.Column="1" FontFamily="Matura MT Script Capitals" FontSize="20" />
         <TextBlock Style="{StaticResource TextBlockStyle}"  Name="emailTextBlock" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2">
             Email
         </TextBlock>
-        <TextBox Margin="10" Name="emailTextBox" Grid.Row="1" Grid.Column="3"/>
+        <TextBox Margin="10" Name="emailTextBox" Grid.Row="1" Grid.Column="3" FontFamily="Matura MT Script Capitals" FontSize="20"/>
         <TextBlock Style="{StaticResource TextBlockStyle}"  Name="pswrdTextBlock" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0">
             Password
         </TextBlock>
-        <TextBox Margin="10" Name="pswrdTextBox" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Visibility="Hidden"/>
-        <PasswordBox Name="pswrdPasswordBox" PasswordChar="*" Margin="10" Grid.Row="2" Grid.Column="1"/>
+        <TextBox Margin="10" Name="pswrdTextBox" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Visibility="Hidden" FontFamily="Matura MT Script Capitals" FontSize="20"/>
+        <PasswordBox Name="pswrdPasswordBox" PasswordChar="*" Margin="10" Grid.Row="2" Grid.Column="1" FontFamily="Matura MT Script Capitals" FontSize="20"/>
         <CheckBox Foreground="White" Margin="10" Name="pswrdCheckBox" Content="Show password" Grid.Row="3" Grid.Column="1"
                   FontFamily="Matura MT Script Capitals" FontSize="20" Click="pswrdCheckBox_Click"/>
         <TextBlock Style="{StaticResource TextBlockStyle}"  Name="cityTextBlock" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2">
