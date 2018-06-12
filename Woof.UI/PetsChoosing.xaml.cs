@@ -40,27 +40,48 @@ namespace Woof.UI
 
         private void catbugButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new NameGiving());
+
+            var animal = new Animal
+            {
+                Species = _storage.FindSpecies(Fox.Name),
+            };
+            NavigationService.Navigate(new NameGiving(animal));
         }
 
         private void rabbitButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new NameGiving());
+            var animal = new Animal
+            {
+                Species = _storage.FindSpecies(Rabbit.Name),
+            };
+            NavigationService.Navigate(new NameGiving(animal));
         }
 
         private void foxButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new NameGiving());
+            var animal = new Animal
+            {
+                Species = _storage.FindSpecies(Fox.Name),
+            };
+            NavigationService.Navigate(new NameGiving(animal));
         }
 
         private void dogButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new NameGiving());
+            var animal = new Animal
+            {
+                Species = _storage.FindSpecies(Dog.Name),
+            };
+            NavigationService.Navigate(new NameGiving(animal));
         }
 
         private void deerButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new NameGiving());
+            var animal = new Animal
+            {
+                Species = _storage.FindSpecies(Deer.Name),
+            };
+            NavigationService.Navigate(new NameGiving(animal));
         }
     }
 }

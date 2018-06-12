@@ -25,12 +25,12 @@ namespace WoofTwo
         public void RestoreUsers()
         {
             _userRepository = Users;
-            _animalRepository = Animals;
-            _speciesRepository = Species;
         }
 
         public void RestoreInfo()
         {
+            _animalRepository = Animals;
+            _speciesRepository = Species;
 
         }
         public List<User> Users
@@ -143,20 +143,126 @@ namespace WoofTwo
             }
         }
 
-        public string FindImages()
+        public void AddUSer(string _city, DateTime _dateOfRegistration, string _email,
+           int _level, string _password, string _name)
         {
             using (var db = new Context())
             {
-                var t = db.UserTable.First();
-                var y = db.SpeciesTable.First().Needs;
-               // var i = db.UserTable.First().Animal.AnimalId;
-                if (db.UserTable.First().Animal.Species.SpeciesName == "Fox")
+                if (_userRepository.Exists(x => x.Name == _name && x.Password == PasswordHelper.GetHash(_password)) == false)
+                db.UserTable.Add(new Classes.User
+                {
+                    City = _city,
+                    DateOfRegistration = _dateOfRegistration, //сделать
+                    Email = _email,
+                    Level = 1,
+                    Password = PasswordHelper.GetHash(_password),
+                    Name = _name,
+                });
+                db.SaveChanges();
+            }
+          
+
+           
+        }
+        private void AddFood(int _foodPoint)
+        {
+            using (var db = new Context())
+            {
+                db.FoodTable.Add(new Classes.Food
+                {
+                    FoodPoints = _foodPoint
+                });
+                db.SaveChanges();
+            }
+            
+        }
+
+        private void AddPoop( int _poopPoints)
+        {
+            using (var db = new Context())
+            {
+                db.PoopTable.Add( new Classes.Poop
+                {
+                    PoopPoints = _poopPoints
+                });
+                db.SaveChanges();
+            }
+            
+           
+        }
+
+        private void AddSleep( int _sleepPoints)
+        {
+            using (var db = new Context())
+            {
+                db.SleepTable.Add( new Classes.Sleep
+                {
+                    SleepPoints = _sleepPoints
+                });
+                db.SaveChanges();
+            }
+           
+        }
+
+        private void AddSpeciesAndNeeds(string _speciesName, int _foodIdFK, int _poopIdFK, int _sleepIdFK)
+        {
+            using (var db = new Context())
+            {
+                if(_speciesRepository.Exists(x => x.SpeciesName == _speciesName) == false)
+                {
+                    db.SpeciesTable.Add(new Classes.Species
+                    {
+                        SpeciesName = _speciesName
+                    });
+
+                    db.NeedsTable.Add(new Relations.Needs
+                    {
+                        FoodIdFK = _foodIdFK,
+                        PoopIdFK = _poopIdFK,
+                        SleepIdFK = _sleepIdFK
+
+                    });
+                    db.SaveChanges();
+                }
+            }
+                
+
+        }
+
+    
+        public string FindImages()
+        {
+            if(CurrentUser.Animal != null)
+            {
+
+                if (CurrentUser.Animal.Species.SpeciesName == "Dinosaur")
                 {
                     string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
                     return imgPath;
                 }
-                return null;
+                if (CurrentUser.Animal.Species.SpeciesName == "Catbug")
+                {
+                    string imgPath = Path.GetFullPath(@"..\..\Images\pets\котожук.png");
+                    return imgPath;
+                }
+                if (CurrentUser.Animal.Species.SpeciesName == "Rabbit")
+                {
+                    string imgPath = Path.GetFullPath(@"..\..\Images\pets\кролик.png");
+                    return imgPath;
+                }
+                if (CurrentUser.Animal.Species.SpeciesName == "Dog")
+                {
+                    string imgPath = Path.GetFullPath(@"..\..\Images\pets\скотч.png");
+                    return imgPath;
+                }
+                if (CurrentUser.Animal.Species.SpeciesName == "Deer")
+                {
+                    string imgPath = Path.GetFullPath(@"..\..\Images\pets\олень.png");
+                    return imgPath;
+                }
             }
+                return null;
+            
 
         }
         //формирование соответствия png 
@@ -171,6 +277,7 @@ namespace WoofTwo
                 return sp;
             }
         }
+
         public void AddAnAnimal(Animal animal)
         {
             using (var db = new Context())
@@ -178,6 +285,7 @@ namespace WoofTwo
                 db.AnimalTable.Add(animal);
             }
         }
+
         //public int FoodValue()
         //{
         //    int value = 0;

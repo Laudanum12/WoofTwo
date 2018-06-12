@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Additions\City.cs" />
     <Compile Include="Classes\Animal.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Factory.cs" />
@@ -58,12 +59,16 @@
     <Compile Include="Migrations\201806101850009_initial.Designer.cs">
       <DependentUpon>201806101850009_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806121128516_NewVersion.cs" />
+    <Compile Include="Migrations\201806121128516_NewVersion.Designer.cs">
+      <DependentUpon>201806121128516_NewVersion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Needs\Food.cs" />
+    <Compile Include="Additions\Food.cs" />
     <Compile Include="Helpers\Need.cs" />
     <Compile Include="Classes\User.cs" />
-    <Compile Include="Needs\Poop.cs" />
-    <Compile Include="Needs\Sleep.cs" />
+    <Compile Include="Additions\Poop.cs" />
+    <Compile Include="Additions\Sleep.cs" />
     <Compile Include="Classes\Species.cs" />
     <Compile Include="Interface\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +97,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806101850009_initial.resx">
       <DependentUpon>201806101850009_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806121128516_NewVersion.resx">
+      <DependentUpon>201806121128516_NewVersion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
