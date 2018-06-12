@@ -15,7 +15,7 @@ namespace WoofTwo
         User CurrentUser { get; set; }
 
         bool CanAddUser(string name);
-        void AddUser(string name, string email, string password, string city, DateTime dateTime, int level);
+        void AddUser(string _city, DateTime _dateOfRegistration, string _email, int _level, string _password, string _name);
         User UserInStorage(string name, string password);
         void RestoreInfo();
         string FindImages();

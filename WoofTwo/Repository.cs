@@ -133,18 +133,17 @@ namespace WoofTwo
             }
         }
 
-        public void AddUser(string name, string email, string password, string city, DateTime dateTime, int level)
-        {
-            using (var db = new Context())
-            {
-                var person = new User(name.Trim(), password, email.Trim(), dateTime, level, city);
-                db.UserTable.Add(person);
-                db.SaveChanges();
-            }
-        }
+        //public void AddUser(string name, string email, string password, string city, DateTime dateTime, int level)
+        //{
+        //    using (var db = new Context())
+        //    {
+        //        var person = new User(name.Trim(), password, email.Trim(), dateTime, level, city);
+        //        db.UserTable.Add(person);
+        //        db.SaveChanges();
+        //    }
+        //}
 
-        public void AddUSer(string _city, DateTime _dateOfRegistration, string _email,
-           int _level, string _password, string _name)
+        public void AddUser(string _city, DateTime _dateOfRegistration, string _email, int _level, string _password, string _name)
         {
             using (var db = new Context())
             {
