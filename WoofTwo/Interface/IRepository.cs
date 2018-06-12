@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WoofTwo.Additions;
 using WoofTwo.Classes;
 
 namespace WoofTwo
@@ -12,8 +13,9 @@ namespace WoofTwo
         List<User> Users { get; }
         List<Animal> Animals { get; }
         List<Species> Species { get; }
-        User CurrentUser { get; set; }
+        List<City> Cities { get; }
 
+        User CurrentUser { get; set; }
         bool CanAddUser(string name);
         void AddUSer(string _city, DateTime _dateOfRegistration, string _email, string _password, string _name);
         User UserInStorage(string name, string password);
@@ -21,7 +23,7 @@ namespace WoofTwo
         Animal FindAnimal(User us);
 
         void RestoreInfo();
-        string FindImages();
+        //string FindImages();
         void AddAnAnimal(Animal animal);
         string GetAPath(string species);
         string GetImageHelper(Animal an);

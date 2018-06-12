@@ -57,6 +57,7 @@ namespace Woof.UI
             if (_storage.UserInStorage(login, pswrd) != null)
             {
 
+            
                 var animal = _storage.FindAnimal(_storage.CurrentUser);
                 NavigationService.Navigate(new SittingRoom(animal));
             }

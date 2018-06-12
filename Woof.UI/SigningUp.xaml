@@ -53,7 +53,7 @@
             City
         </TextBlock>
         <ComboBox Grid.Row="2" Grid.Column="3" Margin="10" Name="cityComboBox" SelectionChanged="cityComboBox_SelectionChanged" Text="Choose your city"
-                  IsEditable="True" IsReadOnly="True" StaysOpenOnEdit="True"/>
+                  IsEditable="True" IsReadOnly="True" StaysOpenOnEdit="True" DisplayMemberPath="CityName"/>
         <StackPanel Margin="10" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Name="signingupButton" Click="signingupButton_Click" Margin="10" Background="Black" Foreground="White" Content="Create an account" FontFamily="Matura MT Script Capitals" FontSize="22"/>
             <Button Name="cancelButton" Click="cancelButton_Click" Margin="10" Background="Black" Foreground="White" Content="Cancel" FontFamily="Matura MT Script Capitals" FontSize="22"/>

@@ -53,6 +53,7 @@
     <Compile Include="Additions\City.cs" />
     <Compile Include="Classes\Animal.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="DTO\Item.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Migrations\201806101850009_initial.cs" />

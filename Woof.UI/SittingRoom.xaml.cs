@@ -33,7 +33,7 @@ namespace Woof.UI
             animal = an;
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
-                
+           
             //UpdateProgressFood();
             //UpdateProgressSleep();
             //UpdateProgressPoop();

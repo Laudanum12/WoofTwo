@@ -3,10 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using WoofTwo.Additions;
 using WoofTwo.Classes;
+using WoofTwo.DTO;
 using WoofTwo.Helpers;
 
 namespace WoofTwo
@@ -16,7 +18,10 @@ namespace WoofTwo
         public List<User> _userRepository { get; set; }
         public List<Animal> _animalRepository { get; set; }
         public List<Species> _speciesRepository { get; set; }
+        public List<City> _citiesRepository { get; set; }
         public User CurrentUser { get; set; }
+
+        private const string _api = "AIzaSyAWCXeLdhMEZBwmQ2Eh6MTsq8usHPJmESA";
 
         public Repository()
         {
@@ -26,8 +31,7 @@ namespace WoofTwo
         public void RestoreUsers()
         {
             _userRepository = Users;
-            _animalRepository = Animals;
-            _speciesRepository = Species;
+            
 
           
         
@@ -36,7 +40,9 @@ namespace WoofTwo
 
         public void RestoreInfo()
         {
-
+            _animalRepository = Animals;
+            _speciesRepository = Species;
+            _citiesRepository = Cities;
         }
 
 
@@ -113,6 +119,29 @@ namespace WoofTwo
             }
         }
 
+        public List<City> Cities
+        {
+            get
+            {
+                using (var db = new Context())
+                {
+                    List<City> cities = new List<City>();
+                    foreach (var item in db.CityTable)
+                    {
+                        City city = new City
+                        {
+                            CityId = item.CityId,
+                            CityName = item.CityName,
+                            Latitude = item.Latitude,
+                            Longitude = item.Longitude
+                        };
+                        cities.Add(city);
+                    }
+                    return cities;
+                }
+              
+            }
+        }
         public User UserInStorage(string name, string password)
         {
            // string hashPassword = PasswordHelper.GetHash(password);
@@ -130,7 +159,6 @@ namespace WoofTwo
         {
             using (var db = new Context())
             {
-
                 foreach (var i in db.UserTable)
                 {
                     if (i.Name == name)
@@ -162,22 +190,39 @@ namespace WoofTwo
             
         }
 
-        public string FindImages()
-        {
-            using (var db = new Context())
-            {
-                var t = db.UserTable.First();
-                var y = db.SpeciesTable.First().Needs;
-               // var i = db.UserTable.First().Animal.AnimalId;
-                if (db.UserTable.First().Animal.Species.SpeciesName == "Dinosaur")
-                {
-                    string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
-                    return imgPath;
-                }
-                return null;
-            }
+        //public string FindImages()
+        //{
+        //    using (var db = new Context())
+        //    {
+        //        var t = db.UserTable.First();
+        //        var y = db.SpeciesTable.First().Needs;
+        //       // var i = db.UserTable.First().Animal.AnimalId;
+        //        if (db.UserTable.First().Animal.Species.SpeciesName == "Dinosaur")
+        //        {
+        //            string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
+        //            return imgPath;
+        //        }
+        //        return null;
+        //    }
 
-        }
+        //public async Task<int> GetCurrentTime(City city)
+        //{
+        //    using (var client = new HttpClient())
+        //    {
+        //        var result = await client.GetStringAsync($"https://maps.googleapis.com/maps/api/timezone/json?location=city.Latitude,city.Longitude&timestamp=1331161200&key=_api");
+        //        //Thread.Sleep(); заставить задержку
+        //        var data = JsonConvert.DeserializeObject<Item>(result);
+
+        //        return data.Items.Select(item => new SearchResult
+        //        {
+        //            Title = item.Title,
+        //            Description = item.Snippet,
+        //            Link = item.Link
+        //        }).ToList();
+        //    }
+
+        //}
+
         public string GetAPath(string species)
         {
             if (species == "Dinosaur")
@@ -210,12 +255,11 @@ namespace WoofTwo
                 string imgPath = Path.GetFullPath(@"..\..\Images\pets\скотч.png");
                 return imgPath;
             }
-            else return null;
+            else
+                return null;
 
         }
-        //формирование соответствия png 
-        //api city time the on 
-        //про
+       
 
         public Species FindSpecies(string name)
         {
@@ -227,7 +271,6 @@ namespace WoofTwo
                     {
                         return species;
                     }
-                   
                 }
                 return null;
 
@@ -251,9 +294,13 @@ namespace WoofTwo
         {
             using (var db = new Context())
             {
+                foreach (var item in db.SpeciesTable)
+                {
+                    if (item.SpeciesId == an.SpeciesId)
+                        return item.SpeciesName;
+                }
                
-                var pp = db.SpeciesTable.FirstOrDefault(x => x.SpeciesId == an.SpeciesId).SpeciesName;
-                return pp;
+                return null;
             }
         }
         

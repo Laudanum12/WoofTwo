@@ -30,6 +30,7 @@ namespace Woof.UI
         public SigningUp()
         {
             InitializeComponent();
+            cityComboBox.ItemsSource = _storage.Cities;
 
         }
 
@@ -41,7 +42,7 @@ namespace Woof.UI
             var city = cityComboBox.SelectedItem.ToString();
             if (login !="" || email !="" || pswrd !="" || city != null)
             {
-                if (_storage.CanAddUser(login) == true)
+                if (_storage.CanAddUser(login) != true)
                 {
                     _storage.AddUSer(city, DateTime.Now, email, pswrd, login);
                     NavigationService.Navigate(new PetsChoosing());
