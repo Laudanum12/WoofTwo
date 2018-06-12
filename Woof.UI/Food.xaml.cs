@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using WoofTwo.Classes;
 
 namespace Woof.UI
@@ -22,12 +23,31 @@ namespace Woof.UI
     public partial class Food : Page
     {
         public Animal animal { get; set; }
+        DispatcherTimer timer = new DispatcherTimer();
         public Food(Animal an)
         {
             InitializeComponent();
             animal = an;
+            UpdateProgressFood();
+            TimerStart();
         }
-
+        public void TimerStart()
+        {
+            timer.Tick += new EventHandler(TimerTick);
+            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Start();
+        }
+        private void TimerTick(object sender, EventArgs e)
+        {
+            animal.FoodPoints -= 1;
+            UpdateProgressFood();
+            animal.SleepPoints -= 1;
+            animal.PoopPoints -= 1;
+        }
+        public void UpdateProgressFood()
+        {
+            ProgressFood.Value = animal.FoodPoints;
+        }
         private void OladushkiButton_Click(object sender, RoutedEventArgs e)
         {
 

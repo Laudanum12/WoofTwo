@@ -18,7 +18,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Foreground="White" Content="Great! Now please enter a name for your pet!" FontFamily="Matura MT Script Capitals" FontSize="36"/>
-        <TextBox Grid.Row="1" Name="nameTextBox" Margin="50">
+        <TextBox Grid.Row="1" Name="nameTextBox" Margin="50" FontFamily="Matura MT Script Capitals" FontSize="22">
         </TextBox>
         <StackPanel Margin="5" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Name="OKButton" Click="OKButton_Click" Margin="10 50 10 50" Content="Let's get started!" FontFamily="Matura MT Script Capitals" FontSize="24"/>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using WoofTwo;
 using WoofTwo.Classes;
 
@@ -24,17 +25,34 @@ namespace Woof.UI
     {
         IRepository _storage = Factory.Instance.GetStorage();
         public Animal animal { get; set; }
+        DispatcherTimer timer = new DispatcherTimer();
         public WC(Animal an)
         {
-           
             InitializeComponent();
             animal = an;
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
-
+            UpdateProgressPoop();
+            TimerStart();
             //img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
         }
-
+        public void TimerStart()
+        {
+            timer.Tick += new EventHandler(TimerTick);
+            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Start();
+        }
+        private void TimerTick(object sender, EventArgs e)
+        {
+            animal.FoodPoints -= 1;
+            animal.SleepPoints -= 1;
+            animal.PoopPoints -= 1;
+            UpdateProgressPoop();
+        }
+        public void UpdateProgressPoop()
+        {
+            ProgressPoop.Value = animal.PoopPoints;
+        }
         private void totheBedroom_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new BedRoom(animal));

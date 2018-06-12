@@ -149,7 +149,7 @@ namespace WoofTwo
             using (var db = new Context())
             {
                 User User = cntx.UserTable.FirstOrDefault(q => q.Name == name && q.Password == hashPassword);
-                if(User != null)
+               // if(User != null)
                     CurrentUser = User;
                 return User;
 
@@ -261,7 +261,7 @@ namespace WoofTwo
                         return species;
                     }
                 }
-                db.SaveChanges();
+                //db.SaveChanges();
                 return null;
 
             }
