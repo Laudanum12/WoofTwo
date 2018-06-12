@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WoofTwo;
+using WoofTwo.Classes;
 
 namespace Woof.UI
 {
@@ -20,9 +22,28 @@ namespace Woof.UI
     /// </summary>
     public partial class WC : Page
     {
-        public WC()
+        IRepository _storage = Factory.Instance.GetStorage();
+        public Animal animal { get; set; }
+        public WC(Animal an)
         {
             InitializeComponent();
+            animal = an;
+            img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
+        }
+
+        private void totheBedroom_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BedRoom(animal));
+        }
+
+        private void totheKitchen_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Kitchen(animal));
+        }
+
+        private void totheSittingRoom_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SittingRoom(animal));
         }
     }
 }

@@ -43,7 +43,8 @@ namespace Woof.UI
 
             var animal = new Animal
             {
-                Species = _storage.FindSpecies(Fox.Name),
+                Species = _storage.FindSpecies(Catbug.Name),
+
             };
             NavigationService.Navigate(new NameGiving(animal));
         }
@@ -53,6 +54,7 @@ namespace Woof.UI
             var animal = new Animal
             {
                 Species = _storage.FindSpecies(Rabbit.Name),
+
             };
             NavigationService.Navigate(new NameGiving(animal));
         }
@@ -62,6 +64,7 @@ namespace Woof.UI
             var animal = new Animal
             {
                 Species = _storage.FindSpecies(Fox.Name),
+
             };
             NavigationService.Navigate(new NameGiving(animal));
         }
@@ -71,6 +74,7 @@ namespace Woof.UI
             var animal = new Animal
             {
                 Species = _storage.FindSpecies(Dog.Name),
+
             };
             NavigationService.Navigate(new NameGiving(animal));
         }
@@ -80,6 +84,7 @@ namespace Woof.UI
             var animal = new Animal
             {
                 Species = _storage.FindSpecies(Deer.Name),
+
             };
             NavigationService.Navigate(new NameGiving(animal));
         }

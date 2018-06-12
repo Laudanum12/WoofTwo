@@ -10,7 +10,15 @@
     <Page.Background>
         <ImageBrush ImageSource="Images/backgrounds/гостиная1.jpg"></ImageBrush>
     </Page.Background>
-
+    <Page.Resources>
+        <Style x:Key="ButtonStyle">
+            <Setter Property="Control.FontSize" Value="36"/>
+            <Setter Property="Control.FontFamily" Value="Matura MT Script Capitals"/>
+            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.Foreground" Value="IndianRed"/>
+            <Setter Property="Control.Background" Value="Moccasin"/>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -23,13 +31,17 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image/>
+        <Image Name="img" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Bottom"/>
         <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="100" Name="ProgressFood"/>
         <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Hunger" FontFamily="Matura MT Script Capitals" FontSize="48"/>
         <ProgressBar Margin="20" Grid.Row="0" Grid.Column="1" Minimum="0" Maximum="100" Name="ProgressSleep"/>
         <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Text="Sleep" FontFamily="Matura MT Script Capitals" FontSize="48"/>
         <ProgressBar Margin="20" Grid.Row="0" Grid.Column="2" Minimum="0" Maximum="100" Name="ProgressPoop"/>
         <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Text="Poop" FontFamily="Matura MT Script Capitals" FontSize="48"/>
-
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical">
+            <Button Click="totheKitchen_Click" Name="totheKitchen" Style="{StaticResource ButtonStyle}" Content="Kitchen"/>
+            <Button Click="totheBedroom_Click" Name="totheBedroom" Style="{StaticResource ButtonStyle}" Content="Bedroom"/>
+            <Button Click="totheWC_Click" Name="totheWC" Style="{StaticResource ButtonStyle}" Content="WC"/>
+        </StackPanel>
     </Grid>
 </Page>

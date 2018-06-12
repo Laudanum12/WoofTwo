@@ -40,7 +40,7 @@ namespace Woof.UI
             var name = nameTextBox.Text;
             an.Name = name;
             _storage.AddAnAnimal(an);
-            NavigationService.Navigate(new SittingRoom());
+            NavigationService.Navigate(new SittingRoom(an));
         }
     }
 }

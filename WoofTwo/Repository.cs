@@ -25,12 +25,12 @@ namespace WoofTwo
         public void RestoreUsers()
         {
             _userRepository = Users;
+            _animalRepository = Animals;
+            _speciesRepository = Species;
         }
 
         public void RestoreInfo()
         {
-            _animalRepository = Animals;
-            _speciesRepository = Species;
 
         }
         public List<User> Users
@@ -108,11 +108,11 @@ namespace WoofTwo
 
         public User UserInStorage(string name, string password)
         {
-            string hashPassword = PasswordHelper.GetHash(password);
+           // string hashPassword = PasswordHelper.GetHash(password);
             using (var db = new Context())
             {
                 User User = db.UserTable.FirstOrDefault
-                    (q => q.Name == name && q.Password == hashPassword);
+                    (q => q.Name == name && q.Password == password);
                 CurrentUser = User;
                 return User;
 
@@ -133,135 +133,65 @@ namespace WoofTwo
             }
         }
 
-        //public void AddUser(string name, string email, string password, string city, DateTime dateTime, int level)
-        //{
-        //    using (var db = new Context())
-        //    {
-        //        var person = new User(name.Trim(), password, email.Trim(), dateTime, level, city);
-        //        db.UserTable.Add(person);
-        //        db.SaveChanges();
-        //    }
-        //}
-
-        public void AddUser(string _city, DateTime _dateOfRegistration, string _email, int _level, string _password, string _name)
+        public void AddUser(string name, string email, string password, string city, DateTime dateTime, int level)
         {
             using (var db = new Context())
             {
-                if (_userRepository.Exists(x => x.Name == _name && x.Password == PasswordHelper.GetHash(_password)) == false)
-                db.UserTable.Add(new Classes.User
-                {
-                    City = _city,
-                    DateOfRegistration = _dateOfRegistration, //сделать
-                    Email = _email,
-                    Level = 1,
-                    Password = PasswordHelper.GetHash(_password),
-                    Name = _name,
-                });
+                var person = new User(name.Trim(), password, email.Trim(), dateTime, level, city);
+                db.UserTable.Add(person);
                 db.SaveChanges();
             }
-          
-
-           
-        }
-        private void AddFood(int _foodPoint)
-        {
-            using (var db = new Context())
-            {
-                db.FoodTable.Add(new Classes.Food
-                {
-                    FoodPoints = _foodPoint
-                });
-                db.SaveChanges();
-            }
-            
         }
 
-        private void AddPoop( int _poopPoints)
-        {
-            using (var db = new Context())
-            {
-                db.PoopTable.Add( new Classes.Poop
-                {
-                    PoopPoints = _poopPoints
-                });
-                db.SaveChanges();
-            }
-            
-           
-        }
-
-        private void AddSleep( int _sleepPoints)
-        {
-            using (var db = new Context())
-            {
-                db.SleepTable.Add( new Classes.Sleep
-                {
-                    SleepPoints = _sleepPoints
-                });
-                db.SaveChanges();
-            }
-           
-        }
-
-        private void AddSpeciesAndNeeds(string _speciesName, int _foodIdFK, int _poopIdFK, int _sleepIdFK)
-        {
-            using (var db = new Context())
-            {
-                if(_speciesRepository.Exists(x => x.SpeciesName == _speciesName) == false)
-                {
-                    db.SpeciesTable.Add(new Classes.Species
-                    {
-                        SpeciesName = _speciesName
-                    });
-
-                    db.NeedsTable.Add(new Relations.Needs
-                    {
-                        FoodIdFK = _foodIdFK,
-                        PoopIdFK = _poopIdFK,
-                        SleepIdFK = _sleepIdFK
-
-                    });
-                    db.SaveChanges();
-                }
-            }
-                
-
-        }
-
-    
         public string FindImages()
         {
-            if(CurrentUser.Animal != null)
+            using (var db = new Context())
             {
-
-                if (CurrentUser.Animal.Species.SpeciesName == "Dinosaur")
+                var t = db.UserTable.First();
+                var y = db.SpeciesTable.First().Needs;
+               // var i = db.UserTable.First().Animal.AnimalId;
+                if (db.UserTable.First().Animal.Species.SpeciesName == "Dinosaur")
                 {
                     string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
                     return imgPath;
                 }
-                if (CurrentUser.Animal.Species.SpeciesName == "Catbug")
-                {
-                    string imgPath = Path.GetFullPath(@"..\..\Images\pets\котожук.png");
-                    return imgPath;
-                }
-                if (CurrentUser.Animal.Species.SpeciesName == "Rabbit")
-                {
-                    string imgPath = Path.GetFullPath(@"..\..\Images\pets\кролик.png");
-                    return imgPath;
-                }
-                if (CurrentUser.Animal.Species.SpeciesName == "Dog")
-                {
-                    string imgPath = Path.GetFullPath(@"..\..\Images\pets\скотч.png");
-                    return imgPath;
-                }
-                if (CurrentUser.Animal.Species.SpeciesName == "Deer")
-                {
-                    string imgPath = Path.GetFullPath(@"..\..\Images\pets\олень.png");
-                    return imgPath;
-                }
-            }
                 return null;
-            
+            }
+
+        }
+        public string GetAPath(string species)
+        {
+            if (species == "Dinosaur")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
+                return imgPath;
+            }
+            else if (species == "Catbug")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\котожук.png");
+                return imgPath;
+            }
+            else if (species == "Rabbit")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\кролик.png");
+                return imgPath;
+            }
+            else if (species == "Fox")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\лиса.png");
+                return imgPath;
+            }
+            else if (species == "Deer")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\олень.png");
+                return imgPath;
+            }
+            else if (species == "Dog")
+            {
+                string imgPath = Path.GetFullPath(@"..\..\Images\pets\скотч.png");
+                return imgPath;
+            }
+            else return null;
 
         }
         //формирование соответствия png 
@@ -276,7 +206,22 @@ namespace WoofTwo
                 return sp;
             }
         }
-
+        public Animal FindAnimal(User us)
+        {
+            using (var db = new Context())
+            {
+                var an = db.AnimalTable.FirstOrDefault(x => x.Name == us.Animal.Name);
+                return an;
+            }
+        }
+        public string GetImageHelper(Animal an)
+        {
+            using (var db = new Context())
+            {
+                var pp = db.SpeciesTable.FirstOrDefault(x => x.SpeciesId == an.SpeciesId).SpeciesName;
+                return pp;
+            }
+        }
         public void AddAnAnimal(Animal animal)
         {
             using (var db = new Context())
@@ -284,11 +229,15 @@ namespace WoofTwo
                 db.AnimalTable.Add(animal);
             }
         }
-
-        //public int FoodValue()
+        //public int IncreaseFoodValue(int points)
         //{
-        //    int value = 0;
+        //    using (var db = new Context())
+        //    {
+        //        int value;
+        //        value = db.AnimalTable.Hunger + points;
         //    return value;
+        //    }
+                
         //}
     }
 }
