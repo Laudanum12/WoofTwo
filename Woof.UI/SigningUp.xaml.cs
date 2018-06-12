@@ -43,7 +43,7 @@ namespace Woof.UI
             {
                 if (_storage.CanAddUser(login) == true)
                 {
-                    _storage.AddUser(city, DateTime.Now,  email, 1, pswrd, login);
+                    _storage.AddUSer(city, DateTime.Now, email, pswrd, login);
                     NavigationService.Navigate(new PetsChoosing());
                 }
                 else MessageBox.Show("Such login already exists!", "Oops!", MessageBoxButton.OK);

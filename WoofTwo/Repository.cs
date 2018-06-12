@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WoofTwo.Additions;
 using WoofTwo.Classes;
 using WoofTwo.Helpers;
 
@@ -27,12 +28,18 @@ namespace WoofTwo
             _userRepository = Users;
             _animalRepository = Animals;
             _speciesRepository = Species;
+
+          
+        
+          
         }
 
         public void RestoreInfo()
         {
 
         }
+
+
         public List<User> Users
         {
             get
@@ -132,15 +139,27 @@ namespace WoofTwo
                 return false;
             }
         }
+        
 
-        public void AddUser(string name, string email, string password, string city, DateTime dateTime, int level)
+        public void AddUSer( string _city, DateTime _dateOfRegistration, string _email, string _password, string _name)
         {
-            using (var db = new Context())
+            using (var context = new Context())
             {
-                var person = new User(name.Trim(), password, email.Trim(), dateTime, level, city);
-                db.UserTable.Add(person);
-                db.SaveChanges();
+                context.UserTable.Add(new Classes.User
+                {
+                    City = _city,
+                    DateOfRegistration = _dateOfRegistration,
+                    Email = _email,
+                    Level = 1,
+                    Password = _password,
+                    Name = _name,
+                    
+                });
+                context.SaveChanges();
             }
+          
+
+            
         }
 
         public string FindImages()
@@ -232,10 +251,12 @@ namespace WoofTwo
         {
             using (var db = new Context())
             {
+               
                 var pp = db.SpeciesTable.FirstOrDefault(x => x.SpeciesId == an.SpeciesId).SpeciesName;
                 return pp;
             }
         }
+        
         public void AddAnAnimal(Animal animal)
         {
             using (var db = new Context())
@@ -254,5 +275,6 @@ namespace WoofTwo
         //    }
                 
         //}
+        
     }
 }

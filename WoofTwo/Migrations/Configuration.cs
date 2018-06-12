@@ -1,9 +1,13 @@
 namespace WoofTwo.Migrations
 {
+    using Newtonsoft.Json.Linq;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.IO;
     using System.Linq;
+    using System.Reflection;
+    using WoofTwo.Additions;
     using WoofTwo.Classes;
 
     internal sealed class Configuration : DbMigrationsConfiguration<WoofTwo.Context>
@@ -45,7 +49,7 @@ namespace WoofTwo.Migrations
            
             AddUSerAndAnimal(context, "Moscow", DateTime.Now.AddDays(1), "email", 1, "a", "Alex", 1, "Foxxy", 5);
 
-
+            GetCities(context);
         }
 
         private void AddFood(WoofTwo.Context context, int _foodPoint)
@@ -117,5 +121,39 @@ namespace WoofTwo.Migrations
             });
             context.SaveChanges();
         }
+
+        private void GetCities(WoofTwo.Context context)
+        {
+            var cityJsonAll =
+                GetEmbeddedResourceAsString("WoofTwo.Data.City.json");
+
+            JArray jsonValCities = JArray.Parse(cityJsonAll) as JArray;
+            dynamic citiesData = jsonValCities;
+            foreach (dynamic city in citiesData)
+            {
+                context.CityTable.AddOrUpdate(new City
+                {
+                    CityName = city.CityName,
+                    Latitude = city.Latitude,
+                    Longitude = city.Longitude
+                });
+            }
+        }
+
+            private string GetEmbeddedResourceAsString(string resourceName)
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+
+                //var names = assembly.GetManifestResourceNames();
+
+                string result;
+                using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    result = reader.ReadToEnd();
+                }
+                return result;
+            }
+        
     }
 }

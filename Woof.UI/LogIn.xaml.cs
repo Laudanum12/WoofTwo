@@ -54,14 +54,31 @@ namespace Woof.UI
         {
             var login = loginTextBox.Text;
             var pswrd = pswrdPasswordBox.Password;
-            _storage.CurrentUser=_storage.UserInStorage(login, pswrd);
-            var animal = _storage.FindAnimal(_storage.CurrentUser);
-            NavigationService.Navigate(new SittingRoom(animal));
+            if (_storage.UserInStorage(login, pswrd) != null)
+            {
+
+                var animal = _storage.FindAnimal(_storage.CurrentUser);
+                NavigationService.Navigate(new SittingRoom(animal));
+            }
+            else
+            {
+                MessageBox.Show("Please make sure that you've entered your login and password correctly", "Error");
+            }
+
         }
 
         private void signupButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SigningUp());
+        }
+
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                loginButton_Click(sender, e);
+                e.Handled = true;
+            }
         }
     }
 }

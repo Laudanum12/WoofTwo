@@ -1,0 +1,1514 @@
+[
+  {
+    "CityId": 0,
+    "CityName": "Sukhumi",
+    "Latitude": 43.001525,
+    "Longitude": 41.023415
+  },
+  {
+    "CityId": 0,
+    "CityName": "Kabul",
+    "Latitude": 34.575503,
+    "Longitude": 69.240073
+  },
+  {
+    "CityId": 0,
+    "CityName": "Mariehamn",
+    "Latitude": 60.1,
+    "Longitude": 19.933333
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tirana",
+    "Latitude": 41.327546,
+    "Longitude": 19.818698
+  },
+  {
+    "CityId": 0,
+    "CityName": "Algiers",
+    "Latitude": 36.752887,
+    "Longitude": 3.042048
+  },
+  {
+    "CityId": 0,
+    "CityName": "Pago Pago",
+    "Latitude": -14.275632,
+    "Longitude": -170.702036
+  },
+  {
+    "CityId": 0,
+    "CityName": "Andorra la Vella",
+    "Latitude": 42.506317,
+    "Longitude": 1.521835
+  },
+  {
+    "CityId": 0,
+    "CityName": "Luanda",
+    "Latitude": -8.839988,
+    "Longitude": 13.289437
+  },
+  {
+    "CityId": 0,
+    "CityName": "The Valley",
+    "Latitude": 18.214813,
+    "Longitude": -63.057441
+  },
+  {
+    "CityId": 0,
+    "CityName": "South Pole",
+    "Latitude": -90.0,
+    "Longitude": 0.0
+  },
+  {
+    "CityId": 0,
+    "CityName": "St, John's",
+    "Latitude": 17.12741,
+    "Longitude": -61.846772
+  },
+  {
+    "CityId": 0,
+    "CityName": "Buenos Aires",
+    "Latitude": -34.603684,
+    "Longitude": -58.381559
+  },
+  {
+    "CityId": 0,
+    "CityName": "Yerevan",
+    "Latitude": 40.179186,
+    "Longitude": 44.499103
+  },
+  {
+    "CityId": 0,
+    "CityName": "Oranjestad",
+    "Latitude": 12.509204,
+    "Longitude": -70.008631
+  },
+  {
+    "CityId": 0,
+    "CityName": "Canberra",
+    "Latitude": -35.282,
+    "Longitude": 149.128684
+  },
+  {
+    "CityId": 0,
+    "CityName": "Vienna",
+    "Latitude": 48.208174,
+    "Longitude": 16.373819
+  },
+  {
+    "CityId": 0,
+    "CityName": "Baku",
+    "Latitude": 40.409262,
+    "Longitude": 49.867092
+  },
+  {
+    "CityId": 0,
+    "CityName": "Nassau",
+    "Latitude": 25.047984,
+    "Longitude": -77.355413
+  },
+  {
+    "CityId": 0,
+    "CityName": "Manama",
+    "Latitude": 26.228516,
+    "Longitude": 50.58605
+  },
+  {
+    "CityId": 0,
+    "CityName": "Dhaka",
+    "Latitude": 23.810332,
+    "Longitude": 90.412518
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bridgetown",
+    "Latitude": 13.113222,
+    "Longitude": -59.598809
+  },
+  {
+    "CityId": 0,
+    "CityName": "Minsk",
+    "Latitude": 53.90454,
+    "Longitude": 27.561524
+  },
+  {
+    "CityId": 0,
+    "CityName": "Brussels",
+    "Latitude": 50.85034,
+    "Longitude": 4.35171
+  },
+  {
+    "CityId": 0,
+    "CityName": "Belmopan",
+    "Latitude": 17.251011,
+    "Longitude": -88.75902
+  },
+  {
+    "CityId": 0,
+    "CityName": "Porto-Novo",
+    "Latitude": 6.496857,
+    "Longitude": 2.628852
+  },
+  {
+    "CityId": 0,
+    "CityName": "Hamilton",
+    "Latitude": 32.294816,
+    "Longitude": -64.781375
+  },
+  {
+    "CityId": 0,
+    "CityName": "Thimphu",
+    "Latitude": 27.472792,
+    "Longitude": 89.639286
+  },
+  {
+    "CityId": 0,
+    "CityName": "La Paz",
+    "Latitude": -16.489689,
+    "Longitude": -68.119294
+  },
+  {
+    "CityId": 0,
+    "CityName": "Sarajevo",
+    "Latitude": 43.856259,
+    "Longitude": 18.413076
+  },
+  {
+    "CityId": 0,
+    "CityName": "Gaborone",
+    "Latitude": -24.628208,
+    "Longitude": 25.923147
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bouvet Island",
+    "Latitude": 54.43,
+    "Longitude": 3.38
+  },
+  {
+    "CityId": 0,
+    "CityName": "Brasília",
+    "Latitude": -15.794229,
+    "Longitude": -47.882166
+  },
+  {
+    "CityId": 0,
+    "CityName": "Camp Justice",
+    "Latitude": 21.3419,
+    "Longitude": 55.4778
+  },
+  {
+    "CityId": 0,
+    "CityName": "Road Town",
+    "Latitude": 18.428612,
+    "Longitude": -64.618466
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bandar Seri Begawan",
+    "Latitude": 4.903052,
+    "Longitude": 114.939821
+  },
+  {
+    "CityId": 0,
+    "CityName": "Sofia",
+    "Latitude": 42.697708,
+    "Longitude": 23.321868
+  },
+  {
+    "CityId": 0,
+    "CityName": "Ouagadougou",
+    "Latitude": 12.371428,
+    "Longitude": -1.51966
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bujumbura",
+    "Latitude": -3.361378,
+    "Longitude": 29.359878
+  },
+  {
+    "CityId": 0,
+    "CityName": "Phnom Penh",
+    "Latitude": 11.544873,
+    "Longitude": 104.892167
+  },
+  {
+    "CityId": 0,
+    "CityName": "Yaoundé",
+    "Latitude": 3.848033,
+    "Longitude": 11.502075
+  },
+  {
+    "CityId": 0,
+    "CityName": "Ottawa",
+    "Latitude": 45.42153,
+    "Longitude": -75.697193
+  },
+  {
+    "CityId": 0,
+    "CityName": "Praia",
+    "Latitude": 14.93305,
+    "Longitude": -23.513327
+  },
+  {
+    "CityId": 0,
+    "CityName": "George Town",
+    "Latitude": 19.286932,
+    "Longitude": -81.367439
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bangui",
+    "Latitude": 4.394674,
+    "Longitude": 18.55819
+  },
+  {
+    "CityId": 0,
+    "CityName": "N'Djamena",
+    "Latitude": 12.134846,
+    "Longitude": 15.055742
+  },
+  {
+    "CityId": 0,
+    "CityName": "Santiago",
+    "Latitude": -33.44889,
+    "Longitude": -70.669265
+  },
+  {
+    "CityId": 0,
+    "CityName": "Beijing",
+    "Latitude": 39.904211,
+    "Longitude": 116.407395
+  },
+  {
+    "CityId": 0,
+    "CityName": "Flying Fish Cove",
+    "Latitude": -10.420686,
+    "Longitude": 105.679379
+  },
+  {
+    "CityId": 0,
+    "CityName": "West Island",
+    "Latitude": -12.188834,
+    "Longitude": 96.829316
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bogotá",
+    "Latitude": 4.710989,
+    "Longitude": -74.072092
+  },
+  {
+    "CityId": 0,
+    "CityName": "Moroni",
+    "Latitude": -11.717216,
+    "Longitude": 43.247315
+  },
+  {
+    "CityId": 0,
+    "CityName": "Kinshasa",
+    "Latitude": -4.441931,
+    "Longitude": 15.266293
+  },
+  {
+    "CityId": 0,
+    "CityName": "Brazzaville",
+    "Latitude": -4.26336,
+    "Longitude": 15.242885
+  },
+  {
+    "CityId": 0,
+    "CityName": "Avarua",
+    "Latitude": -21.212901,
+    "Longitude": -159.782306
+  },
+  {
+    "CityId": 0,
+    "CityName": "San José",
+    "Latitude": 9.928069,
+    "Longitude": -84.090725
+  },
+  {
+    "CityId": 0,
+    "CityName": "Yamoussoukro",
+    "Latitude": 6.827623,
+    "Longitude": -5.289343
+  },
+  {
+    "CityId": 0,
+    "CityName": "Zagreb ",
+    "Latitude": 45.815011,
+    "Longitude": 15.981919
+  },
+  {
+    "CityId": 0,
+    "CityName": "Havana",
+    "Latitude": 23.05407,
+    "Longitude": -82.345189
+  },
+  {
+    "CityId": 0,
+    "CityName": "Willemstad",
+    "Latitude": 12.122422,
+    "Longitude": -68.882423
+  },
+  {
+    "CityId": 0,
+    "CityName": "Nicosia",
+    "Latitude": 35.185566,
+    "Longitude": 33.382276
+  },
+  {
+    "CityId": 0,
+    "CityName": "Prague",
+    "Latitude": 50.075538,
+    "Longitude": 14.4378
+  },
+  {
+    "CityId": 0,
+    "CityName": "Copenhagen",
+    "Latitude": 55.676097,
+    "Longitude": 12.568337
+  },
+  {
+    "CityId": 0,
+    "CityName": "Djibouti",
+    "Latitude": 11.572077,
+    "Longitude": 43.145647
+  },
+  {
+    "CityId": 0,
+    "CityName": "Roseau",
+    "Latitude": 15.309168,
+    "Longitude": -61.379355
+  },
+  {
+    "CityId": 0,
+    "CityName": "Santo Domingo",
+    "Latitude": 18.486058,
+    "Longitude": -69.931212
+  },
+  {
+    "CityId": 0,
+    "CityName": "Quito",
+    "Latitude": -0.180653,
+    "Longitude": -78.467838
+  },
+  {
+    "CityId": 0,
+    "CityName": "Cairo",
+    "Latitude": 30.04442,
+    "Longitude": 31.235712
+  },
+  {
+    "CityId": 0,
+    "CityName": "San Salvador",
+    "Latitude": 13.69294,
+    "Longitude": -89.218191
+  },
+  {
+    "CityId": 0,
+    "CityName": "Malabo",
+    "Latitude": 3.750412,
+    "Longitude": 8.737104
+  },
+  {
+    "CityId": 0,
+    "CityName": "Asmara",
+    "Latitude": 15.322877,
+    "Longitude": 38.925052
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tallinn",
+    "Latitude": 59.436961,
+    "Longitude": 24.753575
+  },
+  {
+    "CityId": 0,
+    "CityName": "Addis Ababa",
+    "Latitude": 8.980603,
+    "Longitude": 38.757761
+  },
+  {
+    "CityId": 0,
+    "CityName": "Stanley",
+    "Latitude": -51.697713,
+    "Longitude": -57.851663
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tórshavn",
+    "Latitude": 62.007864,
+    "Longitude": -6.790982
+  },
+  {
+    "CityId": 0,
+    "CityName": "Suva",
+    "Latitude": -18.124809,
+    "Longitude": 178.450079
+  },
+  {
+    "CityId": 0,
+    "CityName": "Helsinki",
+    "Latitude": 60.173324,
+    "Longitude": 24.941025
+  },
+  {
+    "CityId": 0,
+    "CityName": "Paris",
+    "Latitude": 48.856614,
+    "Longitude": 2.352222
+  },
+  {
+    "CityId": 0,
+    "CityName": "Cayenne",
+    "Latitude": 4.92242,
+    "Longitude": -52.313453
+  },
+  {
+    "CityId": 0,
+    "CityName": "Papeete",
+    "Latitude": -17.551625,
+    "Longitude": -149.558476
+  },
+  {
+    "CityId": 0,
+    "CityName": "Saint-Pierre ",
+    "Latitude": -21.3419,
+    "Longitude": 55.4778
+  },
+  {
+    "CityId": 0,
+    "CityName": "Libreville",
+    "Latitude": 0.416198,
+    "Longitude": 9.467268
+  },
+  {
+    "CityId": 0,
+    "CityName": "Banjul",
+    "Latitude": 13.454876,
+    "Longitude": -16.579032
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tbilisi",
+    "Latitude": 41.715138,
+    "Longitude": 44.827096
+  },
+  {
+    "CityId": 0,
+    "CityName": "Berlin",
+    "Latitude": 52.520007,
+    "Longitude": 13.404954
+  },
+  {
+    "CityId": 0,
+    "CityName": "Accra",
+    "Latitude": 5.603717,
+    "Longitude": -0.186964
+  },
+  {
+    "CityId": 0,
+    "CityName": "Gibraltar",
+    "Latitude": 36.140773,
+    "Longitude": -5.353599
+  },
+  {
+    "CityId": 0,
+    "CityName": "Athens",
+    "Latitude": 37.983917,
+    "Longitude": 23.72936
+  },
+  {
+    "CityId": 0,
+    "CityName": "Nuuk",
+    "Latitude": 64.18141,
+    "Longitude": -51.694138
+  },
+  {
+    "CityId": 0,
+    "CityName": "St, George's",
+    "Latitude": 12.056098,
+    "Longitude": -61.7488
+  },
+  {
+    "CityId": 0,
+    "CityName": "Basse-Terre",
+    "Latitude": 16.014453,
+    "Longitude": -61.706411
+  },
+  {
+    "CityId": 0,
+    "CityName": "Hagåtña",
+    "Latitude": 13.470891,
+    "Longitude": 144.751278
+  },
+  {
+    "CityId": 0,
+    "CityName": "Guatemala City",
+    "Latitude": 14.634915,
+    "Longitude": -90.506882
+  },
+  {
+    "CityId": 0,
+    "CityName": "St, Peter Port",
+    "Latitude": 49.455443,
+    "Longitude": -2.536871
+  },
+  {
+    "CityId": 0,
+    "CityName": "Conakry",
+    "Latitude": 9.641185,
+    "Longitude": -13.578401
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bissau",
+    "Latitude": 11.881655,
+    "Longitude": -15.617794
+  },
+  {
+    "CityId": 0,
+    "CityName": "Georgetown",
+    "Latitude": 6.801279,
+    "Longitude": -58.155125
+  },
+  {
+    "CityId": 0,
+    "CityName": "Port-au-Prince",
+    "Latitude": 18.594395,
+    "Longitude": -72.307433
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tegucigalpa",
+    "Latitude": 14.072275,
+    "Longitude": -87.192136
+  },
+  {
+    "CityId": 0,
+    "CityName": "Hong Kong",
+    "Latitude": 22.396428,
+    "Longitude": 114.109497
+  },
+  {
+    "CityId": 0,
+    "CityName": "Budapest",
+    "Latitude": 47.497912,
+    "Longitude": 19.040235
+  },
+  {
+    "CityId": 0,
+    "CityName": "Reykjavík",
+    "Latitude": 64.126521,
+    "Longitude": -21.817439
+  },
+  {
+    "CityId": 0,
+    "CityName": "New Delhi",
+    "Latitude": 28.613939,
+    "Longitude": 77.209021
+  },
+  {
+    "CityId": 0,
+    "CityName": "Jakarta",
+    "Latitude": -6.208763,
+    "Longitude": 106.845599
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tehran",
+    "Latitude": 35.689198,
+    "Longitude": 51.388974
+  },
+  {
+    "CityId": 0,
+    "CityName": "Baghdad",
+    "Latitude": 33.312806,
+    "Longitude": 44.361488
+  },
+  {
+    "CityId": 0,
+    "CityName": "Dublin",
+    "Latitude": 53.349805,
+    "Longitude": -6.26031
+  },
+  {
+    "CityId": 0,
+    "CityName": "Douglas",
+    "Latitude": 54.152337,
+    "Longitude": -4.486123
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tel Aviv",
+    "Latitude": 32.0853,
+    "Longitude": 34.781768
+  },
+  {
+    "CityId": 0,
+    "CityName": "Rome",
+    "Latitude": 41.902784,
+    "Longitude": 12.496366
+  },
+  {
+    "CityId": 0,
+    "CityName": "Kingston",
+    "Latitude": 18.042327,
+    "Longitude": -76.802893
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tokyo",
+    "Latitude": 35.709026,
+    "Longitude": 139.731992
+  },
+  {
+    "CityId": 0,
+    "CityName": "St, Helier",
+    "Latitude": 49.186823,
+    "Longitude": -2.106568
+  },
+  {
+    "CityId": 0,
+    "CityName": "Amman",
+    "Latitude": 31.956578,
+    "Longitude": 35.945695
+  },
+  {
+    "CityId": 0,
+    "CityName": "Astana",
+    "Latitude": 51.160523,
+    "Longitude": 71.470356
+  },
+  {
+    "CityId": 0,
+    "CityName": "Nairobi",
+    "Latitude": -1.292066,
+    "Longitude": 36.821946
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tarawa Atoll",
+    "Latitude": 1.451817,
+    "Longitude": 172.971662
+  },
+  {
+    "CityId": 0,
+    "CityName": "Pristina",
+    "Latitude": 42.662914,
+    "Longitude": 21.165503
+  },
+  {
+    "CityId": 0,
+    "CityName": "Kuwait City",
+    "Latitude": 29.375859,
+    "Longitude": 47.977405
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bishkek",
+    "Latitude": 42.874621,
+    "Longitude": 74.569762
+  },
+  {
+    "CityId": 0,
+    "CityName": "Vientiane",
+    "Latitude": 17.975706,
+    "Longitude": 102.633104
+  },
+  {
+    "CityId": 0,
+    "CityName": "Riga",
+    "Latitude": 56.949649,
+    "Longitude": 24.105186
+  },
+  {
+    "CityId": 0,
+    "CityName": "Beirut",
+    "Latitude": 33.888629,
+    "Longitude": 35.495479
+  },
+  {
+    "CityId": 0,
+    "CityName": "Maseru",
+    "Latitude": -29.363219,
+    "Longitude": 27.51436
+  },
+  {
+    "CityId": 0,
+    "CityName": "Monrovia",
+    "Latitude": 6.290743,
+    "Longitude": -10.760524
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tripoli",
+    "Latitude": 32.887209,
+    "Longitude": 13.191338
+  },
+  {
+    "CityId": 0,
+    "CityName": "Vaduz",
+    "Latitude": 47.14103,
+    "Longitude": 9.520928
+  },
+  {
+    "CityId": 0,
+    "CityName": "Vilnius",
+    "Latitude": 54.687156,
+    "Longitude": 25.279651
+  },
+  {
+    "CityId": 0,
+    "CityName": "Luxembourg",
+    "Latitude": 49.611621,
+    "Longitude": 6.131935
+  },
+  {
+    "CityId": 0,
+    "CityName": "Macau",
+    "Latitude": 22.166667,
+    "Longitude": 113.55
+  },
+  {
+    "CityId": 0,
+    "CityName": "Skopje",
+    "Latitude": 41.997346,
+    "Longitude": 21.427996
+  },
+  {
+    "CityId": 0,
+    "CityName": "Antananarivo",
+    "Latitude": -18.87919,
+    "Longitude": 47.507905
+  },
+  {
+    "CityId": 0,
+    "CityName": "Lilongwe",
+    "Latitude": -13.962612,
+    "Longitude": 33.774119
+  },
+  {
+    "CityId": 0,
+    "CityName": "Kuala Lumpur",
+    "Latitude": 3.139003,
+    "Longitude": 101.686855
+  },
+  {
+    "CityId": 0,
+    "CityName": "Malé",
+    "Latitude": 4.175496,
+    "Longitude": 73.509347
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bamako",
+    "Latitude": 12.639232,
+    "Longitude": -8.002889
+  },
+  {
+    "CityId": 0,
+    "CityName": "Valletta",
+    "Latitude": 35.898909,
+    "Longitude": 14.514553
+  },
+  {
+    "CityId": 0,
+    "CityName": "Majuro",
+    "Latitude": 7.116421,
+    "Longitude": 171.185774
+  },
+  {
+    "CityId": 0,
+    "CityName": "Fort-de-France",
+    "Latitude": 14.616065,
+    "Longitude": -61.05878
+  },
+  {
+    "CityId": 0,
+    "CityName": "Nouakchott",
+    "Latitude": 18.07353,
+    "Longitude": -15.958237
+  },
+  {
+    "CityId": 0,
+    "CityName": "Port Louis",
+    "Latitude": -20.166896,
+    "Longitude": 57.502332
+  },
+  {
+    "CityId": 0,
+    "CityName": "Mamoudzou",
+    "Latitude": -12.780949,
+    "Longitude": 45.227872
+  },
+  {
+    "CityId": 0,
+    "CityName": "Mexico City",
+    "Latitude": 19.432608,
+    "Longitude": -99.133208
+  },
+  {
+    "CityId": 0,
+    "CityName": "Palikir",
+    "Latitude": 6.914712,
+    "Longitude": 158.161027
+  },
+  {
+    "CityId": 0,
+    "CityName": "Chisinau",
+    "Latitude": 47.010453,
+    "Longitude": 28.86381
+  },
+  {
+    "CityId": 0,
+    "CityName": "Monaco",
+    "Latitude": 43.737411,
+    "Longitude": 7.420816
+  },
+  {
+    "CityId": 0,
+    "CityName": "Ulaanbaatar",
+    "Latitude": 47.886399,
+    "Longitude": 106.905744
+  },
+  {
+    "CityId": 0,
+    "CityName": "Podgorica",
+    "Latitude": 42.43042,
+    "Longitude": 19.259364
+  },
+  {
+    "CityId": 0,
+    "CityName": "Plymouth",
+    "Latitude": 16.706523,
+    "Longitude": -62.215738
+  },
+  {
+    "CityId": 0,
+    "CityName": "Rabat",
+    "Latitude": 33.97159,
+    "Longitude": -6.849813
+  },
+  {
+    "CityId": 0,
+    "CityName": "Maputo",
+    "Latitude": -25.891968,
+    "Longitude": 32.605135
+  },
+  {
+    "CityId": 0,
+    "CityName": "Naypyidaw",
+    "Latitude": 19.763306,
+    "Longitude": 96.07851
+  },
+  {
+    "CityId": 0,
+    "CityName": "Stepanakert",
+    "Latitude": 39.826385,
+    "Longitude": 46.763595
+  },
+  {
+    "CityId": 0,
+    "CityName": "Windhoek",
+    "Latitude": -22.560881,
+    "Longitude": 17.065755
+  },
+  {
+    "CityId": 0,
+    "CityName": "Yaren",
+    "Latitude": -0.546686,
+    "Longitude": 166.921091
+  },
+  {
+    "CityId": 0,
+    "CityName": "Kathmandu",
+    "Latitude": 27.717245,
+    "Longitude": 85.323961
+  },
+  {
+    "CityId": 0,
+    "CityName": "Amsterdam",
+    "Latitude": 52.370216,
+    "Longitude": 4.895168
+  },
+  {
+    "CityId": 0,
+    "CityName": "Willemstad ",
+    "Latitude": 12.1091242,
+    "Longitude": -68.9316546
+  },
+  {
+    "CityId": 0,
+    "CityName": "Nouméa",
+    "Latitude": -22.255823,
+    "Longitude": 166.450524
+  },
+  {
+    "CityId": 0,
+    "CityName": "Wellington",
+    "Latitude": -41.28646,
+    "Longitude": 174.776236
+  },
+  {
+    "CityId": 0,
+    "CityName": "Managua",
+    "Latitude": 12.114993,
+    "Longitude": -86.236174
+  },
+  {
+    "CityId": 0,
+    "CityName": "Niamey",
+    "Latitude": 13.511596,
+    "Longitude": 2.125385
+  },
+  {
+    "CityId": 0,
+    "CityName": "Abuja",
+    "Latitude": 9.076479,
+    "Longitude": 7.398574
+  },
+  {
+    "CityId": 0,
+    "CityName": "Alofi",
+    "Latitude": -19.055371,
+    "Longitude": -169.917871
+  },
+  {
+    "CityId": 0,
+    "CityName": "Kingston",
+    "Latitude": -29.056394,
+    "Longitude": 167.959588
+  },
+  {
+    "CityId": 0,
+    "CityName": "Pyongyang",
+    "Latitude": 39.039219,
+    "Longitude": 125.762524
+  },
+  {
+    "CityId": 0,
+    "CityName": "Nicosia",
+    "Latitude": 35.185566,
+    "Longitude": 33.382276
+  },
+  {
+    "CityId": 0,
+    "CityName": "Saipan",
+    "Latitude": 15.177801,
+    "Longitude": 145.750967
+  },
+  {
+    "CityId": 0,
+    "CityName": "Oslo",
+    "Latitude": 59.913869,
+    "Longitude": 10.752245
+  },
+  {
+    "CityId": 0,
+    "CityName": "Muscat",
+    "Latitude": 23.58589,
+    "Longitude": 58.405923
+  },
+  {
+    "CityId": 0,
+    "CityName": "Islamabad",
+    "Latitude": 33.729388,
+    "Longitude": 73.093146
+  },
+  {
+    "CityId": 0,
+    "CityName": "Ngerulmud",
+    "Latitude": 7.500384,
+    "Longitude": 134.624289
+  },
+  {
+    "CityId": 0,
+    "CityName": "Ramallah",
+    "Latitude": 31.9073509,
+    "Longitude": 35.5354719
+  },
+  {
+    "CityId": 0,
+    "CityName": "Panama City",
+    "Latitude": 9.101179,
+    "Longitude": -79.402864
+  },
+  {
+    "CityId": 0,
+    "CityName": "Port Moresby",
+    "Latitude": -9.4438,
+    "Longitude": 147.180267
+  },
+  {
+    "CityId": 0,
+    "CityName": "Asuncion",
+    "Latitude": -25.26374,
+    "Longitude": -57.575926
+  },
+  {
+    "CityId": 0,
+    "CityName": "Lima",
+    "Latitude": -12.046374,
+    "Longitude": -77.042793
+  },
+  {
+    "CityId": 0,
+    "CityName": "Manila",
+    "Latitude": 14.599512,
+    "Longitude": 120.98422
+  },
+  {
+    "CityId": 0,
+    "CityName": "Adamstown",
+    "Latitude": -25.06629,
+    "Longitude": -130.100464
+  },
+  {
+    "CityId": 0,
+    "CityName": "Warsaw",
+    "Latitude": 52.229676,
+    "Longitude": 21.012229
+  },
+  {
+    "CityId": 0,
+    "CityName": "Lisbon",
+    "Latitude": 38.722252,
+    "Longitude": -9.139337
+  },
+  {
+    "CityId": 0,
+    "CityName": "San Juan",
+    "Latitude": 18.466334,
+    "Longitude": -66.105722
+  },
+  {
+    "CityId": 0,
+    "CityName": "Doha",
+    "Latitude": 25.285447,
+    "Longitude": 51.53104
+  },
+  {
+    "CityId": 0,
+    "CityName": "Saint-Denis",
+    "Latitude": -20.882057,
+    "Longitude": 55.450675
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bucharest",
+    "Latitude": 44.426767,
+    "Longitude": 26.102538
+  },
+  {
+    "CityId": 0,
+    "CityName": "Moscow",
+    "Latitude": 55.755826,
+    "Longitude": 37.6173
+  },
+  {
+    "CityId": 0,
+    "CityName": "Kigali",
+    "Latitude": -1.957875,
+    "Longitude": 30.112735
+  },
+  {
+    "CityId": 0,
+    "CityName": "St, Pierre",
+    "Latitude": 46.775846,
+    "Longitude": -56.180636
+  },
+  {
+    "CityId": 0,
+    "CityName": "Kingstown",
+    "Latitude": 13.160025,
+    "Longitude": -61.224816
+  },
+  {
+    "CityId": 0,
+    "CityName": "Apia",
+    "Latitude": -13.850696,
+    "Longitude": -171.751355
+  },
+  {
+    "CityId": 0,
+    "CityName": "San Marino",
+    "Latitude": 43.935591,
+    "Longitude": 12.447281
+  },
+  {
+    "CityId": 0,
+    "CityName": "São Tomé",
+    "Latitude": 0.330192,
+    "Longitude": 6.733343
+  },
+  {
+    "CityId": 0,
+    "CityName": "Riyadh",
+    "Latitude": 24.749403,
+    "Longitude": 46.902838
+  },
+  {
+    "CityId": 0,
+    "CityName": "Dakar",
+    "Latitude": 14.764504,
+    "Longitude": -17.366029
+  },
+  {
+    "CityId": 0,
+    "CityName": "Belgrade",
+    "Latitude": 44.786568,
+    "Longitude": 20.448922
+  },
+  {
+    "CityId": 0,
+    "CityName": "Victoria",
+    "Latitude": -4.619143,
+    "Longitude": 55.451315
+  },
+  {
+    "CityId": 0,
+    "CityName": "Freetown",
+    "Latitude": 8.465677,
+    "Longitude": -13.231722
+  },
+  {
+    "CityId": 0,
+    "CityName": "Singapore",
+    "Latitude": 1.280095,
+    "Longitude": 103.850949
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bratislava",
+    "Latitude": 48.145892,
+    "Longitude": 17.107137
+  },
+  {
+    "CityId": 0,
+    "CityName": "Ljubljana",
+    "Latitude": 46.056947,
+    "Longitude": 14.505751
+  },
+  {
+    "CityId": 0,
+    "CityName": "Honiara",
+    "Latitude": -9.445638,
+    "Longitude": 159.9729
+  },
+  {
+    "CityId": 0,
+    "CityName": "Mogadishu",
+    "Latitude": 2.046934,
+    "Longitude": 45.318162
+  },
+  {
+    "CityId": 0,
+    "CityName": "Pretoria",
+    "Latitude": -25.747868,
+    "Longitude": 28.229271
+  },
+  {
+    "CityId": 0,
+    "CityName": "King Edward Point",
+    "Latitude": -54.28325,
+    "Longitude": -36.493735
+  },
+  {
+    "CityId": 0,
+    "CityName": "Seoul",
+    "Latitude": 37.566535,
+    "Longitude": 126.977969
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tskhinvali",
+    "Latitude": 42.22146,
+    "Longitude": 43.964405
+  },
+  {
+    "CityId": 0,
+    "CityName": "Juba",
+    "Latitude": 4.859363,
+    "Longitude": 31.57125
+  },
+  {
+    "CityId": 0,
+    "CityName": "Madrid",
+    "Latitude": 40.416775,
+    "Longitude": -3.70379
+  },
+  {
+    "CityId": 0,
+    "CityName": "Sri Jayawardenepura Kotte",
+    "Latitude": 6.89407,
+    "Longitude": 79.902478
+  },
+  {
+    "CityId": 0,
+    "CityName": "Gustavia",
+    "Latitude": 17.896435,
+    "Longitude": -62.852201
+  },
+  {
+    "CityId": 0,
+    "CityName": "Basseterre",
+    "Latitude": 17.302606,
+    "Longitude": -62.717692
+  },
+  {
+    "CityId": 0,
+    "CityName": "Castries",
+    "Latitude": 14.010109,
+    "Longitude": -60.987469
+  },
+  {
+    "CityId": 0,
+    "CityName": "Marigot",
+    "Latitude": 18.067519,
+    "Longitude": -63.082466
+  },
+  {
+    "CityId": 0,
+    "CityName": "Khartoum",
+    "Latitude": 15.500654,
+    "Longitude": 32.559899
+  },
+  {
+    "CityId": 0,
+    "CityName": "Paramaribo",
+    "Latitude": 5.852036,
+    "Longitude": -55.203828
+  },
+  {
+    "CityId": 0,
+    "CityName": "Longyearbyen ",
+    "Latitude": 78.062,
+    "Longitude": 22.055
+  },
+  {
+    "CityId": 0,
+    "CityName": "Mbabane",
+    "Latitude": -26.305448,
+    "Longitude": 31.136672
+  },
+  {
+    "CityId": 0,
+    "CityName": "Stockholm",
+    "Latitude": 59.329323,
+    "Longitude": 18.068581
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bern",
+    "Latitude": 46.947974,
+    "Longitude": 7.447447
+  },
+  {
+    "CityId": 0,
+    "CityName": "Damascus",
+    "Latitude": 33.513807,
+    "Longitude": 36.276528
+  },
+  {
+    "CityId": 0,
+    "CityName": "Taipei",
+    "Latitude": 25.032969,
+    "Longitude": 121.565418
+  },
+  {
+    "CityId": 0,
+    "CityName": "Dushanbe",
+    "Latitude": 38.559772,
+    "Longitude": 68.787038
+  },
+  {
+    "CityId": 0,
+    "CityName": "Dodoma",
+    "Latitude": -6.162959,
+    "Longitude": 35.751607
+  },
+  {
+    "CityId": 0,
+    "CityName": "Bangkok",
+    "Latitude": 13.756331,
+    "Longitude": 100.501765
+  },
+  {
+    "CityId": 0,
+    "CityName": "Dili",
+    "Latitude": -8.556856,
+    "Longitude": 125.560314
+  },
+  {
+    "CityId": 0,
+    "CityName": "Lomé",
+    "Latitude": 6.172497,
+    "Longitude": 1.231362
+  },
+  {
+    "CityId": 0,
+    "CityName": "Nukunonu",
+    "Latitude": -9.2005,
+    "Longitude": -171.848
+  },
+  {
+    "CityId": 0,
+    "CityName": "Nukuʻalofa",
+    "Latitude": -21.139342,
+    "Longitude": -175.204947
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tiraspol",
+    "Latitude": 46.848185,
+    "Longitude": 29.596805
+  },
+  {
+    "CityId": 0,
+    "CityName": "Port of Spain",
+    "Latitude": 10.654901,
+    "Longitude": -61.501926
+  },
+  {
+    "CityId": 0,
+    "CityName": "Edinburgh of the Seven Seas",
+    "Latitude": -37.068042,
+    "Longitude": -12.311315
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tunis",
+    "Latitude": 36.806495,
+    "Longitude": 10.181532
+  },
+  {
+    "CityId": 0,
+    "CityName": "Ankara",
+    "Latitude": 39.933364,
+    "Longitude": 32.859742
+  },
+  {
+    "CityId": 0,
+    "CityName": "Ashgabat",
+    "Latitude": 37.960077,
+    "Longitude": 58.326063
+  },
+  {
+    "CityId": 0,
+    "CityName": "Cockburn Town",
+    "Latitude": 21.467458,
+    "Longitude": -71.13891
+  },
+  {
+    "CityId": 0,
+    "CityName": "Funafuti",
+    "Latitude": -8.520066,
+    "Longitude": 179.198128
+  },
+  {
+    "CityId": 0,
+    "CityName": "Charlotte Amalie",
+    "Latitude": 18.3419,
+    "Longitude": -64.930701
+  },
+  {
+    "CityId": 0,
+    "CityName": "Kampala",
+    "Latitude": 0.347596,
+    "Longitude": 32.58252
+  },
+  {
+    "CityId": 0,
+    "CityName": "Kiev",
+    "Latitude": 50.4501,
+    "Longitude": 30.5234
+  },
+  {
+    "CityId": 0,
+    "CityName": "Abu Dhabi",
+    "Latitude": 24.299174,
+    "Longitude": 54.697277
+  },
+  {
+    "CityId": 0,
+    "CityName": "London",
+    "Latitude": 51.507351,
+    "Longitude": -0.127758
+  },
+  {
+    "CityId": 0,
+    "CityName": "Washington",
+    "Latitude": 38.907192,
+    "Longitude": -77.036871
+  },
+  {
+    "CityId": 0,
+    "CityName": "Montevideo",
+    "Latitude": -34.901113,
+    "Longitude": -56.164531
+  },
+  {
+    "CityId": 0,
+    "CityName": "Tashkent",
+    "Latitude": 41.299496,
+    "Longitude": 69.240073
+  },
+  {
+    "CityId": 0,
+    "CityName": "Port Vila",
+    "Latitude": -17.733251,
+    "Longitude": 168.327325
+  },
+  {
+    "CityId": 0,
+    "CityName": "Vatican City",
+    "Latitude": 41.902179,
+    "Longitude": 12.453601
+  },
+  {
+    "CityId": 0,
+    "CityName": "Caracas",
+    "Latitude": 10.480594,
+    "Longitude": -66.903606
+  },
+  {
+    "CityId": 0,
+    "CityName": "Hanoi",
+    "Latitude": 21.027764,
+    "Longitude": 105.83416
+  },
+  {
+    "CityId": 0,
+    "CityName": "Mata-Utu",
+    "Latitude": -13.282509,
+    "Longitude": -176.176447
+  },
+  {
+    "CityId": 0,
+    "CityName": "El Aaiún",
+    "Latitude": 27.125287,
+    "Longitude": -13.1625
+  },
+  {
+    "CityId": 0,
+    "CityName": "Sana'a",
+    "Latitude": 15.369445,
+    "Longitude": 44.191007
+  },
+  {
+    "CityId": 0,
+    "CityName": "Lusaka",
+    "Latitude": -15.387526,
+    "Longitude": 28.322817
+  },
+  {
+    "CityId": 0,
+    "CityName": "Harare",
+    "Latitude": -17.825166,
+    "Longitude": 31.03351
+  }
+]

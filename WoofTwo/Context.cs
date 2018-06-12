@@ -5,6 +5,7 @@ using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WoofTwo.Additions;
 using WoofTwo.Classes;
 using WoofTwo.Relations;
 
@@ -20,6 +21,7 @@ namespace WoofTwo
         public DbSet<Species> SpeciesTable { get; set; }
         public DbSet<Animal> AnimalTable { get; set; }
         public DbSet<User> UserTable { get; set; }
+        public DbSet<City> CityTable { get; set; }
 
         public Context() : base("localsqll")
         {

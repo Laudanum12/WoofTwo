@@ -15,15 +15,16 @@ namespace WoofTwo
         User CurrentUser { get; set; }
 
         bool CanAddUser(string name);
-        void AddUser(string _city, DateTime _dateOfRegistration, string _email, int _level, string _password, string _name);
+        void AddUSer(string _city, DateTime _dateOfRegistration, string _email, string _password, string _name);
         User UserInStorage(string name, string password);
+        Species FindSpecies(string name);
+        Animal FindAnimal(User us);
+
         void RestoreInfo();
         string FindImages();
-        Species FindSpecies(string name);
         void AddAnAnimal(Animal animal);
         string GetAPath(string species);
         string GetImageHelper(Animal an);
-        Animal FindAnimal(User us);
 
 
 

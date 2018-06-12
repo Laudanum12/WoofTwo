@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201806121128516_NewVersion.Designer.cs">
       <DependentUpon>201806121128516_NewVersion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806121503032_LastVersion.cs" />
+    <Compile Include="Migrations\201806121503032_LastVersion.Designer.cs">
+      <DependentUpon>201806121503032_LastVersion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Additions\Food.cs" />
     <Compile Include="Helpers\Need.cs" />
@@ -77,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EmbeddedResource Include="Data\City.json" />
     <None Include="Data\Foods.json" />
     <None Include="Data\Poops.json" />
     <None Include="Data\Sleeps.json" />
@@ -87,6 +92,9 @@
     <Content Include="bin\Debug\Newtonsoft.Json.xml" />
     <Content Include="bin\Debug\WoofTwo.dll" />
     <Content Include="bin\Debug\WoofTwo.pdb" />
+    <EmbeddedResource Include="Migrations\201806121503032_LastVersion.resx">
+      <DependentUpon>201806121503032_LastVersion.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

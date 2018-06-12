@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Woof.UI"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
-      Title="LogIn" ShowsNavigationUI="False">
+      Title="LogIn" ShowsNavigationUI="False" PreviewKeyDown="Window_PreviewKeyDown">
   
     <Page.Background>
         <ImageBrush ImageSource="Images/backgrounds/стартовая.png"></ImageBrush>
