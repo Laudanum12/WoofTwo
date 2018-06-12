@@ -23,51 +23,57 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition/>
-
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 0 0 10" HorizontalAlignment="Center">
-            <Button Margin="5" Width="60">
+            <Label Name="OladushkiLabel" Content="10" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
+            <Button Margin="5" Width="60" Name="OladushkiButton" Click="OladushkiButton_Click">
                 <StackPanel>
                     <Image Source="Images/Food/оладушки.png" Height="40"/>
                     <!--<Label Content="10" HorizontalAlignment="Center"/>-->
                 </StackPanel>
             </Button>
-            <Button Margin="5" Width="60">
+            <Button Margin="5" Width="60" Name="FastfoodButton" Click="FastfoodButton_Click">
                 <StackPanel>
                     <Image Source="Images/Food/фастфуд.png" Height="45"/>
                     <!--<Label Content="15" HorizontalAlignment="Center"/>-->
                 </StackPanel>
             </Button>
-           
+            <Label Name="FastfoodLabel" Content="15" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" Margin="0 0 0 10" HorizontalAlignment="Center">
-            <Button Margin="5" Width="60">
+            <Label Name="PizzaLabel" Content="20" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
+            <Button Margin="5" Width="60" Name="PizzaButton" Click="PizzaButton_Click">
                 <StackPanel>
                     <Image Source="Images/Food/пицца.png" Height="40"/>
                     <!--<Label Content="10" HorizontalAlignment="Center"/>-->
                 </StackPanel>
             </Button>
-            <Button Margin="5" Width="60">
+            <Button Margin="5" Width="60" Name="PechenyeButton" Click="PechenyeButton_Click">
                 <StackPanel>
                     <Image Source="Images/Food/печенье с молоком.png" Height="45"/>
                     <!--<Label Content="15" HorizontalAlignment="Center"/>-->
                 </StackPanel>
             </Button>
-           
+            <Label Name="PechenyeLabel" Content="25" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="1" Margin="0 0 0 10" HorizontalAlignment="Center">
-            <Button Margin="5" Width="60">
+            <Label Name="SushiLabel" Content="30" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
+            <Button Margin="5" Width="60" Name="SushiButton" Click="SushiButton_Click">
                 <StackPanel>
                     <Image Source="Images/Food/суши.png" Height="40"/>
                     <!--<Label Content="10" HorizontalAlignment="Center"/>-->
                 </StackPanel>
             </Button>
-            <Button Margin="5" Width="60">
+            <Button Margin="5" Width="60" Name="EggsButton" Click="EggsButton_Click">
                 <StackPanel>
                     <Image Source="Images/Food/яичница.png" Height="45"/>
                     <!--<Label Content="15" HorizontalAlignment="Center"/>-->
                 </StackPanel>
             </Button>
+            <Label Name="EggsLabel" Content="35" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
         </StackPanel>
+        <ProgressBar Grid.Row="0" Grid.Column="0" Margin="20" Name="ProgressFood" Minimum="0" Maximum="100"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="SteelBlue" Grid.Column="0" Text="Hunger" FontFamily="Matura MT Script Capitals" FontSize="48"/>
+        <Button Grid.Row="5" Grid.Column="0" Margin="50 10" Content="Back to the kitchen" Name="gobackButton" Click="gobackButton_Click" FontFamily="Matura MT Script Capitals" FontSize="18"/>
     </Grid>
 </Page>

@@ -28,8 +28,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image Name="img"/>
+        <Image Name="img" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Bottom"/>
         <Button VerticalAlignment="Top" Name="foodButton" Click="foodButton_Click" Width="Auto" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="50" Cursor="Hand">
             <StackPanel Orientation="Horizontal">
                 <Label Foreground="Firebrick" VerticalAlignment="Center" Content="Hungry?" FontFamily="Matura MT Script Capitals" FontSize="22"/>
@@ -38,7 +39,7 @@
         </Button>
         <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="100" Name="ProgressFood"/>
         <TextBlock Foreground="Firebrick" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Hunger" FontFamily="Matura MT Script Capitals" FontSize="48"/>
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical">
             <Button Click="totheSittingRoom_Click" Name="totheSittingRoom" Style="{StaticResource ButtonStyle}" Content="Sitting Room"/>
             <Button Click="totheBedroom_Click" Name="totheBedroom" Style="{StaticResource ButtonStyle}" Content="Bedroom"/>
             <Button Click="totheWC_Click" Name="totheWC" Style="{StaticResource ButtonStyle}" Content="WC"/>

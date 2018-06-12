@@ -28,13 +28,14 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image Name="img"/>
+        <Image Name="img" Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" VerticalAlignment="Bottom"/>
         <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="100" Name="ProgressSleep"/>
         <TextBlock Foreground="Firebrick" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Sleep" FontFamily="Matura MT Script Capitals" FontSize="48"/>
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical">
             <Button Click="totheSittingRoom_Click" Name="totheSittingRoom" Style="{StaticResource ButtonStyle}" Content="Sitting Room"/>
-            <Button Click="totheKitchen_Click" Name="totheKitchen" Style="{StaticResource ButtonStyle}" Content="Bedroom"/>
+            <Button Click="totheKitchen_Click" Name="totheKitchen" Style="{StaticResource ButtonStyle}" Content="Kitchen"/>
             <Button Click="totheWC_Click" Name="totheWC" Style="{StaticResource ButtonStyle}" Content="WC"/>
         </StackPanel>
         <Button Style="{StaticResource ButtonStyle}" Click="letssleepButton_Click" Name="letssleepButton" Content="Let's sleep!" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>

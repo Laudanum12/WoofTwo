@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WoofTwo.Classes;
 
 namespace Woof.UI
 {
@@ -20,9 +21,46 @@ namespace Woof.UI
     /// </summary>
     public partial class Food : Page
     {
-        public Food()
+        public Animal animal { get; set; }
+        public Food(Animal an)
         {
             InitializeComponent();
+            animal = an;
+        }
+
+        private void OladushkiButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FastfoodButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PizzaButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PechenyeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SushiButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EggsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void gobackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Kitchen(animal));
         }
     }
 }

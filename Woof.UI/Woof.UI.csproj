@@ -76,6 +76,9 @@
     <Compile Include="PetsChoosing.xaml.cs">
       <DependentUpon>PetsChoosing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PoopAnimationPage.xaml.cs">
+      <DependentUpon>PoopAnimationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SigningUp.xaml.cs">
       <DependentUpon>SigningUp.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PetsChoosing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PoopAnimationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
