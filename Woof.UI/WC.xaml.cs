@@ -26,6 +26,7 @@ namespace Woof.UI
         public Animal animal { get; set; }
         public WC(Animal an)
         {
+           
             InitializeComponent();
             animal = an;
             var name = _storage.GetImageHelper(animal);

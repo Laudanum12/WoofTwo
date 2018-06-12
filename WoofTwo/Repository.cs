@@ -20,7 +20,7 @@ namespace WoofTwo
         public List<Species> _speciesRepository { get; set; }
         public List<City> _citiesRepository { get; set; }
         public User CurrentUser { get; set; }
-
+        Context cntx = new Context();
         private const string _api = "AIzaSyAWCXeLdhMEZBwmQ2Eh6MTsq8usHPJmESA";
 
         public Repository()
@@ -38,7 +38,7 @@ namespace WoofTwo
 
         public void RestoreInfo()
         {
-           
+            
         }
 
 
@@ -64,6 +64,7 @@ namespace WoofTwo
                         };
                         users.Add(user);
                     }
+                    db.SaveChanges();
                     return users;
                 }
             }
@@ -86,6 +87,7 @@ namespace WoofTwo
                         };
                         animals.Add(animal);
                     }
+                    db.SaveChangesAsync();
                     return animals;
                 }
             }
@@ -109,6 +111,7 @@ namespace WoofTwo
                         };
                         species.Add(_species);
                     }
+                    db.SaveChangesAsync();
                     return species;
                 }
 
@@ -133,19 +136,21 @@ namespace WoofTwo
                         };
                         cities.Add(city);
                     }
-                    return cities;
+                    var newcities = cities.OrderBy(c => c.CityName).Select(f => new City { CityName = f.CityName, CityId = f.CityId, Latitude = f.Latitude, Longitude = f.Longitude }).ToList();
+                    
+                    return newcities;
                 }
               
             }
         }
         public User UserInStorage(string name, string password)
         {
-           // string hashPassword = PasswordHelper.GetHash(password);
+            string hashPassword = PasswordHelper.GetHash(password);
             using (var db = new Context())
             {
-                User User = db.UserTable.FirstOrDefault
-                    (q => q.Name == name && q.Password == password);
-                CurrentUser = User;
+                User User = cntx.UserTable.FirstOrDefault(q => q.Name == name && q.Password == hashPassword);
+                if(User != null)
+                    CurrentUser = User;
                 return User;
 
             }
@@ -167,44 +172,30 @@ namespace WoofTwo
 
         public void AddUSer( string _city, DateTime _dateOfRegistration, string _email, string _password, string _name)
         {
-            using (var context = new Context())
-            {
-                context.UserTable.Add(new Classes.User
+            //using (var context = new Context())
+            //{
+
+                cntx.UserTable.Add(new Classes.User
                 {
                     City = _city,
                     DateOfRegistration = _dateOfRegistration,
                     Email = _email,
                     Level = 1,
-                    Password = _password,
+                    Password = PasswordHelper.GetHash(_password),
                     Name = _name,
-                    
                 });
-                context.SaveChanges();
-            }
+                cntx.SaveChanges();
+            //}
           
 
             
         }
 
-        //public string FindImages()
-        //{
-        //    using (var db = new Context())
-        //    {
-        //        var t = db.UserTable.First();
-        //        var y = db.SpeciesTable.First().Needs;
-        //       // var i = db.UserTable.First().Animal.AnimalId;
-        //        if (db.UserTable.First().Animal.Species.SpeciesName == "Dinosaur")
-        //        {
-        //            string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
-        //            return imgPath;
-        //        }
-        //        return null;
-        //    }
-
         //public async Task<int> GetCurrentTime(City city)
         //{
         //    using (var client = new HttpClient())
         //    {
+
         //        var result = await client.GetStringAsync($"https://maps.googleapis.com/maps/api/timezone/json?location=city.Latitude,city.Longitude&timestamp=1331161200&key=_api");
         //        //Thread.Sleep(); заставить задержку
         //        var data = JsonConvert.DeserializeObject<Item>(result);
@@ -221,6 +212,7 @@ namespace WoofTwo
 
         public string GetAPath(string species)
         {
+            
             if (species == "Dinosaur")
             {
                 string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
@@ -265,9 +257,11 @@ namespace WoofTwo
                 {
                     if (species.SpeciesName == name)
                     {
+                        db.SaveChanges();
                         return species;
                     }
                 }
+                db.SaveChanges();
                 return null;
 
             }
@@ -280,11 +274,16 @@ namespace WoofTwo
                 foreach(var animal in db.AnimalTable)
                 {
                     if (animal.Name == us.Animal.Name)
+                    {
+                        db.SaveChanges();
                         return animal;
+
+                    }
                 }
                 return null;
             }
         }
+
         public int FindFoodPoints(Species species)
         {
             using (var db = new Context())
@@ -297,15 +296,17 @@ namespace WoofTwo
                         {
                             if(food.FoodId == item.Needs.FoodIdFK)
                             {
+                                db.SaveChanges();
+
                                 return food.FoodPoints;
                             }
                         }
-                       
                     }
                 }
+                db.SaveChanges();
+
             }
-          
-            
+
             return 100;
         }
 
@@ -322,12 +323,15 @@ namespace WoofTwo
                         {
                             if (sleep.SleepId == item.Needs.SleepIdFK)
                             {
+                                db.SaveChanges();
+
                                 return sleep.SleepPoints;
                             }
                         }
 
                     }
                 }
+                db.SaveChanges();
 
             }
             return 100;
@@ -345,15 +349,20 @@ namespace WoofTwo
                         {
                             if (poop.PoopId == item.Needs.PoopIdFK)
                             {
+                                db.SaveChanges();
+
                                 return poop.PoopPoints;
                             }
                         }
 
                     }
                 }
+                db.SaveChanges();
+
             }
             return 100;
         }
+
         public string GetImageHelper(Animal an)
         {
             using (var db = new Context())
@@ -361,9 +370,13 @@ namespace WoofTwo
                 foreach (var item in db.SpeciesTable)
                 {
                     if (item.SpeciesId == an.SpeciesId)
+                    {
+                        db.SaveChanges();
                         return item.SpeciesName;
+                    }
+                    
                 }
-               
+                db.SaveChanges();
                 return null;
             }
         }
@@ -383,7 +396,7 @@ namespace WoofTwo
                     PoopPoints = FindPoopPoints(species),
                     SleepPoints = FindSleepPoints(species)
                 };
-
+                db.SaveChanges();
                 return animal;
             }
            
@@ -393,7 +406,9 @@ namespace WoofTwo
         {
             using (var db = new Context())
             {
+                animal.AnimalId = CurrentUser.UserId;
                 db.AnimalTable.Add(animal);
+                db.SaveChanges();
             }
         }
         //public int IncreaseFoodValue(int points)

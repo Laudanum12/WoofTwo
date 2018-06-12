@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WoofTwo;
+using WoofTwo.Additions;
 using WoofTwo.Helpers;
 
 namespace Woof.UI
@@ -38,13 +39,15 @@ namespace Woof.UI
         {
             var login = loginTextBox.Text;
             var email = emailTextBox.Text;
-            var pswrd = PasswordHelper.GetHash(pswrdPasswordBox.Password);
-            var city = cityComboBox.SelectedItem.ToString();
-            if (login !="" || email !="" || pswrd !="" || city != null)
+            var pswrd = pswrdPasswordBox.Password;
+
+            var city = cityComboBox.SelectedItem as City;
+            if (login != "" && email !="" && pswrd !="" && city != null)
             {
                 if (_storage.CanAddUser(login) == true)
                 {
-                    _storage.AddUSer(city, DateTime.Now, email, pswrd, login);
+                    _storage.AddUSer(city.CityName, DateTime.Now, email, pswrd, login);
+                    _storage.UserInStorage(login, pswrd);
                     NavigationService.Navigate(new PetsChoosing());
                 }
                 else MessageBox.Show("Such login already exists!", "Oops!", MessageBoxButton.OK);
