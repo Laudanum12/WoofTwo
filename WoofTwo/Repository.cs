@@ -108,7 +108,7 @@ namespace WoofTwo
 
         public User UserInStorage(string name, string password)
         {
-           // string hashPassword = PasswordHelper.GetHash(password);
+            // string hashPassword = PasswordHelper.GetHash(password);
             using (var db = new Context())
             {
                 User User = db.UserTable.FirstOrDefault
@@ -133,6 +133,33 @@ namespace WoofTwo
             }
         }
 
+        //public void AddUser(string name, string email, string password, string city, DateTime dateTime, int level)
+        //{
+        //    using (var db = new Context())
+        //    {
+        //        var person = new User(name.Trim(), password, email.Trim(), dateTime, level, city);
+        //        db.UserTable.Add(person);
+        //        db.SaveChanges();
+        //    }
+        //}
+
+        //public void AddUser(string _city, DateTime _dateOfRegistration, string _email, int _level, string _password, string _name)
+        //{
+        //    using (var db = new Context())
+        //    {
+        //        if (_userRepository.Exists(x => x.Name == _name && x.Password == PasswordHelper.GetHash(_password)) == false)
+        //            db.UserTable.Add(new Classes.User
+        //            {
+        //                City = _city,
+        //                DateOfRegistration = _dateOfRegistration, //сделать
+        //                Email = _email,
+        //                Level = 1,
+        //                Password = PasswordHelper.GetHash(_password),
+        //                Name = _name,
+        //            });
+        //        db.SaveChanges();
+        //    }
+        //}
         public void AddUser(string name, string email, string password, string city, DateTime dateTime, int level)
         {
             using (var db = new Context())
@@ -141,15 +168,14 @@ namespace WoofTwo
                 db.UserTable.Add(person);
                 db.SaveChanges();
             }
-        }
-
+         }
         public string FindImages()
         {
             using (var db = new Context())
             {
                 var t = db.UserTable.First();
                 var y = db.SpeciesTable.First().Needs;
-               // var i = db.UserTable.First().Animal.AnimalId;
+                // var i = db.UserTable.First().Animal.AnimalId;
                 if (db.UserTable.First().Animal.Species.SpeciesName == "Dinosaur")
                 {
                     string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
@@ -202,13 +228,13 @@ namespace WoofTwo
         {
             using (var db = new Context())
             {
-                foreach(var species in db.SpeciesTable)
+                foreach (var species in db.SpeciesTable)
                 {
                     if (species.SpeciesName == name)
                     {
                         return species;
                     }
-                   
+
                 }
                 return null;
 
@@ -219,7 +245,7 @@ namespace WoofTwo
         {
             using (var db = new Context())
             {
-                foreach(var animal in db.AnimalTable)
+                foreach (var animal in db.AnimalTable)
                 {
                     if (animal.Name == us.Animal.Name)
                         return animal;
@@ -252,7 +278,60 @@ namespace WoofTwo
         //        value = db.AnimalTable.Hunger + points;
         //    return value;
         //    }
-                
+
         //}
+        private void AddFood(int _foodPoint)
+        {
+            using (var db = new Context())
+            {
+                db.FoodTable.Add(new Classes.Food
+                {
+                    FoodPoints = _foodPoint
+                });
+                db.SaveChanges();
+            }
+        }
+        private void AddPoop(int _poopPoints)
+        {
+            using (var db = new Context())
+            {
+                db.PoopTable.Add(new Classes.Poop
+                {
+                    PoopPoints = _poopPoints
+                });
+                db.SaveChanges();
+            }
+        }
+        private void AddSleep(int _sleepPoints)
+        {
+            using (var db = new Context())
+            {
+                db.SleepTable.Add(new Classes.Sleep
+                {
+                    SleepPoints = _sleepPoints
+                });
+                db.SaveChanges();
+            }
+        }
+        private void AddSpeciesAndNeeds(string _speciesName, int _foodIdFK, int _poopIdFK, int _sleepIdFK)
+        {
+            using (var db = new Context())
+            {
+                if (_speciesRepository.Exists(x => x.SpeciesName == _speciesName) == false)
+                {
+                    db.SpeciesTable.Add(new Classes.Species
+                    {
+                        SpeciesName = _speciesName
+                    });
+                    db.NeedsTable.Add(new Relations.Needs
+                    {
+                        FoodIdFK = _foodIdFK,
+                        PoopIdFK = _poopIdFK,
+                        SleepIdFK = _sleepIdFK
+                    });
+                    db.SaveChanges();
+                }
+            }
+        }
     }
 }

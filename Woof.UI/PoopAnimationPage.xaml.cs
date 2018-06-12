@@ -17,22 +17,20 @@ using WoofTwo.Classes;
 namespace Woof.UI
 {
     /// <summary>
-    /// Логика взаимодействия для SleepAnimationPage.xaml
+    /// Логика взаимодействия для PoopAnimationPage.xaml
     /// </summary>
-    public partial class SleepAnimationPage : Page
+    public partial class PoopAnimationPage : Page
     {
         public Animal animal { get; set; }
-        //public Action Worker { get; set; }
-        public SleepAnimationPage(/*Action worker, */Animal an)
+        public PoopAnimationPage(Animal an)
         {
             InitializeComponent();
             animal = an;
-            //Worker = worker ?? throw new ArgumentNullException();
         }
 
-        private void wakingupButton_Click(object sender, RoutedEventArgs e)
+        private void gettingbackButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new BedRoom(animal));
+            NavigationService.Navigate(new WC(animal));
         }
     }
 }

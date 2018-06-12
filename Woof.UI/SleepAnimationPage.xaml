@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Woof.UI"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="600"
-      Title="SleepAnimationPage">
+      Title="SleepAnimationPage" ShowsNavigationUI="False">
     <Page.Resources>
         <Storyboard x:Key="Storyboard1" RepeatBehavior="Forever">
             <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="label">

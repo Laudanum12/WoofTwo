@@ -28,7 +28,10 @@ namespace Woof.UI
         {
             InitializeComponent();
             animal = an;
-            img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
+            var name = _storage.GetImageHelper(animal);
+            img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
+
+            //img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
         }
 
         private void totheBedroom_Click(object sender, RoutedEventArgs e)
@@ -45,5 +48,12 @@ namespace Woof.UI
         {
             NavigationService.Navigate(new SittingRoom(animal));
         }
+
+        private void poppButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PoopAnimationPage(animal));
+        }
+
+        
     }
 }

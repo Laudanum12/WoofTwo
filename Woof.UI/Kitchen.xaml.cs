@@ -28,13 +28,15 @@ namespace Woof.UI
         {
             InitializeComponent();
             animal = an;
-            img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
+            var name = _storage.GetImageHelper(animal);
+            img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
+            //img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
             //UpdateProgressFood();
         }
 
         private void foodButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Food());
+            NavigationService.Navigate(new Food(animal));
         }
         public void UpdateProgressFood()
         {

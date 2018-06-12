@@ -1,0 +1,45 @@
+﻿<Page x:Class="Woof.UI.PoopAnimationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Woof.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="600"
+      Title="PoopAnimationPage">
+    <Page.Resources>
+        <Storyboard x:Key="Storyboard1" RepeatBehavior="Forever">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="label">
+                <EasingColorKeyFrame KeyTime="0" Value="#7F428DDD"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FF428DDD"/>
+                <EasingColorKeyFrame KeyTime="0:0:1" Value="#00428DDD"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="label1">
+                <EasingColorKeyFrame KeyTime="0" Value="#00428DDD"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#7F428DDD"/>
+                <EasingColorKeyFrame KeyTime="0:0:1" Value="#FF428DDD"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="label2">
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#00428DDD"/>
+                <EasingColorKeyFrame KeyTime="0:0:1" Value="#7F428DDD"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid Background="RosyBrown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label2" Content="Poopin'..." HorizontalAlignment="Left" Height="105.738" Margin="27.845,124.522,0,0" VerticalAlignment="Top" Width="156.148" FontFamily="Matura MT Script Capitals" FontSize="36" Foreground="#FF428DDD"/>
+        <Label x:Name="label" Content="Poopin'..." HorizontalAlignment="Left" Height="105.738" Margin="188.993,165.096,0,0" VerticalAlignment="Top" Width="156.148" FontFamily="Matura MT Script Capitals" FontSize="36" Foreground="#FF428DDD"/>
+        <Label x:Name="label1" Content="Poopin'..." HorizontalAlignment="Left" Height="105.738" Margin="345.141,214.276,0,0" VerticalAlignment="Top" Width="156.148" FontFamily="Matura MT Script Capitals" FontSize="36" Foreground="#FF428DDD"/>
+        <Button Margin="20" Content="Get back" Grid.Row="2" VerticalAlignment="Center" Click="gettingbackButton_Click" Name="gettingbackButton" FontFamily="Matura MT Script Capitals" FontSize="48" Grid.ColumnSpan="2"/>
+        <ProgressBar Height="40" Margin="20" Name="ProgressPoop" Grid.Row="1" Minimum="0" Maximum="100" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+    </Grid>
+</Page>

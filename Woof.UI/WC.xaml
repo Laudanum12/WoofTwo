@@ -28,14 +28,16 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image Name="img"/>
+        <Image Name="img" Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" VerticalAlignment="Bottom"/>
         <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="100" Name="ProgressSleep"/>
-        <TextBlock Foreground="SteelBlue" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Poop" FontFamily="Matura MT Script Capitals" FontSize="48"/>
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+        <TextBlock Foreground="SteelBlue" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Poop" VerticalAlignment="Top" FontFamily="Matura MT Script Capitals" FontSize="48"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="Want to poop?" Grid.Row="1" VerticalAlignment="Bottom" Name="poppButton" Click="poppButton_Click"/>
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical">
             <Button Click="totheSittingRoom_Click" Name="totheSittingRoom" Style="{StaticResource ButtonStyle}" Content="Sitting Room"/>
-            <Button Click="totheKitchen_Click" Name="totheKitchen" Style="{StaticResource ButtonStyle}" Content="Bedroom"/>
-            <Button Click="totheBedroom_Click" Name="totheBedroom" Style="{StaticResource ButtonStyle}" Content="WC"/>
+            <Button Click="totheBedroom_Click" Name="totheBedroom" Style="{StaticResource ButtonStyle}" Content="Bedroom"/>
+            <Button Click="totheKitchen_Click" Name="totheKitchen" Style="{StaticResource ButtonStyle}" Content="Kitchen"/>
         </StackPanel>
     </Grid>
 </Page>
