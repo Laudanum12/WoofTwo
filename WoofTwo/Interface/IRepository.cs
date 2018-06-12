@@ -22,6 +22,8 @@ namespace WoofTwo
         Species FindSpecies(string name);
         Animal FindAnimal(User us);
 
+        Animal AddIncompleteAnimal(string name);
+
         void RestoreInfo();
         //string FindImages();
         void AddAnAnimal(Animal animal);

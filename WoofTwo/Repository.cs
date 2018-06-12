@@ -31,18 +31,14 @@ namespace WoofTwo
         public void RestoreUsers()
         {
             _userRepository = Users;
-            
-
-          
-        
-          
+            _animalRepository = Animals;
+            _speciesRepository = Species;
+            _citiesRepository = Cities;
         }
 
         public void RestoreInfo()
         {
-            _animalRepository = Animals;
-            _speciesRepository = Species;
-            _citiesRepository = Cities;
+           
         }
 
 
@@ -162,9 +158,9 @@ namespace WoofTwo
                 foreach (var i in db.UserTable)
                 {
                     if (i.Name == name)
-                        return true;
+                        return false;
                 }
-                return false;
+                return true;
             }
         }
         
@@ -291,7 +287,75 @@ namespace WoofTwo
                 return null;
             }
         }
+        public int FindFoodPoints(Species species)
+        {
+            using (var db = new Context())
+            {
+                foreach (var item in _speciesRepository)
+                {
+                    if (species.SpeciesName == item.SpeciesName)
+                    {
+                        foreach(var food in db.FoodTable)
+                        {
+                            if(food.FoodId == item.Needs.FoodIdFK)
+                            {
+                                return food.FoodPoints;
+                            }
+                        }
+                       
+                    }
+                }
+            }
+          
+            
+            return 100;
+        }
 
+        public int FindSleepPoints(Species species)
+        {
+
+            using (var db = new Context())
+            {
+                foreach (var item in _speciesRepository)
+                {
+                    if (species.SpeciesName == item.SpeciesName)
+                    {
+                        foreach (var sleep in db.SleepTable)
+                        {
+                            if (sleep.SleepId == item.Needs.SleepIdFK)
+                            {
+                                return sleep.SleepPoints;
+                            }
+                        }
+
+                    }
+                }
+
+            }
+            return 100;
+        }
+
+        public int FindPoopPoints(Species species)
+        {
+            using (var db = new Context())
+            {
+                foreach (var item in _speciesRepository)
+                {
+                    if (species.SpeciesName == item.SpeciesName)
+                    {
+                        foreach (var poop in db.PoopTable)
+                        {
+                            if (poop.PoopId == item.Needs.PoopIdFK)
+                            {
+                                return poop.PoopPoints;
+                            }
+                        }
+
+                    }
+                }
+            }
+            return 100;
+        }
         public string GetImageHelper(Animal an)
         {
             using (var db = new Context())
@@ -306,6 +370,27 @@ namespace WoofTwo
             }
         }
         
+        
+
+        public Animal AddIncompleteAnimal(string name)
+        {
+            using(var db = new Context())
+            {
+                Species species = FindSpecies(name);
+                var animal = new Animal
+                {
+                    Species = FindSpecies(name),
+                    SpeciesId = FindSpecies(name).SpeciesId,
+                    FoodPoints =  FindFoodPoints(species),
+                    PoopPoints = FindPoopPoints(species),
+                    SleepPoints = FindSleepPoints(species)
+                };
+
+                return animal;
+            }
+           
+        }
+
         public void AddAnAnimal(Animal animal)
         {
             using (var db = new Context())
@@ -313,7 +398,6 @@ namespace WoofTwo
                 db.AnimalTable.Add(animal);
             }
         }
-
         //public int IncreaseFoodValue(int points)
         //{
         //    using (var db = new Context())
@@ -322,8 +406,8 @@ namespace WoofTwo
         //        value = db.AnimalTable.Hunger + points;
         //    return value;
         //    }
-                
+
         //}
-        
+
     }
 }
