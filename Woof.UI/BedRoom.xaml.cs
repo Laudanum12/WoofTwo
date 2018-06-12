@@ -25,7 +25,7 @@ namespace Woof.UI
     {
         public Animal animal { get; set; }
         IRepository _storage = Factory.Instance.GetStorage();
-        BlurEffect ef = new BlurEffect();
+       
         public BedRoom(Animal an)
         {
             InitializeComponent();
@@ -53,15 +53,10 @@ namespace Woof.UI
 
         private void letssleepButton_Click(object sender, RoutedEventArgs e)
         {
-            ef.Radius = 10;
-            Effect = ef;
-            NavigationService.Navigate(new SleepAnimationPage(animal));
-            ef.Radius = 0;
-            Effect = ef;
-        }
-        public void Simulator()
-        {
 
+            NavigationService.Navigate(new SleepAnimationPage(animal));
+            
         }
+        
     }
 }
