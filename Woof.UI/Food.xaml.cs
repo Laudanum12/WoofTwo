@@ -84,6 +84,10 @@ namespace Woof.UI
         private void EggsButton_Click(object sender, RoutedEventArgs e)
         {
             _storage.IncreaseFoodValue(int.Parse(EggsLabel.Text));
+            if (animal.FoodPoints == 0)
+            {
+                NavigationService.Navigate(new DeathPage());
+            }
             UpdateProgressFood();
         }
 

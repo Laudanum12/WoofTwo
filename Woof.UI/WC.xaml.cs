@@ -25,7 +25,6 @@ namespace Woof.UI
     {
         IRepository _storage = Factory.Instance.GetStorage();
         public Animal animal { get; set; }
-        DispatcherTimer timer = new DispatcherTimer();
         public WC(Animal an)
         {
             InitializeComponent();
@@ -33,27 +32,16 @@ namespace Woof.UI
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
             UpdateProgressPoop();
-            //TimerStart();
-            //img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
         }
-
-        public void TimerStart()
-        {
-            timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = new TimeSpan(0, 0, 30);
-            timer.Start();
-        }
-        private void TimerTick(object sender, EventArgs e)
-        {
-            animal.FoodPoints -= 1;
-            animal.SleepPoints -= 1;
-            animal.PoopPoints -= 1;
-            UpdateProgressPoop();
-        }
+        
         public void UpdateProgressPoop()
         {
             _storage.NormalizePoopValue(true);
             ProgressPoop.Value = animal.PoopPoints;
+            if (animal.PoopPoints == 0)
+            {
+                NavigationService.Navigate(new DeathPage());
+            }
         }
         private void totheBedroom_Click(object sender, RoutedEventArgs e)
         {
@@ -74,7 +62,6 @@ namespace Woof.UI
         {
             NavigationService.Navigate(new PoopAnimationPage(animal));
         }
-
         
     }
 }

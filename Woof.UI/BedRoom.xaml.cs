@@ -26,7 +26,6 @@ namespace Woof.UI
     {
         public Animal animal { get; set; }
         IRepository _storage = Factory.Instance.GetStorage();
-        DispatcherTimer timer = new DispatcherTimer();
         public BedRoom(Animal an)
         {
             InitializeComponent();
@@ -34,25 +33,16 @@ namespace Woof.UI
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
             UpdateProgressSleep();
-            //TimerStart();
-           // img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
+            
         }
-        public void TimerStart()
-        {
-            timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = new TimeSpan(0, 0, 30);
-            timer.Start();
-        }
+        
         public void UpdateProgressSleep()
         {
             ProgressSleep.Value = animal.SleepPoints;
-        }
-        private void TimerTick(object sender, EventArgs e)
-        {
-            animal.FoodPoints -= 1;
-            animal.SleepPoints -= 1;
-            UpdateProgressSleep();
-            animal.PoopPoints -= 1;
+            if (animal.SleepPoints == 0)
+            {
+                NavigationService.Navigate(new DeathPage());
+            }
         }
         private void totheKitchen_Click(object sender, RoutedEventArgs e)
         {
