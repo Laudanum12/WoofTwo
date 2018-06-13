@@ -31,24 +31,26 @@ namespace Woof.UI
             InitializeComponent();
             animal = an;
             UpdateProgressFood();
+            //_storage.DecreaseNeeds();
             //TimerStart();
         }
         public void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Interval = new TimeSpan(0, 0, 15);
             timer.Start();
         }
         private void TimerTick(object sender, EventArgs e)
         {
-            animal.FoodPoints -= 1;
             UpdateProgressFood();
-            animal.SleepPoints -= 1;
-            animal.PoopPoints -= 1;
         }
         public void UpdateProgressFood()
         {
             ProgressFood.Value = animal.FoodPoints;
+            if (animal.FoodPoints==0)
+            {
+                NavigationService.Navigate(new DeathPage());
+            }
            
         }
         private void OladushkiButton_Click(object sender, RoutedEventArgs e)

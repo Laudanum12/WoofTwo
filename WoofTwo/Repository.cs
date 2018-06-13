@@ -433,7 +433,7 @@ namespace WoofTwo
         {
             DispatcherTimer a = new DispatcherTimer();
             a.Tick += A_Tick;
-            a.Interval = new TimeSpan(0, 0, 5);
+            a.Interval = new TimeSpan(0, 0, 30);
             a.Start();
 
             //Timer a = new Timer();
