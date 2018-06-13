@@ -20,31 +20,34 @@ namespace WoofTwo.Migrations
         protected override void Seed(WoofTwo.Context context)
         {
             
-            AddFood(context, 10);
-            AddFood(context, 15);
-            AddFood(context, 20);
-            AddFood(context, 25);
-            AddFood(context, 30);
-            AddFood(context, 35);
-            AddPoop(context, 10);
-            AddPoop(context, 15);
-            AddPoop(context, 20);
-            AddPoop(context, 25);
-            AddPoop(context, 30);
-            AddSleep(context, 35);
-            AddSleep(context, 10);
-            AddSleep(context, 15);
-            AddSleep(context, 20);
-            AddSleep(context, 25);
-            AddSleep(context, 30);
-            AddSleep(context, 35);
+            AddFood(context, 100);
+            AddFood(context, 120);
+            AddFood(context, 140);
+            AddFood(context, 160);
+            AddFood(context, 180);
+            AddFood(context, 200);
 
-            AddSpeciesAndNeeds(context, "Dinosaur", 1, 1, 1);
-            AddSpeciesAndNeeds(context, "Catbug", 1, 3, 2);
-            AddSpeciesAndNeeds(context, "Rabbit", 4, 3, 2);
+            AddPoop(context, 100);
+            AddPoop(context, 110);
+            AddPoop(context, 120);
+            AddPoop(context, 130);
+            AddPoop(context, 140);
+            AddPoop(context, 150);
+
+            AddSleep(context, 50);
+            AddSleep(context, 60);
+            AddSleep(context, 70);
+            AddSleep(context, 80);
+            AddSleep(context, 90);
+            AddSleep(context, 100);
+           
+
+            AddSpeciesAndNeeds(context, "Dinosaur", 5, 3, 3);
+            AddSpeciesAndNeeds(context, "Catbug", 4, 3, 6);
+            AddSpeciesAndNeeds(context, "Rabbit", 4, 2, 2);
             AddSpeciesAndNeeds(context, "Dog", 3, 1, 4);
-            AddSpeciesAndNeeds(context, "Fox", 1, 4, 2);
-            AddSpeciesAndNeeds(context, "Deer", 2, 3, 2);
+            AddSpeciesAndNeeds(context, "Fox", 2, 1, 2);
+            AddSpeciesAndNeeds(context, "Deer", 1, 3, 2);
 
            
             AddUSerAndAnimal(context, "Moscow", DateTime.Now.AddDays(1), "email", 1, "a", "Alex", 1, "Foxxy", 5);
