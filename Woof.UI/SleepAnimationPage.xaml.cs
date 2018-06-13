@@ -24,32 +24,22 @@ namespace Woof.UI
     public partial class SleepAnimationPage : Page
     {
         public Animal animal { get; set; }
-        DispatcherTimer timer = new DispatcherTimer();
         IRepository _storage = Factory.Instance.GetStorage();
         public SleepAnimationPage(Animal an)
         {
             InitializeComponent();
             animal = an;
             UpdateProgressSleep();
-            //_storage.IncreaseSleepValue(true);
-            //TimerStart();
+            
         }
-        public void TimerStart()
-        {
-            timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = new TimeSpan(0, 0, 30);
-            timer.Start();
-        }
-        private void TimerTick(object sender, EventArgs e)
-        {
-            animal.FoodPoints -= 1;
-            animal.SleepPoints -= 1;
-            UpdateProgressSleep();
-            animal.PoopPoints -= 1;
-        }
+        
         public void UpdateProgressSleep()
         {
             _storage.IncreaseSleepValue(true);
+            if (animal.SleepPoints == 0)
+            {
+                NavigationService.Navigate(new DeathPage());
+            }
             ProgressSleep.Value = animal.SleepPoints;
         }
         private void wakingupButton_Click(object sender, RoutedEventArgs e)
