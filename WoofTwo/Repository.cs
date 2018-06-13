@@ -28,6 +28,8 @@ namespace WoofTwo
         Context cntx = new Context();
 
         private const int _intervalDecrease = 1000 * 15;
+        public const int _intervalNormalizePoop = 2000;
+        public const int _intervalSleepIncrease = 15000;
         private const string _api = "AIzaSyAWCXeLdhMEZBwmQ2Eh6MTsq8usHPJmESA";
 
         public Repository()
@@ -457,15 +459,15 @@ namespace WoofTwo
                 }
             }
         }
-
+       
         public void IncreaseSleepValue(bool boolean)
         {
             Timer a = new Timer();
-            a.Interval = 150000;
+            a.Interval = _intervalSleepIncrease;
             a.Elapsed += Sleep_Increase;
             a.AutoReset = true;
             a.Enabled = true;
-            if (boolean == true)
+            if (boolean != true)
                 a.Stop();
         }
 
@@ -492,7 +494,6 @@ namespace WoofTwo
 
 
         }
-
         public void IncreaseFoodValue(int points)
         {
             //using (var db = new Context())
@@ -513,11 +514,12 @@ namespace WoofTwo
             //}
 
         }
+      
 
         public void NormalizePoopValue(bool boolean)
         {
             Timer a = new Timer();
-            a.Interval = 2000;
+            a.Interval = _intervalNormalizePoop;
             a.Elapsed += Poop_Decrease;
             a.AutoReset = true;
             a.Enabled = true;
