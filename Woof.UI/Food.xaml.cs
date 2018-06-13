@@ -32,12 +32,12 @@ namespace Woof.UI
             animal = an;
             UpdateProgressFood();
             //_storage.DecreaseNeeds();
-            //TimerStart();
+           //TimerStart();
         }
         public void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = new TimeSpan(0, 0, 15);
+            timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();
         }
         private void TimerTick(object sender, EventArgs e)
