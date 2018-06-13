@@ -14,6 +14,8 @@ namespace WoofTwo.DTO
 
         [JsonProperty("rawOffset")]
         public int OffsetFromUTC { get; set; }
-
+        public DateTime DateTime { get; set; }
+        public string TimeZoneId { get; set; }
+        public string TimeZoneName { get; set; }
     }
 }
