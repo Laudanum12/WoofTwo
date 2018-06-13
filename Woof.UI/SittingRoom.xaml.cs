@@ -51,6 +51,7 @@ namespace Woof.UI
             UpdateProgressSleep();
             UpdateProgressPoop(); 
         }
+
         public void UpdateProgressFood()
         {
             ProgressFood.Value = animal.FoodPoints;

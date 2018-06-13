@@ -26,6 +26,10 @@ namespace WoofTwo
         public List<City> _citiesRepository { get; set; }
         public User CurrentUser { get; set; }
         Context cntx = new Context();
+
+        private const int _intervalDecrease = 1000 * 15;
+        public const int _intervalNormalizePoop = 2000;
+        public const int _intervalSleepIncrease = 15000;
         private const string _api = "AIzaSyAWCXeLdhMEZBwmQ2Eh6MTsq8usHPJmESA";
 
         public Repository()
@@ -36,17 +40,17 @@ namespace WoofTwo
         public void RestoreUsers()
         {
             _userRepository = Users;
+           
+        }
+
+        public void RestoreInfo()
+        {
             _animalRepository = Animals;
             _speciesRepository = Species;
             _citiesRepository = Cities;
         }
 
-        public void RestoreInfo()
-        {
-
-        }
-
-
+     
         public List<User> Users
         {
             get
@@ -163,15 +167,15 @@ namespace WoofTwo
 
         public bool CanAddUser(string name)
         {
-            using (var db = new Context())
-            {
-                foreach (var i in db.UserTable)
+            //using (var db = new Context())
+            //{
+                foreach (var i in cntx.UserTable)
                 {
                     if (i.Name == name)
                         return false;
                 }
                 return true;
-            }
+            //}
         }
 
 
@@ -195,28 +199,11 @@ namespace WoofTwo
 
         }
 
-        //public async Task<int> GetCurrentTime(City city)
-        //{
-        //    using (var client = new HttpClient())
-        //    {
-
-        //        var result = await client.GetStringAsync($"https://maps.googleapis.com/maps/api/timezone/json?location=city.Latitude,city.Longitude&timestamp=1331161200&key=_api");
-        //        //Thread.Sleep(); заставить задержку
-        //        var data = JsonConvert.DeserializeObject<Item>(result);
-
-        //        return data.Items.Select(item => new SearchResult
-        //        {
-        //            Title = item.Title,
-        //            Description = item.Snippet,
-        //            Link = item.Link
-        //        }).ToList();
-        //    }
-
         private async Task<DateTime> GetConvertedDateTimeBasedOnAddress(City city, long timestamp)
         {
             using (var client = new HttpClient())
             {
-                var resultt = await client.GetStringAsync($"https://maps.googleapis.com/maps/api/timezone/json?location=city.Latitude,city.Longitude&timestamp=timespa&key=_api");
+                var resultt = await client.GetStringAsync($"https://maps.googleapis.com/maps/api/timezone/json?location=city.Latitude,city.Longitude&timestamp=timestamp&key=_api");
 
                 var data = JsonConvert.DeserializeObject<Item>(resultt);
                 DateTime dt = GetDateTimeFromUnixTimeStamp(Convert.ToDouble(timestamp) + Convert.ToDouble(data.OffsetForSummer) + Convert.ToDouble(data.OffsetFromUTC));
@@ -290,11 +277,8 @@ namespace WoofTwo
                 }
             }
             // }
-
-
+            
             return null;
-
-
         }
 
         public Animal FindAnimal(User us)
@@ -442,10 +426,11 @@ namespace WoofTwo
         }
 
 
+
         public void DecreaseNeeds()
         {
             Timer a = new Timer();
-            a.Interval = 5000;
+            a.Interval = _intervalDecrease;
             a.Elapsed += A_Elapsed;
             a.AutoReset = true;
             a.Enabled = true;
@@ -474,15 +459,15 @@ namespace WoofTwo
                 }
             }
         }
-
+       
         public void IncreaseSleepValue(bool boolean)
         {
             Timer a = new Timer();
-            a.Interval = 5;
+            a.Interval = _intervalSleepIncrease;
             a.Elapsed += Sleep_Increase;
             a.AutoReset = true;
             a.Enabled = true;
-            if (boolean == true)
+            if (boolean != true)
                 a.Stop();
         }
 
@@ -509,7 +494,6 @@ namespace WoofTwo
 
 
         }
-
         public void IncreaseFoodValue(int points)
         {
             //using (var db = new Context())
@@ -530,11 +514,12 @@ namespace WoofTwo
             //}
 
         }
+      
 
         public void NormalizePoopValue(bool boolean)
         {
             Timer a = new Timer();
-            a.Interval = 3;
+            a.Interval = _intervalNormalizePoop;
             a.Elapsed += Poop_Decrease;
             a.AutoReset = true;
             a.Enabled = true;
@@ -551,6 +536,7 @@ namespace WoofTwo
                     item.PoopPoints += 1;
                     cntx.SaveChanges();
                     CurrentUser.Animal.FoodPoints += 1;
+                    
                 }
                 else
                     NormalizePoopValue(true);

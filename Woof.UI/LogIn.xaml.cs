@@ -24,12 +24,13 @@ namespace Woof.UI
     public partial class LogIn : Page
     {
         IRepository _storage = Factory.Instance.GetStorage();
-        
+        public Action CanDownloadData;
         public LogIn()
         {
             InitializeComponent();
             
             ShowsNavigationUI = false;
+            CanDownloadData += _storage.RestoreInfo ;
             
         }
 
@@ -56,6 +57,7 @@ namespace Woof.UI
             var pswrd = pswrdPasswordBox.Password;
             if (_storage.UserInStorage(login, pswrd) != null)
             {
+                CanDownloadData?.Invoke();
                 if (_storage.UserInStorage(login, pswrd).Animal == null)
                     NavigationService.Navigate(new PetsChoosing());
                 else {
