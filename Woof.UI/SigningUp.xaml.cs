@@ -27,12 +27,13 @@ namespace Woof.UI
     public partial class SigningUp : Page
     {
         IRepository _storage = Factory.Instance.GetStorage();
+        public Action CanDownloadData;
 
         public SigningUp()
         {
             InitializeComponent();
             cityComboBox.ItemsSource = _storage.Cities;
-
+            CanDownloadData += _storage.RestoreInfo;
         }
 
         private void signingupButton_Click(object sender, RoutedEventArgs e)
@@ -46,6 +47,7 @@ namespace Woof.UI
             {
                 if (_storage.CanAddUser(login) == true)
                 {
+                    CanDownloadData?.Invoke();
                     _storage.AddUSer(city.CityName, DateTime.Now, email, pswrd, login);
                     _storage.UserInStorage(login, pswrd);
                     NavigationService.Navigate(new PetsChoosing());
