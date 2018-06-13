@@ -40,6 +40,6 @@
         <Label x:Name="label" Content="Poopin'..." HorizontalAlignment="Left" Height="105.738" Margin="188.993,165.096,0,0" VerticalAlignment="Top" Width="156.148" FontFamily="Matura MT Script Capitals" FontSize="36" Foreground="#FF428DDD"/>
         <Label x:Name="label1" Content="Poopin'..." HorizontalAlignment="Left" Height="105.738" Margin="345.141,214.276,0,0" VerticalAlignment="Top" Width="156.148" FontFamily="Matura MT Script Capitals" FontSize="36" Foreground="#FF428DDD"/>
         <Button Margin="20" Content="Get back" Grid.Row="2" VerticalAlignment="Center" Click="gettingbackButton_Click" Name="gettingbackButton" FontFamily="Matura MT Script Capitals" FontSize="48" Grid.ColumnSpan="2"/>
-        <ProgressBar Height="40" Margin="20" Name="ProgressPoop" Grid.Row="1" Minimum="0" Maximum="100" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <ProgressBar Height="40" Margin="20" Name="ProgressPoop" Grid.Row="1" Minimum="0" Maximum="25" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
     </Grid>
 </Page>

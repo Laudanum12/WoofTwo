@@ -34,10 +34,10 @@
         <Button VerticalAlignment="Top" Name="foodButton" Click="foodButton_Click" Width="Auto" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="50" Cursor="Hand">
             <StackPanel Orientation="Horizontal">
                 <Label Foreground="Firebrick" VerticalAlignment="Center" Content="Hungry?" FontFamily="Matura MT Script Capitals" FontSize="22"/>
-                <Image Source="Images/food/еда.png" Width="70" Margin="15"/>
+                <Image Source="Images/food/еда.png" Width="55" Margin="15"/>
             </StackPanel>
         </Button>
-        <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="100" Name="ProgressFood"/>
+        <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="10" Name="ProgressFood"/>
         <TextBlock Foreground="Firebrick" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Hunger" FontFamily="Matura MT Script Capitals" FontSize="48"/>
         <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical">
             <Button Click="totheSittingRoom_Click" Name="totheSittingRoom" Style="{StaticResource ButtonStyle}" Content="Sitting Room"/>

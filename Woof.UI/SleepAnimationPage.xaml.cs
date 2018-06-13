@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using WoofTwo.Classes;
 
 namespace Woof.UI
@@ -22,14 +23,31 @@ namespace Woof.UI
     public partial class SleepAnimationPage : Page
     {
         public Animal animal { get; set; }
-        //public Action Worker { get; set; }
-        public SleepAnimationPage(/*Action worker, */Animal an)
+        DispatcherTimer timer = new DispatcherTimer();
+        public SleepAnimationPage(Animal an)
         {
             InitializeComponent();
             animal = an;
-            //Worker = worker ?? throw new ArgumentNullException();
+            UpdateProgressSleep();
+            TimerStart();
         }
-
+        public void TimerStart()
+        {
+            timer.Tick += new EventHandler(TimerTick);
+            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Start();
+        }
+        private void TimerTick(object sender, EventArgs e)
+        {
+            animal.FoodPoints -= 1;
+            animal.SleepPoints -= 1;
+            UpdateProgressSleep();
+            animal.PoopPoints -= 1;
+        }
+        public void UpdateProgressSleep()
+        {
+            ProgressSleep.Value = animal.SleepPoints;
+        }
         private void wakingupButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new BedRoom(animal));

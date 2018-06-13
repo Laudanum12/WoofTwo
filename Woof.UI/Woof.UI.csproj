@@ -206,24 +206,24 @@
     <Resource Include="Images\backgrounds\стена.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\pets\динозавр.png">
+    <Resource Include="Images\pets\динозавр.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\pets\котожук.png">
+    </Resource>
+    <Resource Include="Images\pets\котожук.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\pets\кролик.png">
+    </Resource>
+    <Resource Include="Images\pets\кролик.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\pets\лиса.png">
+    </Resource>
+    <Resource Include="Images\pets\лиса.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\pets\олень.png">
+    </Resource>
+    <Resource Include="Images\pets\олень.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\pets\скотч.png">
+    </Resource>
+    <Resource Include="Images\pets\скотч.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\backgrounds\бэк.jpg" />
