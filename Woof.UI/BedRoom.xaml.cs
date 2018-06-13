@@ -26,16 +26,27 @@ namespace Woof.UI
     {
         public Animal animal { get; set; }
         IRepository _storage = Factory.Instance.GetStorage();
+        DispatcherTimer timer = new DispatcherTimer();
         public BedRoom(Animal an)
         {
             InitializeComponent();
             animal = an;
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
+            _storage.DecreaseNeeds();
             UpdateProgressSleep();
-            
+            TimerStart();
         }
-        
+        private void TimerStart()
+        {
+            timer.Tick += new EventHandler(TimerTick);
+            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Start();
+        }
+        private void TimerTick(object sender, EventArgs e)
+        {
+            UpdateProgressSleep();
+        }
         public void UpdateProgressSleep()
         {
             ProgressSleep.Value = animal.SleepPoints;

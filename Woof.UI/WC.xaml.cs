@@ -25,6 +25,7 @@ namespace Woof.UI
     {
         IRepository _storage = Factory.Instance.GetStorage();
         public Animal animal { get; set; }
+        DispatcherTimer timer = new DispatcherTimer();
         public WC(Animal an)
         {
             InitializeComponent();
@@ -32,8 +33,18 @@ namespace Woof.UI
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
             UpdateProgressPoop();
+            TimerStart();
         }
-        
+        public void TimerStart()
+        {
+            timer.Tick += new EventHandler(TimerTick);
+            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Start();
+        }
+        private void TimerTick(object sender, EventArgs e)
+        {
+            UpdateProgressPoop();
+        }
         public void UpdateProgressPoop()
         {
             _storage.NormalizePoopValue(true);

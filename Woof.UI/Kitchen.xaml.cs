@@ -25,6 +25,7 @@ namespace Woof.UI
     {
         public Animal animal { get; set; }
         IRepository _storage = Factory.Instance.GetStorage();
+        DispatcherTimer timer = new DispatcherTimer();
         public Kitchen(Animal an)
         {
             InitializeComponent();
@@ -32,8 +33,20 @@ namespace Woof.UI
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
             //img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
+
+            _storage.DecreaseNeeds();
             UpdateProgressFood();
-            //TimerStart();
+            TimerStart();
+        }
+        public void TimerStart()
+        {
+            timer.Tick += new EventHandler(TimerTick);
+            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Start();
+        }
+        private void TimerTick(object sender, EventArgs e)
+        {
+            UpdateProgressFood();
         }
         private void foodButton_Click(object sender, RoutedEventArgs e)
         {
@@ -42,7 +55,7 @@ namespace Woof.UI
         public void UpdateProgressFood()
         {
             ProgressFood.Value = animal.FoodPoints;
-            if(animal.FoodPoints==0)
+            if (animal.FoodPoints == 0)
             {
                 NavigationService.Navigate(new DeathPage());
             }

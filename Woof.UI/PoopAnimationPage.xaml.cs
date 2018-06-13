@@ -25,14 +25,25 @@ namespace Woof.UI
     {
         public Animal animal { get; set; }
         IRepository _storage = Factory.Instance.GetStorage();
+        DispatcherTimer timer = new DispatcherTimer();
         public PoopAnimationPage(Animal an)
         {
             InitializeComponent();
             animal = an;
             UpdateProgressPoop();
-           
+            //_storage.DecreaseNeeds();
+            TimerStart();
         }
-       
+        public void TimerStart()
+        {
+            timer.Tick += new EventHandler(TimerTick);
+            timer.Interval = new TimeSpan(0, 0, 5);
+            timer.Start();
+        }
+        private void TimerTick(object sender, EventArgs e)
+        {
+            UpdateProgressPoop();
+        }
         public void UpdateProgressPoop()
         {
             _storage.NormalizePoopValue(true);
