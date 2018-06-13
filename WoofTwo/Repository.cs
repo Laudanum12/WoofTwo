@@ -483,7 +483,7 @@ namespace WoofTwo
         {
             DispatcherTimer a = new DispatcherTimer();
             a.Tick += Sleep_Increase; ;
-            a.Interval = new TimeSpan(0, 0, 5);
+            a.Interval = new TimeSpan(0, 0, 2);
             a.Start();
             //    Timer a = new Timer();
             //    a.Interval = _intervalSleepIncrease;
@@ -543,7 +543,7 @@ namespace WoofTwo
             if (boolean != true)
                 a.Stop();
             a.Tick += Poop_Decrease; ; ;
-            a.Interval = new TimeSpan(0, 0, 5);
+            a.Interval = new TimeSpan(0, 0, 2);
             a.Start();
             
             
