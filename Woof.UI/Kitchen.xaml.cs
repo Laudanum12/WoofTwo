@@ -34,7 +34,7 @@ namespace Woof.UI
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
             //img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
             UpdateProgressFood();
-            TimerStart();
+            //TimerStart();
         }
         public void TimerStart()
         {

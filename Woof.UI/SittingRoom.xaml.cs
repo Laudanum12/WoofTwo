@@ -36,7 +36,7 @@ namespace Woof.UI
             UpdateProgressFood();
             UpdateProgressSleep();
             UpdateProgressPoop();
-            TimerStart();
+            //TimerStart();
 
         }
         private void TimerStart()

@@ -68,6 +68,9 @@
     <Compile Include="BedRoom.xaml.cs">
       <DependentUpon>BedRoom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeathPage.xaml.cs">
+      <DependentUpon>DeathPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Food.xaml.cs">
       <DependentUpon>Food.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
       <DependentUpon>WC.xaml</DependentUpon>
     </Compile>
     <Page Include="BedRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeathPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -185,6 +192,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\backgrounds\кладбище.jpg" />
     <Resource Include="Images\backgrounds\рег.jpg" />
   </ItemGroup>
   <ItemGroup>

@@ -25,7 +25,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 0 0 10" HorizontalAlignment="Center">
-            <Label Name="OladushkiLabel" Content="6" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
+            <TextBlock Name="OladushkiLabel" Text="6" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
             <Button Margin="5" Width="60" Name="OladushkiButton" Click="OladushkiButton_Click">
                 <StackPanel>
                     <Image Source="Images/Food/оладушки.png" Height="40"/>
@@ -38,10 +38,10 @@
                     <!--<Label Content="15" HorizontalAlignment="Center"/>-->
                 </StackPanel>
             </Button>
-            <Label Name="FastfoodLabel" Content="9" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
+            <TextBlock Name="FastfoodLabel" Text="9" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" Margin="0 0 0 10" HorizontalAlignment="Center">
-            <Label Name="PizzaLabel" Content="13" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
+            <TextBlock Name="PizzaLabel" Text="13" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
             <Button Margin="5" Width="60" Name="PizzaButton" Click="PizzaButton_Click">
                 <StackPanel>
                     <Image Source="Images/Food/пицца.png" Height="40"/>
@@ -54,10 +54,10 @@
                     <!--<Label Content="15" HorizontalAlignment="Center"/>-->
                 </StackPanel>
             </Button>
-            <Label Name="PechenyeLabel" Content="4" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
+            <TextBlock Name="PechenyeLabel" Text="4" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="1" Margin="0 0 0 10" HorizontalAlignment="Center">
-            <Label Name="SushiLabel" Content="17" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
+            <TextBlock Name="SushiLabel" Text="17" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
             <Button Margin="5" Width="60" Name="SushiButton" Click="SushiButton_Click">
                 <StackPanel>
                     <Image Source="Images/Food/суши.png" Height="40"/>
@@ -70,7 +70,7 @@
                     <!--<Label Content="15" HorizontalAlignment="Center"/>-->
                 </StackPanel>
             </Button>
-            <Label Name="EggsLabel" Content="11" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
+            <TextBlock Name="EggsLabel" Text="11" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" FontFamily="Matura MT Script Capitals" FontSize="36"/>
         </StackPanel>
         <ProgressBar Grid.Row="0" Grid.Column="0" Margin="20" Name="ProgressFood" Minimum="0" Maximum="10"/>
         <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="SteelBlue" Grid.Column="0" Text="Hunger" FontFamily="Matura MT Script Capitals" FontSize="48"/>

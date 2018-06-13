@@ -31,6 +31,10 @@ namespace WoofTwo
         string GetAPath(string species);
         string GetImageHelper(Animal an);
 
+        void IncreaseFoodValue(int points);
+        void IncreaseSleepValue(bool boolean);
+        void NormalizePoopValue(bool boolean);
+
 
 
     }

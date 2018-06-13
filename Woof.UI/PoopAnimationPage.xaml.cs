@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using WoofTwo;
 using WoofTwo.Classes;
 
 namespace Woof.UI
@@ -23,13 +24,14 @@ namespace Woof.UI
     public partial class PoopAnimationPage : Page
     {
         public Animal animal { get; set; }
+        IRepository _storage = Factory.Instance.GetStorage();
         DispatcherTimer timer = new DispatcherTimer();
         public PoopAnimationPage(Animal an)
         {
             InitializeComponent();
             animal = an;
-            UpdateProgressPoop();
-            TimerStart();
+            //UpdateProgressPoop();
+            //TimerStart();
         }
         public void TimerStart()
         {

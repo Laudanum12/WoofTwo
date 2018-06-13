@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using WoofTwo;
 using WoofTwo.Classes;
 
 namespace Woof.UI
@@ -23,13 +24,14 @@ namespace Woof.UI
     public partial class Food : Page
     {
         public Animal animal { get; set; }
+        IRepository _storage = Factory.Instance.GetStorage();
         DispatcherTimer timer = new DispatcherTimer();
         public Food(Animal an)
         {
             InitializeComponent();
             animal = an;
             UpdateProgressFood();
-            TimerStart();
+            //TimerStart();
         }
         public void TimerStart()
         {
@@ -47,40 +49,48 @@ namespace Woof.UI
         public void UpdateProgressFood()
         {
             ProgressFood.Value = animal.FoodPoints;
+           
         }
         private void OladushkiButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _storage.IncreaseFoodValue(int.Parse(OladushkiLabel.Text));
+            UpdateProgressFood();
         }
 
         private void FastfoodButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _storage.IncreaseFoodValue(int.Parse(FastfoodLabel.Text));
+            UpdateProgressFood();
         }
 
         private void PizzaButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _storage.IncreaseFoodValue(int.Parse(PizzaLabel.Text));
+            UpdateProgressFood();
         }
 
         private void PechenyeButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _storage.IncreaseFoodValue(int.Parse(PechenyeLabel.Text));
+            UpdateProgressFood();
         }
 
         private void SushiButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _storage.IncreaseFoodValue(int.Parse(SushiLabel.Text));
+            UpdateProgressFood();
         }
 
         private void EggsButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _storage.IncreaseFoodValue(int.Parse(EggsLabel.Text));
+            UpdateProgressFood();
         }
 
         private void gobackButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Kitchen(animal));
+            UpdateProgressFood();
         }
     }
 }

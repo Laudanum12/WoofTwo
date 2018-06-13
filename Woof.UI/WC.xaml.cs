@@ -33,7 +33,7 @@ namespace Woof.UI
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
             UpdateProgressPoop();
-            TimerStart();
+            //TimerStart();
             //img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
         }
 
@@ -52,6 +52,7 @@ namespace Woof.UI
         }
         public void UpdateProgressPoop()
         {
+            _storage.NormalizePoopValue(true);
             ProgressPoop.Value = animal.PoopPoints;
         }
         private void totheBedroom_Click(object sender, RoutedEventArgs e)

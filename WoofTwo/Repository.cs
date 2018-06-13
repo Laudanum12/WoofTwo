@@ -43,7 +43,7 @@ namespace WoofTwo
 
         public void RestoreInfo()
         {
-            
+
         }
 
 
@@ -53,24 +53,24 @@ namespace WoofTwo
             {
                 //using (var db = new Context())
                 //{
-                    List<User> users = new List<User>();
-                    foreach (var item in cntx.UserTable)
+                List<User> users = new List<User>();
+                foreach (var item in cntx.UserTable)
+                {
+                    User user = new User
                     {
-                        User user = new User
-                        {
-                            City = item.City,
-                            DateOfRegistration = item.DateOfRegistration,
-                            Email = item.Email,
-                            Level = item.Level,
-                            Name = item.Name,
-                            Password = item.Password,
-                            UserId = item.UserId,
-                            Animal = item.Animal
-                        };
-                        users.Add(user);
-                    }
+                        City = item.City,
+                        DateOfRegistration = item.DateOfRegistration,
+                        Email = item.Email,
+                        Level = item.Level,
+                        Name = item.Name,
+                        Password = item.Password,
+                        UserId = item.UserId,
+                        Animal = item.Animal
+                    };
+                    users.Add(user);
+                }
                 cntx.SaveChanges();
-                    return users;
+                return users;
                 //}
             }
         }
@@ -80,20 +80,20 @@ namespace WoofTwo
             {
                 //using (var db = new Context())
                 //{
-                    List<Animal> animals = new List<Animal>();
-                    foreach (var item in cntx.AnimalTable)
+                List<Animal> animals = new List<Animal>();
+                foreach (var item in cntx.AnimalTable)
+                {
+                    Animal animal = new Animal
                     {
-                        Animal animal = new Animal
-                        {
-                            AnimalId = item.AnimalId,
-                            Name = item.Name,
-                            SpeciesId = item.SpeciesId,
-                            Species = item.Species
-                        };
-                        animals.Add(animal);
-                    }
-                   
-                    return animals;
+                        AnimalId = item.AnimalId,
+                        Name = item.Name,
+                        SpeciesId = item.SpeciesId,
+                        Species = item.Species
+                    };
+                    animals.Add(animal);
+                }
+
+                return animals;
                 //}
             }
         }
@@ -116,7 +116,7 @@ namespace WoofTwo
                         };
                         species.Add(_species);
                     }
-                    
+
                     return species;
                 }
 
@@ -142,23 +142,23 @@ namespace WoofTwo
                         cities.Add(city);
                     }
                     var newcities = cities.OrderBy(c => c.CityName).Select(f => new City { CityName = f.CityName, CityId = f.CityId, Latitude = f.Latitude, Longitude = f.Longitude }).ToList();
-                    
+
                     return newcities;
                 }
-              
+
             }
         }
         public User UserInStorage(string name, string password)
         {
             string hashPassword = PasswordHelper.GetHash(password);
-           // using (var db = new Context())
+            // using (var db = new Context())
             //{
-                User User = cntx.UserTable.FirstOrDefault(q => q.Name == name && q.Password == hashPassword);
-                //if(User != null)
-                    CurrentUser = User;
-                return User;
+            User User = cntx.UserTable.FirstOrDefault(q => q.Name == name && q.Password == hashPassword);
+            //if(User != null)
+            CurrentUser = User;
+            return User;
 
-           // }
+            // }
         }
 
         public bool CanAddUser(string name)
@@ -173,26 +173,26 @@ namespace WoofTwo
                 return true;
             }
         }
-        
 
-        public void AddUSer( string _city, DateTime _dateOfRegistration, string _email, string _password, string _name)
+
+        public void AddUSer(string _city, DateTime _dateOfRegistration, string _email, string _password, string _name)
         {
             //using (var db = new Context())
             //{
 
-                cntx.UserTable.Add(new Classes.User
-                {
-                    City = _city,
-                    DateOfRegistration = _dateOfRegistration,
-                    Email = _email,
-                    Level = 1,
-                    Password = PasswordHelper.GetHash(_password),
-                    Name = _name,
-                });
-                cntx.SaveChanges();
-           //}
-           
-            
+            cntx.UserTable.Add(new Classes.User
+            {
+                City = _city,
+                DateOfRegistration = _dateOfRegistration,
+                Email = _email,
+                Level = 1,
+                Password = PasswordHelper.GetHash(_password),
+                Name = _name,
+            });
+            cntx.SaveChanges();
+            //}
+
+
         }
 
         //public async Task<int> GetCurrentTime(City city)
@@ -214,7 +214,7 @@ namespace WoofTwo
 
         private async Task<DateTime> GetConvertedDateTimeBasedOnAddress(City city, long timestamp)
         {
-            using(var client = new HttpClient())
+            using (var client = new HttpClient())
             {
                 var resultt = await client.GetStringAsync($"https://maps.googleapis.com/maps/api/timezone/json?location=city.Latitude,city.Longitude&timestamp=timespa&key=_api");
 
@@ -222,7 +222,7 @@ namespace WoofTwo
                 DateTime dt = GetDateTimeFromUnixTimeStamp(Convert.ToDouble(timestamp) + Convert.ToDouble(data.OffsetForSummer) + Convert.ToDouble(data.OffsetFromUTC));
                 return dt;
             }
-            
+
         }
         private long GetUnixTimeStampFromDateTime(DateTime dt)
         {
@@ -240,7 +240,7 @@ namespace WoofTwo
 
         public string GetAPath(string species)
         {
-            
+
             if (species == "Dinosaur")
             {
                 string imgPath = Path.GetFullPath(@"..\..\Images\pets\динозавр.png");
@@ -275,42 +275,42 @@ namespace WoofTwo
                 return null;
 
         }
-       
+
 
         public Species FindSpecies(string name)
         {
             //using (var db = new Context())
             //{
-                foreach (var species in cntx.SpeciesTable)
+            foreach (var species in cntx.SpeciesTable)
+            {
+                if (species.SpeciesName == name)
                 {
-                    if (species.SpeciesName == name)
-                    {
 
-                        return species;
-                    }
+                    return species;
                 }
-           // }
-                
-               
-                return null;
+            }
+            // }
+
+
+            return null;
 
 
         }
 
         public Animal FindAnimal(User us)
         {
-           // using (var db = new Context())
-           // {
-                foreach(var animal in cntx.AnimalTable)
+            // using (var db = new Context())
+            // {
+            foreach (var animal in cntx.AnimalTable)
+            {
+                if (animal.Name == us.Animal.Name)
                 {
-                    if (animal.Name == us.Animal.Name)
-                    {
-                   // cntx.SaveChanges();
-                        return animal;
+                    // cntx.SaveChanges();
+                    return animal;
 
-                    }
                 }
-                return null;
+            }
+            return null;
             //}
         }
 
@@ -318,19 +318,19 @@ namespace WoofTwo
         {
             //using (var db = new Context())
             //{
-                foreach (var item in _speciesRepository)
+            foreach (var item in _speciesRepository)
+            {
+                if (species.SpeciesName == item.SpeciesName)
                 {
-                    if (species.SpeciesName == item.SpeciesName)
+                    foreach (var food in cntx.FoodTable)
                     {
-                        foreach(var food in cntx.FoodTable)
+                        if (food.FoodId == item.Needs.FoodIdFK)
                         {
-                            if(food.FoodId == item.Needs.FoodIdFK)
-                            {
                             return food.FoodPoints;
-                            }
                         }
                     }
                 }
+            }
 
 
             //}
@@ -343,26 +343,26 @@ namespace WoofTwo
 
             //using (var db = new Context())
             //{
-                foreach (var item in _speciesRepository)
+            foreach (var item in _speciesRepository)
+            {
+                if (species.SpeciesName == item.SpeciesName)
                 {
-                    if (species.SpeciesName == item.SpeciesName)
+                    foreach (var sleep in cntx.SleepTable)
                     {
-                        foreach (var sleep in cntx.SleepTable)
+                        if (sleep.SleepId == item.Needs.SleepIdFK)
                         {
-                            if (sleep.SleepId == item.Needs.SleepIdFK)
-                            {
 
-                                cntx.SaveChanges();
+                            cntx.SaveChanges();
 
-                                return sleep.SleepPoints;
-                            }
+                            return sleep.SleepPoints;
                         }
-
                     }
+
                 }
+            }
             cntx.SaveChanges();
 
-           // }
+            // }
             return 100;
         }
 
@@ -378,7 +378,7 @@ namespace WoofTwo
                         {
                             if (poop.PoopId == item.Needs.PoopIdFK)
                             {
-                                
+
 
                                 return poop.PoopPoints;
                             }
@@ -386,9 +386,9 @@ namespace WoofTwo
 
                     }
                 }
-                
 
-           }
+
+            }
             return 100;
         }
 
@@ -396,49 +396,49 @@ namespace WoofTwo
         {
             //using (var db = new Context())
             //{
-                foreach (var item in cntx.SpeciesTable)
+            foreach (var item in cntx.SpeciesTable)
+            {
+                if (item.SpeciesId == an.SpeciesId)
                 {
-                    if (item.SpeciesId == an.SpeciesId)
-                    {
-                        
-                        return item.SpeciesName;
-                    }
-                    
+
+                    return item.SpeciesName;
                 }
-               
-                return null;
+
+            }
+
+            return null;
             //}
         }
-        
-        
+
+
 
         public Animal AddIncompleteAnimal(string name)
         {
             //using(var db = new Context())
             //{
-                Species species = FindSpecies(name);
-                var animal = new Animal
-                {
-                    Species = FindSpecies(name),
-                    SpeciesId = FindSpecies(name).SpeciesId,
-                    FoodPoints =  FindFoodPoints(species),
-                    PoopPoints = FindPoopPoints(species),
-                    SleepPoints = FindSleepPoints(species)
-                };
-                cntx.SaveChanges();
-                return animal;
+            Species species = FindSpecies(name);
+            var animal = new Animal
+            {
+                Species = FindSpecies(name),
+                SpeciesId = FindSpecies(name).SpeciesId,
+                FoodPoints = FindFoodPoints(species),
+                PoopPoints = FindPoopPoints(species),
+                SleepPoints = FindSleepPoints(species)
+            };
+            cntx.SaveChanges();
+            return animal;
             //}
-           
+
         }
 
         public void AddAnAnimal(Animal animal)
         {
             //using (var db = new Context())
             //{
-                animal.AnimalId = CurrentUser.UserId;
-                cntx.AnimalTable.Add(animal);
-                cntx.SaveChanges();
-           // }
+            animal.AnimalId = CurrentUser.UserId;
+            cntx.AnimalTable.Add(animal);
+            cntx.SaveChanges();
+            // }
         }
 
 
@@ -454,9 +454,9 @@ namespace WoofTwo
         private void A_Elapsed(object sender, ElapsedEventArgs e)
         {
 
-            using( var db = new Context())
+            using (var db = new Context())
             {
-                foreach(var item in db.AnimalTable)
+                foreach (var item in db.AnimalTable)
                 {
                     if (CurrentUser.UserId == item.AnimalId && CurrentUser.Animal.PoopPoints > 0 &&
                         CurrentUser.Animal.FoodPoints > 0 && CurrentUser.Animal.SleepPoints > 0)
@@ -473,16 +473,16 @@ namespace WoofTwo
                         break;
                 }
             }
-           
 
-           
+
+
         }
 
         public void IncreaseSleepValue(bool boolean)
         {
             Timer a = new Timer();
             a.Interval = 150000;
-            a.Elapsed += Sleep_Increase; 
+            a.Elapsed += Sleep_Increase;
             a.AutoReset = true;
             a.Enabled = true;
             if (boolean == true)
@@ -493,9 +493,9 @@ namespace WoofTwo
         {
             //using (var db = new Context())
             //{
-                foreach (var item in cntx.AnimalTable)
-                {
-                if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) < item.FoodPoints)
+            foreach (var item in cntx.AnimalTable)
+            {
+                if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) < item.SleepPoints)
                 {
 
                     item.SleepPoints += 1;
@@ -506,32 +506,32 @@ namespace WoofTwo
                 else
                     IncreaseSleepValue(true);
             }
-           // }
-            
-            
-            
-           
+            // }
+
+
+
+
         }
 
         public void IncreaseFoodValue(int points)
         {
             //using (var db = new Context())
             //{
-                foreach (var item in cntx.AnimalTable)
+            foreach (var item in cntx.AnimalTable)
+            {
+                if (CurrentUser.UserId == item.AnimalId && FindFoodPoints(CurrentUser.Animal.Species) < item.FoodPoints)
                 {
-                    if (CurrentUser.UserId == item.AnimalId && FindFoodPoints(CurrentUser.Animal.Species) < item.FoodPoints)
-                    {
-                        item.FoodPoints += points;
-                        cntx.SaveChanges();
-                        CurrentUser.Animal.FoodPoints += points;
-                    }
-                    else
-                        break;
-                       
-                    
+                    item.FoodPoints += points;
+                    cntx.SaveChanges();
+                    CurrentUser.Animal.FoodPoints += points;
                 }
+                else
+                    break;
+
+
+            }
             //}
-          
+
         }
 
         public void NormalizePoopValue(bool boolean)
@@ -558,7 +558,7 @@ namespace WoofTwo
                 else
                     NormalizePoopValue(true);
             }
-            
+
         }
     }
 }
