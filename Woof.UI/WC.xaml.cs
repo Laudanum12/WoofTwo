@@ -36,6 +36,7 @@ namespace Woof.UI
             TimerStart();
             //img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
         }
+
         public void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);

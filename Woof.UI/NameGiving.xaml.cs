@@ -41,6 +41,7 @@ namespace Woof.UI
             an.Name = name;
             _storage.AddAnAnimal(an);
             NavigationService.Navigate(new SittingRoom(an));
+            _storage.DecreaseNeeds();
         }
     }
 }

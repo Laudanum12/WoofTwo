@@ -23,6 +23,7 @@ namespace WoofTwo
         Animal FindAnimal(User us);
 
         Animal AddIncompleteAnimal(string name);
+        void DecreaseNeeds();
 
         void RestoreInfo();
         //string FindImages();

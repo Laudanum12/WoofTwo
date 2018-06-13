@@ -60,6 +60,7 @@ namespace Woof.UI
                     NavigationService.Navigate(new PetsChoosing());
                 else {
                     var animal = _storage.FindAnimal(_storage.CurrentUser);
+                    _storage.DecreaseNeeds();
                     NavigationService.Navigate(new SittingRoom(animal));
                 }
                
