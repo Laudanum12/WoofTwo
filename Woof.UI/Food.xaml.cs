@@ -44,10 +44,11 @@ namespace Woof.UI
         {
             UpdateProgressFood();
         }
+
         public void UpdateProgressFood()
         {
             ProgressFood.Value = animal.FoodPoints;
-            if (animal.FoodPoints==0)
+            if (animal.FoodPoints == 0)
             {
                 NavigationService.Navigate(new DeathPage());
             }
