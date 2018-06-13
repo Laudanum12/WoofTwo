@@ -33,25 +33,22 @@ namespace Woof.UI
             animal = an;
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
+            _storage.DecreaseNeeds();
             UpdateProgressFood();
             UpdateProgressSleep();
             UpdateProgressPoop();
-            //TimerStart();
-
+            TimerStart();
         }
         private void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Interval = new TimeSpan(0, 0, 5);
             timer.Start();
         }
         private void TimerTick(object sender, EventArgs e)
         {
-            animal.FoodPoints -= 1;
             UpdateProgressFood();
-            animal.SleepPoints -= 1;
             UpdateProgressSleep();
-            animal.PoopPoints -= 1;
             UpdateProgressPoop(); 
         }
         public void UpdateProgressFood()

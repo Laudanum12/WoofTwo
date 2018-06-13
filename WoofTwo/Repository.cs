@@ -445,7 +445,7 @@ namespace WoofTwo
         public void DecreaseNeeds()
         {
             Timer a = new Timer();
-            a.Interval = 432000000;
+            a.Interval = 5000;
             a.Elapsed += A_Elapsed;
             a.AutoReset = true;
             a.Enabled = true;
@@ -473,15 +473,12 @@ namespace WoofTwo
                         break;
                 }
             }
-
-
-
         }
 
         public void IncreaseSleepValue(bool boolean)
         {
             Timer a = new Timer();
-            a.Interval = 150000;
+            a.Interval = 5;
             a.Elapsed += Sleep_Increase;
             a.AutoReset = true;
             a.Enabled = true;
@@ -537,7 +534,7 @@ namespace WoofTwo
         public void NormalizePoopValue(bool boolean)
         {
             Timer a = new Timer();
-            a.Interval = 2000;
+            a.Interval = 3;
             a.Elapsed += Poop_Decrease;
             a.AutoReset = true;
             a.Enabled = true;
