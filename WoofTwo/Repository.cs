@@ -519,7 +519,6 @@ namespace WoofTwo
             
         public void IncreaseFoodValue(int points)
         {
-            
             foreach (var item in cntx.AnimalTable)
             {
                 if (CurrentUser.UserId == item.AnimalId && FindFoodPoints(CurrentUser.Animal.Species) < item.FoodPoints)
@@ -527,8 +526,6 @@ namespace WoofTwo
                     item.FoodPoints += points;
                     CurrentUser.Animal.FoodPoints += points;
                 }
-
-
             }
             cntx.SaveChanges();
             
@@ -542,7 +539,7 @@ namespace WoofTwo
             DispatcherTimer a = new DispatcherTimer();
             if (boolean != true)
                 a.Stop();
-            a.Tick += Poop_Decrease; ; ;
+            a.Tick += Poop_Decrease; 
             a.Interval = new TimeSpan(0, 0, 5);
             a.Start();
             
