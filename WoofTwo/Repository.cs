@@ -452,7 +452,7 @@ namespace WoofTwo
                         CurrentUser.Animal.FoodPoints += points;
                     }
                     else
-                        item.PoopPoints == FindFoodPoints(CurrentUser.Animal.Species);
+                        item.PoopPoints = FindFoodPoints(CurrentUser.Animal.Species);
 
 
                 }
