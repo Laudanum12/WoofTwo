@@ -48,7 +48,6 @@ namespace Woof.UI
         }
         public void UpdateProgressPoop()
         {
-            
             ProgressPoop.Value = animal.PoopPoints;
             if (_storage.AnimalIsDead() == true)
             {

@@ -34,35 +34,24 @@ namespace Woof.UI
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
             _storage.DecreaseNeeds();
-            UpdateProgressFood();
-            UpdateProgressSleep();
-            UpdateProgressPoop();
+            ProgressFood.Value = animal.FoodPoints;
+            ProgressSleep.Value = animal.SleepPoints;
+            ProgressPoop.Value = animal.PoopPoints;
             TimerStart();
         }
         private void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
+            timer.Tick += new EventHandler();
             timer.Interval = new TimeSpan(0, 0, 30);
             timer.Start();
         }
         private void TimerTick(object sender, EventArgs e)
         {
-            UpdateProgressFood();
-            UpdateProgressSleep();
-            UpdateProgressPoop(); 
-        }
-
-        public void UpdateProgressFood()
-        {
             ProgressFood.Value = animal.FoodPoints;
-        }
-        public void UpdateProgressSleep()
-        {
             ProgressSleep.Value = animal.SleepPoints;
-        }
-        public void UpdateProgressPoop()
-        {
             ProgressPoop.Value = animal.PoopPoints;
+            frame.NavigationService.Refresh();
         }
 
         private void totheKitchen_Click(object sender, RoutedEventArgs e)

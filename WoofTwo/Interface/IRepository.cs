@@ -25,12 +25,15 @@ namespace WoofTwo
         void AddAnAnimal(Animal animal);
         void AddUSer(string _city, DateTime _dateOfRegistration, string _email, string _password, string _name);
 
+        City FindCity(string city);
         Species FindSpecies(string name);
         Animal FindAnimal(User us);
         int FindFoodPoints(Species species);
         int FindSleepPoints(Species species);
         int FindPoopPoints(Species species);
-        
+
+        Task<DateTime> GetConvertedDateTimeBasedOnAddress(string cityName);
+
         string GetAPath(string species);
         string GetImageHelper(Animal an);
 

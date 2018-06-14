@@ -49,12 +49,14 @@ namespace Woof.UI
 
         private void UpdateProgressPoop()
         {
-           
+            NavigationService navigationService = frame.NavigationService;
             ProgressPoop.Value = animal.PoopPoints;
+            //ProgressPoop.
             if (animal.PoopPoints == 0)
             {
                 NavigationService.Navigate(new DeathPage());
             }
+            frame.NavigationService.Refresh();
         }
         private void gettingbackButton_Click(object sender, RoutedEventArgs e)
         {

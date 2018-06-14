@@ -48,10 +48,13 @@ namespace Woof.UI
         public void UpdateProgressSleep()
         {
             ProgressSleep.Value = animal.SleepPoints;
+            NavigationService navigation = frame.NavigationService;
             if (_storage.AnimalIsDead() == true)
             {
-                NavigationService.Navigate(new DeathPage());
+                navigation.Navigate(new DeathPage());
+              
             }
+            frame.NavigationService.Refresh();
         }
         private void wakingupButton_Click(object sender, RoutedEventArgs e)
         {

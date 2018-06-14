@@ -192,13 +192,28 @@ namespace WoofTwo
             cntx.SaveChanges();
         }
 
-        private async Task<DateTime> GetConvertedDateTimeBasedOnAddress(City city, long timestamp)
+        public City FindCity(string city)
+        {
+            foreach(var item in cntx.CityTable)
+            {
+
+                if(item.CityName == city)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        public async Task<DateTime> GetConvertedDateTimeBasedOnAddress(string cityName)
         {
             using (var client = new HttpClient())
             {
-                var resultt = await client.GetStringAsync($"https://maps.googleapis.com/maps/api/timezone/json?location=city.Latitude,city.Longitude&timestamp=timestamp&key=_api");
+                var timestamp = GetUnixTimeStampFromDateTime(DateTime.UtcNow);
+                var city = FindCity(cityName);
+                var result = await client.GetStringAsync($"https://maps.googleapis.com/maps/api/timezone/json?location=city.Latitude,city.Longitude&timestamp=timestamp&key=_api");
 
-                var data = JsonConvert.DeserializeObject<Item>(resultt);
+                var data = JsonConvert.DeserializeObject<Item>(result);
                 DateTime dt = GetDateTimeFromUnixTimeStamp(Convert.ToDouble(timestamp) + Convert.ToDouble(data.OffsetForSummer) + Convert.ToDouble(data.OffsetFromUTC));
                 return dt;
             }
@@ -256,7 +271,7 @@ namespace WoofTwo
                 return null;
 
         }
-
+        
 
         public Species FindSpecies(string name)
         {
@@ -307,9 +322,6 @@ namespace WoofTwo
 
         public int FindSleepPoints(Species species)
         {
-
-            //using (var db = new Context())
-            //{
             foreach (var item in _speciesRepository)
             {
                 if (species.SpeciesName == item.SpeciesName)
@@ -328,8 +340,6 @@ namespace WoofTwo
                 }
             }
             cntx.SaveChanges();
-
-           
             return 100;
         }
 
@@ -344,8 +354,6 @@ namespace WoofTwo
                         {
                             if (poop.PoopId == item.Needs.PoopIdFK)
                             {
-
-
                                 return poop.PoopPoints;
                             }
                         }
@@ -364,15 +372,10 @@ namespace WoofTwo
 
                     return item.SpeciesName;
                 }
-
             }
-
             return null;
-            
         }
-
-
-
+        
         public Animal AddIncompleteAnimal(string name)
         {
             
@@ -387,8 +390,6 @@ namespace WoofTwo
             };
             cntx.SaveChanges();
             return animal;
-            
-
         }
 
         public void AddAnAnimal(Animal animal)
@@ -398,18 +399,16 @@ namespace WoofTwo
             cntx.AnimalTable.Add(animal);
             cntx.SaveChanges();
         }
-
-
-
+        
         public void DecreaseNeeds()
         {
             DispatcherTimer a = new DispatcherTimer();
-            a.Tick += A_Tick;
+            a.Tick += NeedsDecrease;
             a.Interval = new TimeSpan(0, 0, 30);
             a.Start();
         }
 
-        public void A_Tick(object sender, EventArgs e)
+        public void NeedsDecrease(object sender, EventArgs e)
         {
             foreach (var item in cntx.AnimalTable)
             {
@@ -424,14 +423,10 @@ namespace WoofTwo
                     CurrentUser.Animal.FoodPoints -= 1;
                     break;
                 }
-                else if (CurrentUser.Animal.PoopPoints == 0 ||
-                    CurrentUser.Animal.FoodPoints == 0 || CurrentUser.Animal.SleepPoints == 0)
-                    AnimalIsDead();
+                
 
             }
             cntx.SaveChanges();
-
-            
         }
 
         public void Sleep_Increase(object sender, EventArgs e)
@@ -440,7 +435,7 @@ namespace WoofTwo
             {
                 if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) < item.SleepPoints)
                 {
-                    item.SleepPoints += 1;
+                    item.SleepPoints += 5;
                     CurrentUser.Animal.SleepPoints += 1;
                 }
                 cntx.SaveChanges();
@@ -460,8 +455,6 @@ namespace WoofTwo
                 }
             }
             cntx.SaveChanges();
-            
-
         }
 
         public void Poop_Normalize(object sender, EventArgs e)
@@ -470,13 +463,12 @@ namespace WoofTwo
             {
                 if (CurrentUser.UserId == item.AnimalId && FindPoopPoints(CurrentUser.Animal.Species) > item.PoopPoints)
                 {
-                    item.PoopPoints += 1;
+                    item.PoopPoints += 5;
                     CurrentUser.Animal.FoodPoints += 1;
                 }
                
             }
             cntx.SaveChanges();
-
         }
 
 

@@ -40,6 +40,8 @@
         <Label x:Name="label1" Content="Z-" HorizontalAlignment="Left" Height="90" Margin="102,184,0,0" VerticalAlignment="Top" Width="90" FontFamily="Chiller" FontSize="72" Foreground="#7F0C3782"/>
         <Label x:Name="label2" Content="Z" HorizontalAlignment="Left" Height="90" Margin="171,184,0,0" VerticalAlignment="Top" Width="90" FontFamily="Chiller" FontSize="72" Foreground="#7F0C3782"/>
 
+        <Frame Name="frame" Content="Frame"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" Height="100"/>
+
         <Button Margin="20,41.6,20,41" Content="Wake up" Grid.Row="2" VerticalAlignment="Center" Click="wakingupButton_Click" Name="wakingupButton" FontFamily="Matura MT Script Capitals" FontSize="48" Grid.ColumnSpan="2"/>
         <ProgressBar Height="40" Margin="20,55,20,55.4" Name="ProgressSleep" Grid.Row="1" Minimum="0" Maximum="10" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
 

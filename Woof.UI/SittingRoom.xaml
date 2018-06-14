@@ -32,6 +32,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Image Name="img" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Bottom"/>
+        <Frame Name="frame" Content="Frame"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" Height="100"/>
+
         <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="10" Name="ProgressFood"/>
         <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Hunger" FontFamily="Matura MT Script Capitals" FontSize="48"/>
         <ProgressBar Margin="20" Grid.Row="0" Grid.Column="1" Minimum="0" Maximum="10" Name="ProgressSleep"/>

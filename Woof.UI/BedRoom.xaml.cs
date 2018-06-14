@@ -47,13 +47,16 @@ namespace Woof.UI
         {
             UpdateProgressSleep();
         }
+
         public void UpdateProgressSleep()
         {
+
             ProgressSleep.Value = animal.SleepPoints;
             if (animal.SleepPoints == 0)
             {
                 NavigationService.Navigate(new DeathPage());
             }
+            frame.NavigationService.Refresh();
         }
         private void totheKitchen_Click(object sender, RoutedEventArgs e)
         {
