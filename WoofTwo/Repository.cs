@@ -328,9 +328,6 @@ namespace WoofTwo
                     {
                         if (sleep.SleepId == item.Needs.SleepIdFK)
                         {
-
-                            cntx.SaveChanges();
-
                             return sleep.SleepPoints;
                         }
                     }

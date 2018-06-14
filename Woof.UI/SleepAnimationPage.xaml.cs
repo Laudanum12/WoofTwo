@@ -60,7 +60,6 @@ namespace Woof.UI
                 timer.Stop();
                 _storage.AnimalIsDead();
                 navigation.Navigate(new DeathPage());
-              
             }
             frame.NavigationService.Refresh();
         }
