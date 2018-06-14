@@ -35,14 +35,14 @@ namespace Woof.UI
             ProgressFood.Maximum = _storage.FindFoodPoints(_storage.FindSpecies(name));
             //img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
 
-            _storage.DecreaseNeeds();
+           // _storage.DecreaseNeeds();
             UpdateProgressFood();
             TimerStart();
         }
         public void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
-           
+            timer.Tick += new EventHandler(_storage.NeedsDecrease);
             timer.Interval = new TimeSpan(0, 0, 30);
             timer.Start();
         }
@@ -50,6 +50,7 @@ namespace Woof.UI
         {
             UpdateProgressFood();
         }
+
         private void foodButton_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();

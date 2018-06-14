@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WoofTwo;
 
 namespace Woof.UI
 {
@@ -20,6 +21,8 @@ namespace Woof.UI
     /// </summary>
     public partial class DeathPage : Page
     {
+        IRepository _storage = Factory.Instance.GetStorage();
+
         public DeathPage()
         {
             InitializeComponent();
@@ -27,7 +30,9 @@ namespace Woof.UI
 
         private void tryagainButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new PetsChoosing());
+            NavigationService navigation = frame.NavigationService;
+            _storage.AnimalIsDead();
+            navigation.Navigate(new PetsChoosing());
         }
     }
 }

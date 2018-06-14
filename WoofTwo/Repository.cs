@@ -378,7 +378,6 @@ namespace WoofTwo
         
         public Animal AddIncompleteAnimal(string name)
         {
-            
             Species species = FindSpecies(name);
             var animal = new Animal
             {
@@ -423,8 +422,6 @@ namespace WoofTwo
                     CurrentUser.Animal.FoodPoints -= 1;
                     break;
                 }
-                
-
             }
             cntx.SaveChanges();
         }
@@ -433,10 +430,10 @@ namespace WoofTwo
         {
             foreach (var item in cntx.AnimalTable)
             {
-                if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) > item.SleepPoints)
+                if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) < item.SleepPoints)
                 {
-                    item.SleepPoints += 2;
-                    CurrentUser.Animal.SleepPoints += 2;
+                    item.SleepPoints += 10;
+                    CurrentUser.Animal.SleepPoints += 1;
                 }
                 cntx.SaveChanges();
 
@@ -448,7 +445,7 @@ namespace WoofTwo
             foreach (var item in cntx.AnimalTable)
             {
              
-                if (CurrentUser.UserId == item.AnimalId && FindFoodPoints(CurrentUser.Animal.Species) >= item.FoodPoints + points)
+                if (CurrentUser.UserId == item.AnimalId && FindFoodPoints(CurrentUser.Animal.Species) > item.FoodPoints + points)
                 {
                     item.FoodPoints += points;
                     CurrentUser.Animal.FoodPoints += points;
@@ -463,8 +460,8 @@ namespace WoofTwo
             {
                 if (CurrentUser.UserId == item.AnimalId && FindPoopPoints(CurrentUser.Animal.Species) > item.PoopPoints)
                 {
-                    item.PoopPoints += 2;
-                    CurrentUser.Animal.PoopPoints += 2;
+                    item.PoopPoints += 10;
+                    CurrentUser.Animal.FoodPoints += 1;
                 }
                
             }
@@ -472,13 +469,26 @@ namespace WoofTwo
         }
 
 
-        public bool AnimalIsDead()
+        public bool IsAnimalDead()
         {
             if(CurrentUser.Animal.PoopPoints == 0 || CurrentUser.Animal.SleepPoints == 0 || CurrentUser.Animal.FoodPoints == 0)
             {
                 return true;
             }
             return false;
+        }
+
+        public void AnimalIsDead()
+        {
+            foreach(var item in cntx.AnimalTable)
+            {
+                if(CurrentUser.Animal.Name == item.Name)
+                {
+                    cntx.AnimalTable.Remove(item);
+                
+                }
+            }
+            cntx.SaveChanges();
         }
     }
 }
