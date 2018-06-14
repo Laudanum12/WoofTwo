@@ -31,7 +31,7 @@ namespace Woof.UI
             InitializeComponent();
             animal = an;
             UpdateProgressPoop();
-            _storage.DecreaseNeeds();
+            //_storage.DecreaseNeeds();
             TimerStart();
         }
         public void TimerStart()
@@ -53,7 +53,7 @@ namespace Woof.UI
             ProgressPoop.Value = animal.PoopPoints;
             if (_storage.IsAnimalDead() == true)
             {
-                NavigationService.Navigate(new DeathPage());
+                navigationService.Navigate(new DeathPage());
             }
             frame.NavigationService.Refresh();
         }

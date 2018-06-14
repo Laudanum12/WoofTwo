@@ -32,7 +32,7 @@ namespace Woof.UI
             InitializeComponent();
             animal = an;
             UpdateProgressSleep();
-            _storage.DecreaseNeeds();
+           // _storage.DecreaseNeeds();
             TimerStart();
         }
         public void TimerStart()
@@ -50,6 +50,7 @@ namespace Woof.UI
         public void UpdateProgressSleep()
         {
             ProgressSleep.Value = animal.SleepPoints;
+            
             NavigationService navigation = frame.NavigationService;
             if (_storage.IsAnimalDead() == true)
             {

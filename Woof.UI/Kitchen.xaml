@@ -38,7 +38,7 @@
             </StackPanel>
         </Button>
         <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="10" Name="ProgressFood"/>
-        <Frame Name="frame" Content="Frame"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" Height="100"/>
+        <Frame Name="frame"/>
 
         <TextBlock Foreground="Firebrick" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Hunger" FontFamily="Matura MT Script Capitals" FontSize="48"/>
         <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical">

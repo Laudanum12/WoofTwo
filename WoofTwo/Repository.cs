@@ -432,7 +432,7 @@ namespace WoofTwo
             {
                 if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) < item.SleepPoints)
                 {
-                    item.SleepPoints += 2;
+                    item.SleepPoints += 10;
                     CurrentUser.Animal.SleepPoints += 1;
                 }
                 cntx.SaveChanges();
@@ -460,7 +460,7 @@ namespace WoofTwo
             {
                 if (CurrentUser.UserId == item.AnimalId && FindPoopPoints(CurrentUser.Animal.Species) > item.PoopPoints)
                 {
-                    item.PoopPoints += 2;
+                    item.PoopPoints += 10;
                     CurrentUser.Animal.FoodPoints += 1;
                 }
                

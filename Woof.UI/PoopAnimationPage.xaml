@@ -37,7 +37,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Frame Name="frame" Content="Frame"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" Height="100"/>
+        <Frame Name="frame"/>
 
         <Label x:Name="label2" Content="Poopin'..." HorizontalAlignment="Left" Height="105.738" Margin="27.845,124.522,0,0" VerticalAlignment="Top" Width="156.148" FontFamily="Matura MT Script Capitals" FontSize="36" Foreground="#FF428DDD"/>
         <Label x:Name="label" Content="Poopin'..." HorizontalAlignment="Left" Height="105.738" Margin="188.993,165.096,0,0" VerticalAlignment="Top" Width="156.148" FontFamily="Matura MT Script Capitals" FontSize="36" Foreground="#FF428DDD"/>
