@@ -51,8 +51,7 @@ namespace Woof.UI
         {
             NavigationService navigationService = frame.NavigationService;
             ProgressPoop.Value = animal.PoopPoints;
-            //ProgressPoop.
-            if (animal.PoopPoints == 0)
+            if (_storage.IsAnimalDead() == true)
             {
                 NavigationService.Navigate(new DeathPage());
             }

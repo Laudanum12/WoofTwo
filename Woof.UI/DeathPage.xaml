@@ -11,6 +11,8 @@
         <ImageBrush ImageSource="Images/backgrounds/кладбище.jpg"></ImageBrush>
     </Page.Background>
     <Grid>
+        <Frame Name="frame" Content="Frame"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" Height="100"/>
+
         <StackPanel VerticalAlignment="Top">
             <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="Oops, your animal died :(" FontFamily="Matura MT Script Capitals" FontSize="48"/>
             <Button Name="tryagainButton" Click="tryagainButton_Click" Margin="0 0 20 0" Foreground="IndianRed" Background="MistyRose" Content="Try again" HorizontalAlignment="Right" FontFamily="Matura MT Script Capitals" FontSize="36"/>

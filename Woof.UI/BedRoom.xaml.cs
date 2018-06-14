@@ -40,7 +40,8 @@ namespace Woof.UI
         private void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Tick += new EventHandler(_storage.Sleep_Increase);
+            timer.Interval = new TimeSpan(0, 0, 15);
             timer.Start();
         }
         private void TimerTick(object sender, EventArgs e)
@@ -50,11 +51,11 @@ namespace Woof.UI
 
         public void UpdateProgressSleep()
         {
-
+            NavigationService navigation = frame.NavigationService;
             ProgressSleep.Value = animal.SleepPoints;
             if (animal.SleepPoints == 0)
             {
-                NavigationService.Navigate(new DeathPage());
+                navigation.Navigate(new DeathPage());
             }
             frame.NavigationService.Refresh();
         }

@@ -48,10 +48,11 @@ namespace Woof.UI
         }
         public void UpdateProgressPoop()
         {
+            NavigationService navigation = frame.NavigationService;
             ProgressPoop.Value = animal.PoopPoints;
-            if (_storage.AnimalIsDead() == true)
+            if (_storage.IsAnimalDead() == true)
             {
-                NavigationService.Navigate(new DeathPage());
+                navigation.Navigate(new DeathPage());
             }
         }
         private void totheBedroom_Click(object sender, RoutedEventArgs e)

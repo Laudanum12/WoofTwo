@@ -26,6 +26,7 @@ namespace Woof.UI
         public Animal animal { get; set; }
         IRepository _storage = Factory.Instance.GetStorage();
         DispatcherTimer timer = new DispatcherTimer();
+
         public SleepAnimationPage(Animal an)
         {
             InitializeComponent();
@@ -45,11 +46,12 @@ namespace Woof.UI
         {
             UpdateProgressSleep();
         }
+
         public void UpdateProgressSleep()
         {
             ProgressSleep.Value = animal.SleepPoints;
             NavigationService navigation = frame.NavigationService;
-            if (_storage.AnimalIsDead() == true)
+            if (_storage.IsAnimalDead() == true)
             {
                 navigation.Navigate(new DeathPage());
               

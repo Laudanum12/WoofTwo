@@ -30,6 +30,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Frame Name="frame" Content="Frame"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" Height="100"/>
         <Image Name="img" Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" VerticalAlignment="Bottom"/>
         <ProgressBar Margin="20" Grid.Row="0" Grid.Column="0" Minimum="0" Maximum="25" Name="ProgressPoop"/>
         <TextBlock Foreground="SteelBlue" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Text="Poop" VerticalAlignment="Top" FontFamily="Matura MT Script Capitals" FontSize="48"/>

@@ -39,9 +39,11 @@ namespace WoofTwo
 
         void DecreaseNeeds();
         void IncreaseFoodValue(int points);
+        void NeedsDecrease(object sender, EventArgs e);
         void Poop_Normalize(object sender, EventArgs e);
         void Sleep_Increase(object sender, EventArgs e);
-        bool AnimalIsDead();
+        bool IsAnimalDead();
+        void AnimalIsDead();
 
 
     }

@@ -378,7 +378,6 @@ namespace WoofTwo
         
         public Animal AddIncompleteAnimal(string name)
         {
-            
             Species species = FindSpecies(name);
             var animal = new Animal
             {
@@ -423,8 +422,6 @@ namespace WoofTwo
                     CurrentUser.Animal.FoodPoints -= 1;
                     break;
                 }
-                
-
             }
             cntx.SaveChanges();
         }
@@ -435,7 +432,7 @@ namespace WoofTwo
             {
                 if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) < item.SleepPoints)
                 {
-                    item.SleepPoints += 5;
+                    item.SleepPoints += 2;
                     CurrentUser.Animal.SleepPoints += 1;
                 }
                 cntx.SaveChanges();
@@ -463,7 +460,7 @@ namespace WoofTwo
             {
                 if (CurrentUser.UserId == item.AnimalId && FindPoopPoints(CurrentUser.Animal.Species) > item.PoopPoints)
                 {
-                    item.PoopPoints += 5;
+                    item.PoopPoints += 2;
                     CurrentUser.Animal.FoodPoints += 1;
                 }
                
@@ -472,13 +469,26 @@ namespace WoofTwo
         }
 
 
-        public bool AnimalIsDead()
+        public bool IsAnimalDead()
         {
             if(CurrentUser.Animal.PoopPoints == 0 || CurrentUser.Animal.SleepPoints == 0 || CurrentUser.Animal.FoodPoints == 0)
             {
                 return true;
             }
             return false;
+        }
+
+        public void AnimalIsDead()
+        {
+            foreach(var item in cntx.AnimalTable)
+            {
+                if(CurrentUser.Animal.Name == item.Name)
+                {
+                    cntx.AnimalTable.Remove(item);
+                
+                }
+            }
+            cntx.SaveChanges();
         }
     }
 }
