@@ -37,7 +37,7 @@ namespace Woof.UI
         public void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
-            timer.Tick += new EventHandler(_storage.Poop_Decrease);
+            timer.Tick += new EventHandler(_storage.Poop_Normalize);
             timer.Interval = new TimeSpan(0, 0, 2);
             timer.Start();
         }

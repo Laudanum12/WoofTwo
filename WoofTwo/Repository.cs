@@ -84,8 +84,7 @@ namespace WoofTwo
         {
             get
             {
-                //using (var db = new Context())
-                //{
+                
                 List<Animal> animals = new List<Animal>();
                 foreach (var item in cntx.AnimalTable)
                 {
@@ -100,7 +99,7 @@ namespace WoofTwo
                 }
 
                 return animals;
-                //}
+                
             }
         }
 
@@ -154,38 +153,33 @@ namespace WoofTwo
 
             }
         }
+
         public User UserInStorage(string name, string password)
         {
             string hashPassword = PasswordHelper.GetHash(password);
-            // using (var db = new Context())
-            //{
+           
             User User = cntx.UserTable.FirstOrDefault(q => q.Name == name && q.Password == hashPassword);
-            //if(User != null)
             CurrentUser = User;
             return User;
 
-            // }
+          
         }
 
         public bool CanAddUser(string name)
         {
-            //using (var db = new Context())
-            //{
+            
             foreach (var i in cntx.UserTable)
             {
                 if (i.Name == name)
                     return false;
             }
             return true;
-            //}
         }
 
 
         public void AddUSer(string _city, DateTime _dateOfRegistration, string _email, string _password, string _name)
         {
-            //using (var db = new Context())
-            //{
-
+            
             cntx.UserTable.Add(new Classes.User
             {
                 City = _city,
@@ -196,9 +190,6 @@ namespace WoofTwo
                 Name = _name,
             });
             cntx.SaveChanges();
-            //}
-
-
         }
 
         private async Task<DateTime> GetConvertedDateTimeBasedOnAddress(City city, long timestamp)
@@ -213,6 +204,7 @@ namespace WoofTwo
             }
 
         }
+
         private long GetUnixTimeStampFromDateTime(DateTime dt)
         {
             DateTime epochDate = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
@@ -287,7 +279,6 @@ namespace WoofTwo
             {
                 if (animal.Name == us.Animal.Name)
                 {
-                    // cntx.SaveChanges();
                     return animal;
 
                 }
@@ -406,7 +397,6 @@ namespace WoofTwo
             animal.AnimalId = CurrentUser.UserId;
             cntx.AnimalTable.Add(animal);
             cntx.SaveChanges();
-            // }
         }
 
 
@@ -450,7 +440,6 @@ namespace WoofTwo
             {
                 if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) < item.SleepPoints)
                 {
-
                     item.SleepPoints += 1;
                     CurrentUser.Animal.SleepPoints += 1;
                 }
@@ -475,21 +464,7 @@ namespace WoofTwo
 
         }
 
-
-        //public void NormalizePoopValue(bool boolean)
-        //{
-
-        //    DispatcherTimer a = new DispatcherTimer();
-        //    if (boolean != true)
-        //        a.Stop();
-        //    a.Tick += Poop_Decrease; 
-        //    a.Interval = new TimeSpan(0, 0, 5);
-        //    a.Start();
-            
-            
-        //}
-
-        public void Poop_Decrease(object sender, EventArgs e)
+        public void Poop_Normalize(object sender, EventArgs e)
         {
             foreach (var item in cntx.AnimalTable)
             {
