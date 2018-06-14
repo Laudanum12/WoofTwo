@@ -283,7 +283,6 @@ namespace WoofTwo
                     return species;
                 }
             }
-
             return null;
         }
 
@@ -434,6 +433,11 @@ namespace WoofTwo
                     item.SleepPoints += 5;
                     CurrentUser.Animal.SleepPoints += 5;
                 }
+                else
+                {
+                    item.SleepPoints = FindSleepPoints(CurrentUser.Animal.Species);
+                    CurrentUser.Animal.SleepPoints = FindSleepPoints(CurrentUser.Animal.Species);
+                }
             }
             cntx.SaveChanges();
 
@@ -456,8 +460,6 @@ namespace WoofTwo
                         item.PoopPoints = FindFoodPoints(CurrentUser.Animal.Species);
                         CurrentUser.Animal.FoodPoints = FindFoodPoints(CurrentUser.Animal.Species);
                     }
-
-
                 }
             }
             cntx.SaveChanges();
@@ -471,6 +473,11 @@ namespace WoofTwo
                 {
                     item.PoopPoints += 5;
                     CurrentUser.Animal.FoodPoints += 5;
+                }
+                else
+                {
+                    item.PoopPoints = FindPoopPoints(CurrentUser.Animal.Species);
+                    CurrentUser.Animal.FoodPoints =FindPoopPoints(CurrentUser.Animal.Species);
                 }
                
             }
