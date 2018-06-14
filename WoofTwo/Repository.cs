@@ -315,7 +315,7 @@ namespace WoofTwo
                     }
                 }
             }
-            return 100;
+            return 0;
         }
 
         public int FindSleepPoints(Species species)
@@ -334,7 +334,7 @@ namespace WoofTwo
 
                 }
             }
-            return 100;
+            return 0;
         }
 
         public int FindPoopPoints(Species species)
@@ -354,7 +354,7 @@ namespace WoofTwo
 
                     }
                 }
-            return 100;
+            return 0;
         }
 
         public string GetImageHelper(Animal an)
