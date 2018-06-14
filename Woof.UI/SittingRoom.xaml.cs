@@ -33,7 +33,10 @@ namespace Woof.UI
             animal = an;
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
-           
+            //_storage.DecreaseNeeds();
+            ProgressFood.Maximum = _storage.FindFoodPoints(_storage.FindSpecies(name));
+            ProgressSleep.Maximum = _storage.FindSleepPoints(_storage.FindSpecies(name));
+            ProgressPoop.Maximum = _storage.FindPoopPoints(_storage.FindSpecies(name));
             ProgressFood.Value = animal.FoodPoints;
             ProgressSleep.Value = animal.SleepPoints;
             ProgressPoop.Value = animal.PoopPoints;
@@ -44,11 +47,12 @@ namespace Woof.UI
                 NavigationService.Navigate(new DeathPage());
             }
         }
+        
         private void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
             timer.Tick += new EventHandler(_storage.NeedsDecrease);
-            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Interval = new TimeSpan(0, 0, 15);
             timer.Start();
         }
         private void TimerTick(object sender, EventArgs e)
@@ -56,7 +60,7 @@ namespace Woof.UI
             ProgressFood.Value = animal.FoodPoints;
             ProgressSleep.Value = animal.SleepPoints;
             ProgressPoop.Value = animal.PoopPoints;
-           // frame.NavigationService.Refresh();
+            frame.NavigationService.Refresh();
         }
 
         private void totheKitchen_Click(object sender, RoutedEventArgs e)

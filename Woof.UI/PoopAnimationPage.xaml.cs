@@ -57,6 +57,7 @@ namespace Woof.UI
             if (_storage.IsAnimalDead() == true)
             {
                 timer.Stop();
+                _storage.AnimalIsDead();
                 NavigationService.Navigate(new DeathPage());
             }
             frame.NavigationService.Refresh();

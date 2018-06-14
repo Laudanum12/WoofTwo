@@ -43,7 +43,7 @@ namespace Woof.UI
         {
             timer.Tick += new EventHandler(TimerTick);
             timer.Tick += new EventHandler(_storage.NeedsDecrease);
-            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Interval = new TimeSpan(0, 0, 15);
             timer.Start();
         }
         private void TimerTick(object sender, EventArgs e)
@@ -63,6 +63,7 @@ namespace Woof.UI
             if (_storage.IsAnimalDead() == true)
             {
                 timer.Stop();
+                _storage.AnimalIsDead();
                 navigation.Navigate(new DeathPage());
             }
             frame.NavigationService.Refresh();
