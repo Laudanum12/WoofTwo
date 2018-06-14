@@ -24,15 +24,15 @@ namespace Woof.UI
     /// </summary>
     public partial class BedRoom : Page
     {
-        public Animal animal { get; set; }
+        
         IRepository _storage = Factory.Instance.GetStorage();
         DispatcherTimer timer = new DispatcherTimer();
-        public BedRoom(Animal an)
+        public BedRoom()
         {
             InitializeComponent();
-            animal = an;
-            img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(_storage.GetImageHelper(animal))) as ImageSource;
-            ProgressSleep.Maximum = _storage.FindSleepPoints(_storage.FindSpecies(_storage.GetImageHelper(animal)));
+           
+            img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(_storage.GetImageHelper(_storage.CurrentUser.Animal))) as ImageSource;
+            ProgressSleep.Maximum = _storage.FindSleepPoints(_storage.FindSpecies(_storage.GetImageHelper(_storage.CurrentUser.Animal)));
            
             UpdateProgressSleep();
             TimerStart();
@@ -53,7 +53,7 @@ namespace Woof.UI
 
         public void UpdateProgressSleep()
         {
-            ProgressSleep.Value = animal.SleepPoints;
+            ProgressSleep.Value = _storage.CurrentUser.Animal.SleepPoints;
             if (_storage.IsAnimalDead() == true)
             {
                 timer.Stop();
@@ -64,25 +64,25 @@ namespace Woof.UI
         private void totheKitchen_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new Kitchen(animal));
+            NavigationService.Navigate(new Kitchen());
         }
 
         private void totheSittingRoom_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new SittingRoom(animal));
+            NavigationService.Navigate(new SittingRoom());
         }
 
         private void totheWC_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new WC(animal));
+            NavigationService.Navigate(new WC());
         }
 
         private void letssleepButton_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new SleepAnimationPage(animal));
+            NavigationService.Navigate(new SleepAnimationPage());
             
         }
         

@@ -23,16 +23,16 @@ namespace Woof.UI
     /// </summary>
     public partial class Kitchen : Page
     {
-        public Animal animal { get; set; }
+        
         IRepository _storage = Factory.Instance.GetStorage();
         DispatcherTimer timer = new DispatcherTimer();
-        public Kitchen(Animal an)
+        public Kitchen()
         {
             InitializeComponent();
-            animal = an;
-            var name = _storage.GetImageHelper(animal);
-            img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
-            ProgressFood.Maximum = _storage.FindFoodPoints(_storage.FindSpecies(name));
+            
+           
+            img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(_storage.GetImageHelper(_storage.CurrentUser.Animal))) as ImageSource;
+            ProgressFood.Maximum = _storage.FindFoodPoints(_storage.FindSpecies(_storage.GetImageHelper(_storage.CurrentUser.Animal)));
             //img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
 
            // _storage.DecreaseNeeds();
@@ -54,12 +54,12 @@ namespace Woof.UI
         private void foodButton_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new Food(animal));
+            NavigationService.Navigate(new Food(_storage.CurrentUser.Animal));
         }
         public void UpdateProgressFood()
         {
             NavigationService navigation = frame.NavigationService;
-            ProgressFood.Value = animal.FoodPoints;
+            ProgressFood.Value = _storage.CurrentUser.Animal.FoodPoints;
             if (_storage.IsAnimalDead() == true)
             {
                 timer.Stop();
@@ -72,19 +72,19 @@ namespace Woof.UI
         private void totheSittingRoom_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new SittingRoom(animal));
+            NavigationService.Navigate(new SittingRoom());
         }
 
         private void totheBedroom_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new BedRoom(animal));
+            NavigationService.Navigate(new BedRoom());
         }
 
         private void totheWC_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new WC(animal));
+            NavigationService.Navigate(new WC());
         }
     }
 }

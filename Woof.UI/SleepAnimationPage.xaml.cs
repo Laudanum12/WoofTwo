@@ -23,15 +23,15 @@ namespace Woof.UI
     /// </summary>
     public partial class SleepAnimationPage : Page
     {
-        public Animal animal { get; set; }
+        
         IRepository _storage = Factory.Instance.GetStorage();
         DispatcherTimer timer = new DispatcherTimer();
 
-        public SleepAnimationPage(Animal an)
+        public SleepAnimationPage()
         {
             InitializeComponent();
-            animal = an;
-            var name = _storage.GetImageHelper(animal);
+           
+            var name = _storage.GetImageHelper(_storage.CurrentUser.Animal);
             ProgressSleep.Maximum = _storage.FindSleepPoints(_storage.FindSpecies(name));
             UpdateProgressSleep();
          
@@ -52,7 +52,7 @@ namespace Woof.UI
 
         public void UpdateProgressSleep()
         {
-            ProgressSleep.Value = animal.SleepPoints;
+            ProgressSleep.Value = _storage.CurrentUser.Animal.SleepPoints;
             
             NavigationService navigation = frame.NavigationService;
             if (_storage.IsAnimalDead() == true)
@@ -67,7 +67,7 @@ namespace Woof.UI
         private void wakingupButton_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new BedRoom(animal));
+            NavigationService.Navigate(new BedRoom());
         }
     }
 }

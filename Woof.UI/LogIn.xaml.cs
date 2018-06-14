@@ -63,7 +63,7 @@ namespace Woof.UI
                 else {
                     var animal = _storage.FindAnimal(_storage.CurrentUser);
                     _storage.DecreaseNeeds();
-                    NavigationService.Navigate(new SittingRoom(animal));
+                    NavigationService.Navigate(new SittingRoom());
                 }
                
             }

@@ -24,13 +24,13 @@ namespace Woof.UI
     public partial class WC : Page
     {
         IRepository _storage = Factory.Instance.GetStorage();
-        public Animal animal { get; set; }
+        
         DispatcherTimer timer = new DispatcherTimer();
-        public WC(Animal an)
+        public WC()
         {
             InitializeComponent();
-            animal = an;
-            var name = _storage.GetImageHelper(animal);
+           
+            var name = _storage.GetImageHelper(_storage.CurrentUser.Animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
             ProgressPoop.Maximum = _storage.FindPoopPoints(_storage.FindSpecies(name));
             UpdateProgressPoop();
@@ -49,7 +49,7 @@ namespace Woof.UI
         }
         public void UpdateProgressPoop()
         {
-            ProgressPoop.Value = animal.PoopPoints;
+            ProgressPoop.Value = _storage.CurrentUser.Animal.PoopPoints;
             if (_storage.IsAnimalDead() == true)
             {
                 timer.Stop();
@@ -60,25 +60,25 @@ namespace Woof.UI
         private void totheBedroom_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new BedRoom(animal));
+            NavigationService.Navigate(new BedRoom());
         }
 
         private void totheKitchen_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new Kitchen(animal));
+            NavigationService.Navigate(new Kitchen());
         }
 
         private void totheSittingRoom_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new SittingRoom(animal));
+            NavigationService.Navigate(new SittingRoom());
         }
 
         private void poppButton_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new PoopAnimationPage(animal));
+            NavigationService.Navigate(new PoopAnimationPage());
         }
         
     }

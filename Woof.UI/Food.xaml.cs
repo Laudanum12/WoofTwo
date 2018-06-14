@@ -23,45 +23,39 @@ namespace Woof.UI
     /// </summary>
     public partial class Food : Page
     {
-        public Animal animal { get; set; }
+        
         IRepository _storage = Factory.Instance.GetStorage();
         DispatcherTimer timer = new DispatcherTimer();
         public Food(Animal an)
         {
             InitializeComponent();
-            animal = an;
-            var name = _storage.GetImageHelper(animal);
-            ProgressFood.Maximum = _storage.FindFoodPoints(_storage.FindSpecies(name));
+           
+           
+            ProgressFood.Maximum = _storage.FindFoodPoints(_storage.FindSpecies(_storage.GetImageHelper(_storage.CurrentUser.Animal)));
             UpdateProgressFood();
-            _storage.DecreaseNeeds();
+            //_storage.DecreaseNeeds();
             //TimerStart();
         }
-        public void TimerStart()
-        {
-            timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Start();
-        }
-        private void TimerTick(object sender, EventArgs e)
-        {
-            UpdateProgressFood();
-        }
+        //public void TimerStart()
+        //{
+        //    timer.Tick += new EventHandler(TimerTick);
+        //    timer.Interval = new TimeSpan(0, 0, 1);
+        //    timer.Start();
+        //}
+        //private void TimerTick(object sender, EventArgs e)
+        //{
+        //    UpdateProgressFood();
+        //}
 
         public void UpdateProgressFood()
         {
             NavigationService navigation = frame.NavigationService;
-            ProgressFood.Value = animal.FoodPoints;
-            //if (animal.FoodPoints == 0)
-            //{
-            //    NavigationService.Navigate(new DeathPage());
-            //}
-            //frame.NavigationService.Refresh();
+            ProgressFood.Value = _storage.CurrentUser.Animal.FoodPoints;
             if (_storage.IsAnimalDead() == true)
             {
                 _storage.AnimalIsDead();
                 NavigationService.Navigate(new DeathPage());
             }
-
         }
         private void OladushkiButton_Click(object sender, RoutedEventArgs e)
         {
@@ -96,16 +90,12 @@ namespace Woof.UI
         private void EggsButton_Click(object sender, RoutedEventArgs e)
         {
             _storage.IncreaseFoodValue(int.Parse(EggsLabel.Text));
-            if (animal.FoodPoints == 0)
-            {
-                NavigationService.Navigate(new DeathPage());
-            }
             UpdateProgressFood();
         }
 
         private void gobackButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Kitchen(animal));
+            NavigationService.Navigate(new Kitchen());
             UpdateProgressFood();
         }
     }

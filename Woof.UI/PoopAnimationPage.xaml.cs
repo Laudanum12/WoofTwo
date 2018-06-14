@@ -23,14 +23,14 @@ namespace Woof.UI
     /// </summary>
     public partial class PoopAnimationPage : Page
     {
-        public Animal animal { get; set; }
+       
         IRepository _storage = Factory.Instance.GetStorage();
         DispatcherTimer timer = new DispatcherTimer();
-        public PoopAnimationPage(Animal an)
+        public PoopAnimationPage()
         {
             InitializeComponent();
-            animal = an;
-            var name = _storage.GetImageHelper(animal);
+          
+            var name = _storage.GetImageHelper(_storage.CurrentUser.Animal);
             ProgressPoop.Maximum = _storage.FindPoopPoints(_storage.FindSpecies(name));
             UpdateProgressPoop();
             //_storage.DecreaseNeeds();
@@ -52,7 +52,7 @@ namespace Woof.UI
         private void UpdateProgressPoop()
         {
             NavigationService navigationService = frame.NavigationService;
-            ProgressPoop.Value = animal.PoopPoints;
+            ProgressPoop.Value = _storage.CurrentUser.Animal.PoopPoints;
             
             if (_storage.IsAnimalDead() == true)
             {
@@ -65,7 +65,7 @@ namespace Woof.UI
         private void gettingbackButton_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            NavigationService.Navigate(new WC(animal));
+            NavigationService.Navigate(new WC());
         }
     }
 }
