@@ -428,7 +428,7 @@ namespace WoofTwo
         {
             foreach (var item in cntx.AnimalTable)
             {
-                if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) >= item.SleepPoints)
+                if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) > item.SleepPoints)
                 {
                     
                     item.SleepPoints += 5;
@@ -467,7 +467,7 @@ namespace WoofTwo
         {
             foreach (var item in cntx.AnimalTable)
             {
-                if (CurrentUser.UserId == item.AnimalId && FindPoopPoints(CurrentUser.Animal.Species) >= item.PoopPoints)
+                if (CurrentUser.UserId == item.AnimalId && FindPoopPoints(CurrentUser.Animal.Species) > item.PoopPoints)
                 {
                     item.PoopPoints += 5;
                     CurrentUser.Animal.FoodPoints += 5;
