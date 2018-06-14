@@ -31,12 +31,13 @@ namespace Woof.UI
             InitializeComponent();
             animal = an;
             UpdateProgressSleep();
-            //_storage.DecreaseNeeds();
+            _storage.DecreaseNeeds();
             TimerStart();
         }
         public void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
+            timer.Tick += new EventHandler(_storage.Sleep_Increase);
             timer.Interval = new TimeSpan(0, 0, 2);
             timer.Start();
         }
@@ -46,12 +47,11 @@ namespace Woof.UI
         }
         public void UpdateProgressSleep()
         {
-            _storage.IncreaseSleepValue(true);
-            if (animal.SleepPoints == 0)
+            ProgressSleep.Value = animal.SleepPoints;
+            if (_storage.AnimalIsDead() == true)
             {
                 NavigationService.Navigate(new DeathPage());
             }
-            ProgressSleep.Value = animal.SleepPoints;
         }
         private void wakingupButton_Click(object sender, RoutedEventArgs e)
         {

@@ -32,9 +32,9 @@ namespace WoofTwo
         string GetImageHelper(Animal an);
 
         void IncreaseFoodValue(int points);
-        void IncreaseSleepValue(bool boolean);
-        void NormalizePoopValue(bool boolean);
-
+        void Poop_Decrease(object sender, EventArgs e);
+        void Sleep_Increase(object sender, EventArgs e);
+        bool AnimalIsDead();
 
 
     }

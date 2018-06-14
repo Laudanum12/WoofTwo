@@ -31,22 +31,25 @@ namespace Woof.UI
             InitializeComponent();
             animal = an;
             UpdateProgressPoop();
-            //_storage.DecreaseNeeds();
+            _storage.DecreaseNeeds();
             TimerStart();
         }
         public void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
+            timer.Tick += new EventHandler(_storage.Poop_Decrease);
             timer.Interval = new TimeSpan(0, 0, 2);
             timer.Start();
         }
+
         private void TimerTick(object sender, EventArgs e)
         {
             UpdateProgressPoop();
         }
-        public void UpdateProgressPoop()
+
+        private void UpdateProgressPoop()
         {
-            _storage.NormalizePoopValue(true);
+           
             ProgressPoop.Value = animal.PoopPoints;
             if (animal.PoopPoints == 0)
             {

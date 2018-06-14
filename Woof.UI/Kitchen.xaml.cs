@@ -41,6 +41,7 @@ namespace Woof.UI
         public void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
+           
             timer.Interval = new TimeSpan(0, 0, 30);
             timer.Start();
         }

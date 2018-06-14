@@ -38,6 +38,7 @@ namespace Woof.UI
         public void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
+            timer.Tick += new EventHandler(_storage.Poop_Decrease);
             timer.Interval = new TimeSpan(0, 0, 30);
             timer.Start();
         }
@@ -47,9 +48,9 @@ namespace Woof.UI
         }
         public void UpdateProgressPoop()
         {
-            _storage.NormalizePoopValue(true);
+            
             ProgressPoop.Value = animal.PoopPoints;
-            if (animal.PoopPoints == 0)
+            if (_storage.AnimalIsDead() == true)
             {
                 NavigationService.Navigate(new DeathPage());
             }
