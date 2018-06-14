@@ -430,14 +430,13 @@ namespace WoofTwo
         {
             foreach (var item in cntx.AnimalTable)
             {
-                if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) < item.SleepPoints)
+                if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) > item.SleepPoints)
                 {
-                    item.SleepPoints += 10;
-                    CurrentUser.Animal.SleepPoints += 1;
+                    item.SleepPoints += 2;
+                    CurrentUser.Animal.SleepPoints += 2;
                 }
-                cntx.SaveChanges();
-
             }
+            cntx.SaveChanges();
         }
 
         public void IncreaseFoodValue(int points)
@@ -460,8 +459,8 @@ namespace WoofTwo
             {
                 if (CurrentUser.UserId == item.AnimalId && FindPoopPoints(CurrentUser.Animal.Species) > item.PoopPoints)
                 {
-                    item.PoopPoints += 10;
-                    CurrentUser.Animal.FoodPoints += 1;
+                    item.PoopPoints += 2;
+                    CurrentUser.Animal.PoopPoints += 2;
                 }
                
             }

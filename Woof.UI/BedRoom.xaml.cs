@@ -34,14 +34,15 @@ namespace Woof.UI
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
             ProgressSleep.Maximum = _storage.FindSleepPoints(_storage.FindSpecies(name));
-            _storage.DecreaseNeeds();
+            //_storage.DecreaseNeeds();
             UpdateProgressSleep();
             TimerStart();
         }
         private void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = new TimeSpan(0, 0, 30);
+            timer.Tick += new EventHandler(_storage.NeedsDecrease);
+            timer.Interval = new TimeSpan(0, 0, 15);
             timer.Start();
         }
         private void TimerTick(object sender, EventArgs e)
@@ -52,9 +53,10 @@ namespace Woof.UI
         public void UpdateProgressSleep()
         {
             ProgressSleep.Value = animal.SleepPoints;
-            if (_storage.AnimalIsDead() == true)
+            if (_storage.IsAnimalDead() == true)
             {
                 timer.Stop();
+                _storage.AnimalIsDead();
                 NavigationService.Navigate(new DeathPage());
             }
             frame.NavigationService.Refresh();

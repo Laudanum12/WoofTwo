@@ -33,7 +33,7 @@ namespace Woof.UI
             var name = _storage.GetImageHelper(animal);
             ProgressPoop.Maximum = _storage.FindPoopPoints(_storage.FindSpecies(name));
             UpdateProgressPoop();
-            _storage.DecreaseNeeds();
+            //_storage.DecreaseNeeds();
             TimerStart();
         }
         public void TimerStart()
@@ -54,9 +54,10 @@ namespace Woof.UI
             NavigationService navigationService = frame.NavigationService;
             ProgressPoop.Value = animal.PoopPoints;
             
-            if (_storage.AnimalIsDead() == true)
+            if (_storage.IsAnimalDead() == true)
             {
                 timer.Stop();
+                _storage.AnimalIsDead();
                 NavigationService.Navigate(new DeathPage());
             }
             frame.NavigationService.Refresh();
