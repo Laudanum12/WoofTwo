@@ -430,6 +430,7 @@ namespace WoofTwo
             {
                 if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) >= item.SleepPoints)
                 {
+                    
                     item.SleepPoints += 5;
                     CurrentUser.Animal.SleepPoints += 5;
                 }
@@ -443,10 +444,17 @@ namespace WoofTwo
             foreach (var item in cntx.AnimalTable)
             {
              
-                if (CurrentUser.UserId == item.AnimalId && FindFoodPoints(CurrentUser.Animal.Species) >= item.FoodPoints + points)
+                if (CurrentUser.UserId == item.AnimalId)
                 {
-                    item.FoodPoints += points;
-                    CurrentUser.Animal.FoodPoints += points;
+                    if (FindFoodPoints(CurrentUser.Animal.Species) >= item.FoodPoints + points)
+                    {
+                        item.FoodPoints += points;
+                        CurrentUser.Animal.FoodPoints += points;
+                    }
+                    else
+                        item.PoopPoints == FindFoodPoints(CurrentUser.Animal.Species);
+
+
                 }
             }
             cntx.SaveChanges();
