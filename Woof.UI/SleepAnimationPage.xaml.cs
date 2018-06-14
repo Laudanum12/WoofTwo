@@ -30,12 +30,15 @@ namespace Woof.UI
         {
             InitializeComponent();
             animal = an;
+            var name = _storage.GetImageHelper(animal);
+            ProgressSleep.Maximum = _storage.FindSleepPoints(_storage.FindSpecies(name));
             UpdateProgressSleep();
             _storage.DecreaseNeeds();
             TimerStart();
         }
         public void TimerStart()
         {
+            
             timer.Tick += new EventHandler(TimerTick);
             timer.Tick += new EventHandler(_storage.Sleep_Increase);
             timer.Interval = new TimeSpan(0, 0, 2);
@@ -51,6 +54,7 @@ namespace Woof.UI
             NavigationService navigation = frame.NavigationService;
             if (_storage.AnimalIsDead() == true)
             {
+                timer.Stop();
                 navigation.Navigate(new DeathPage());
               
             }
@@ -58,6 +62,7 @@ namespace Woof.UI
         }
         private void wakingupButton_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new BedRoom(animal));
         }
     }

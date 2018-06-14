@@ -33,7 +33,7 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Label Foreground="White" Margin="15" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="Welcome to Woof! Please enter your personal data to create an account!"
-               FontFamily="Matura MT Script Capitals" FontSize="24" Cursor="IBeam"/>
+               FontFamily="Matura MT Script Capitals" FontSize="22" Cursor="IBeam"/>
         <TextBlock Style="{StaticResource TextBlockStyle}" HorizontalAlignment="Center" Name="loginTextBlock" Grid.Row="1" Grid.Column="0">
             Login
         </TextBlock>

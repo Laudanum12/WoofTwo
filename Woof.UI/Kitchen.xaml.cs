@@ -32,6 +32,7 @@ namespace Woof.UI
             animal = an;
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
+            ProgressFood.Maximum = _storage.FindFoodPoints(_storage.FindSpecies(name));
             //img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(animal.Species.SpeciesName)) as ImageSource;
 
             _storage.DecreaseNeeds();
@@ -51,14 +52,16 @@ namespace Woof.UI
         }
         private void foodButton_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new Food(animal));
         }
         public void UpdateProgressFood()
         {
             NavigationService navigation = frame.NavigationService;
             ProgressFood.Value = animal.FoodPoints;
-            if (animal.FoodPoints == 0)
+            if (_storage.AnimalIsDead() == true)
             {
+                timer.Stop();
                 navigation.Navigate(new DeathPage());
             }
             frame.NavigationService.Refresh();
@@ -66,16 +69,19 @@ namespace Woof.UI
 
         private void totheSittingRoom_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new SittingRoom(animal));
         }
 
         private void totheBedroom_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new BedRoom(animal));
         }
 
         private void totheWC_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new WC(animal));
         }
     }

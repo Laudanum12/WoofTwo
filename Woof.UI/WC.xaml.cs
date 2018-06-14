@@ -32,13 +32,14 @@ namespace Woof.UI
             animal = an;
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
+            ProgressPoop.Maximum = _storage.FindPoopPoints(_storage.FindSpecies(name));
             UpdateProgressPoop();
             TimerStart();
         }
         public void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
-            timer.Tick += new EventHandler(_storage.Poop_Normalize);
+            //timer.Tick += new EventHandler(_storage.Poop_Normalize);
             timer.Interval = new TimeSpan(0, 0, 30);
             timer.Start();
         }
@@ -51,26 +52,31 @@ namespace Woof.UI
             ProgressPoop.Value = animal.PoopPoints;
             if (_storage.AnimalIsDead() == true)
             {
+                timer.Stop();
                 NavigationService.Navigate(new DeathPage());
             }
         }
         private void totheBedroom_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new BedRoom(animal));
         }
 
         private void totheKitchen_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new Kitchen(animal));
         }
 
         private void totheSittingRoom_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new SittingRoom(animal));
         }
 
         private void poppButton_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new PoopAnimationPage(animal));
         }
         

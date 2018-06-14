@@ -33,16 +33,24 @@ namespace Woof.UI
             animal = an;
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
+            ProgressFood.Maximum = _storage.FindFoodPoints(_storage.FindSpecies(name));
+            ProgressSleep.Maximum = _storage.FindSleepPoints(_storage.FindSpecies(name));
+            ProgressPoop.Maximum = _storage.FindPoopPoints(_storage.FindSpecies(name));
             _storage.DecreaseNeeds();
             ProgressFood.Value = animal.FoodPoints;
             ProgressSleep.Value = animal.SleepPoints;
             ProgressPoop.Value = animal.PoopPoints;
             TimerStart();
+            if(_storage.AnimalIsDead()==true)
+            {
+                timer.Stop();
+                NavigationService.Navigate(new DeathPage());
+            }
         }
         private void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
-            timer.Tick += new EventHandler();
+            //timer.Tick += new EventHandler();
             timer.Interval = new TimeSpan(0, 0, 30);
             timer.Start();
         }
@@ -51,21 +59,24 @@ namespace Woof.UI
             ProgressFood.Value = animal.FoodPoints;
             ProgressSleep.Value = animal.SleepPoints;
             ProgressPoop.Value = animal.PoopPoints;
-            frame.NavigationService.Refresh();
+            //frame.NavigationService.Refresh();
         }
 
         private void totheKitchen_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new Kitchen(animal));
         }
 
         private void totheBedroom_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new BedRoom(animal));
         }
 
         private void totheWC_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new WC(animal));
         }
     }

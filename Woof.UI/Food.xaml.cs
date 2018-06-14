@@ -30,9 +30,11 @@ namespace Woof.UI
         {
             InitializeComponent();
             animal = an;
+            var name = _storage.GetImageHelper(animal);
+            ProgressFood.Maximum = _storage.FindFoodPoints(_storage.FindSpecies(name));
             UpdateProgressFood();
             _storage.DecreaseNeeds();
-            TimerStart();
+            //TimerStart();
         }
         public void TimerStart()
         {
@@ -47,13 +49,17 @@ namespace Woof.UI
 
         public void UpdateProgressFood()
         {
-            //NavigationService navigation = frame.NavigationService;
+            NavigationService navigation = frame.NavigationService;
             ProgressFood.Value = animal.FoodPoints;
-            if (animal.FoodPoints == 0)
+            //if (animal.FoodPoints == 0)
+            //{
+            //    NavigationService.Navigate(new DeathPage());
+            //}
+            //frame.NavigationService.Refresh();
+            if (_storage.AnimalIsDead() == true)
             {
                 NavigationService.Navigate(new DeathPage());
             }
-            frame.NavigationService.Refresh();
 
         }
         private void OladushkiButton_Click(object sender, RoutedEventArgs e)

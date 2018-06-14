@@ -33,6 +33,7 @@ namespace Woof.UI
             animal = an;
             var name = _storage.GetImageHelper(animal);
             img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
+            ProgressSleep.Maximum = _storage.FindSleepPoints(_storage.FindSpecies(name));
             _storage.DecreaseNeeds();
             UpdateProgressSleep();
             TimerStart();
@@ -50,32 +51,35 @@ namespace Woof.UI
 
         public void UpdateProgressSleep()
         {
-
             ProgressSleep.Value = animal.SleepPoints;
-            if (animal.SleepPoints == 0)
+            if (_storage.AnimalIsDead() == true)
             {
+                timer.Stop();
                 NavigationService.Navigate(new DeathPage());
             }
             frame.NavigationService.Refresh();
         }
         private void totheKitchen_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new Kitchen(animal));
         }
 
         private void totheSittingRoom_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new SittingRoom(animal));
         }
 
         private void totheWC_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             NavigationService.Navigate(new WC(animal));
         }
 
         private void letssleepButton_Click(object sender, RoutedEventArgs e)
         {
-
+            timer.Stop();
             NavigationService.Navigate(new SleepAnimationPage(animal));
             
         }

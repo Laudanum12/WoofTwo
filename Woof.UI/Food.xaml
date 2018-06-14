@@ -74,7 +74,7 @@
         </StackPanel>
         <Frame Name="frame" Content="Frame"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" Height="100"/>
 
-        <ProgressBar Grid.Row="0" Grid.Column="0" Margin="20" Name="ProgressFood" Minimum="0" Maximum="10"/>
+        <ProgressBar Grid.Row="0" Grid.Column="0" Margin="20" Name="ProgressFood" Minimum="0"/>
         <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="SteelBlue" Grid.Column="0" Text="Hunger" FontFamily="Matura MT Script Capitals" FontSize="48"/>
         <Button Grid.Row="5" Grid.Column="0" Margin="50 10" Content="Back to the kitchen" Name="gobackButton" Click="gobackButton_Click" FontFamily="Matura MT Script Capitals" FontSize="18"/>
     </Grid>
