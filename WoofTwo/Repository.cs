@@ -217,7 +217,6 @@ namespace WoofTwo
                 DateTime dt = GetDateTimeFromUnixTimeStamp(Convert.ToDouble(timestamp) + Convert.ToDouble(data.OffsetForSummer) + Convert.ToDouble(data.OffsetFromUTC));
                 return dt;
             }
-
         }
 
         private long GetUnixTimeStampFromDateTime(DateTime dt)
@@ -435,9 +434,9 @@ namespace WoofTwo
                     item.SleepPoints += 10;
                     CurrentUser.Animal.SleepPoints += 1;
                 }
-                cntx.SaveChanges();
-
             }
+            cntx.SaveChanges();
+
         }
 
         public void IncreaseFoodValue(int points)
@@ -485,7 +484,6 @@ namespace WoofTwo
                 if(CurrentUser.Animal.Name == item.Name)
                 {
                     cntx.AnimalTable.Remove(item);
-                
                 }
             }
             cntx.SaveChanges();

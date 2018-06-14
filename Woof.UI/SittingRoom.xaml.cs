@@ -38,7 +38,7 @@ namespace Woof.UI
             ProgressSleep.Value = animal.SleepPoints;
             ProgressPoop.Value = animal.PoopPoints;
             TimerStart();
-            if(_storage.AnimalIsDead()==true)
+            if(_storage.IsAnimalDead()==true)
             {
                 timer.Stop();
                 NavigationService.Navigate(new DeathPage());
@@ -47,7 +47,7 @@ namespace Woof.UI
         private void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
-            timer.Tick += new EventHandler();
+            //timer.Tick += new EventHandler();
             timer.Interval = new TimeSpan(0, 0, 30);
             timer.Start();
         }

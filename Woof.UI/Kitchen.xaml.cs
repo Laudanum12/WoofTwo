@@ -60,7 +60,7 @@ namespace Woof.UI
         {
             NavigationService navigation = frame.NavigationService;
             ProgressFood.Value = animal.FoodPoints;
-            if (_storage.AnimalIsDead() == true)
+            if (_storage.IsAnimalDead() == true)
             {
                 timer.Stop();
                 navigation.Navigate(new DeathPage());

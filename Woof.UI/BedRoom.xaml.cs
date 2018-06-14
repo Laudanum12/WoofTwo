@@ -52,7 +52,7 @@ namespace Woof.UI
         public void UpdateProgressSleep()
         {
             ProgressSleep.Value = animal.SleepPoints;
-            if (_storage.AnimalIsDead() == true)
+            if (_storage.IsAnimalDead() == true)
             {
                 timer.Stop();
                 NavigationService.Navigate(new DeathPage());
