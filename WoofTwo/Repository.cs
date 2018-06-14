@@ -392,7 +392,6 @@ namespace WoofTwo
 
         public void AddAnAnimal(Animal animal)
         {
-           
             animal.AnimalId = CurrentUser.UserId;
             cntx.AnimalTable.Add(animal);
             cntx.SaveChanges();
@@ -429,10 +428,10 @@ namespace WoofTwo
         {
             foreach (var item in cntx.AnimalTable)
             {
-                if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) < item.SleepPoints)
+                if (CurrentUser.UserId == item.AnimalId && FindSleepPoints(CurrentUser.Animal.Species) >= item.SleepPoints)
                 {
-                    item.SleepPoints += 10;
-                    CurrentUser.Animal.SleepPoints += 1;
+                    item.SleepPoints += 5;
+                    CurrentUser.Animal.SleepPoints += 5;
                 }
             }
             cntx.SaveChanges();
@@ -444,7 +443,7 @@ namespace WoofTwo
             foreach (var item in cntx.AnimalTable)
             {
              
-                if (CurrentUser.UserId == item.AnimalId && FindFoodPoints(CurrentUser.Animal.Species) > item.FoodPoints + points)
+                if (CurrentUser.UserId == item.AnimalId && FindFoodPoints(CurrentUser.Animal.Species) >= item.FoodPoints + points)
                 {
                     item.FoodPoints += points;
                     CurrentUser.Animal.FoodPoints += points;
@@ -457,10 +456,10 @@ namespace WoofTwo
         {
             foreach (var item in cntx.AnimalTable)
             {
-                if (CurrentUser.UserId == item.AnimalId && FindPoopPoints(CurrentUser.Animal.Species) > item.PoopPoints)
+                if (CurrentUser.UserId == item.AnimalId && FindPoopPoints(CurrentUser.Animal.Species) >= item.PoopPoints)
                 {
-                    item.PoopPoints += 10;
-                    CurrentUser.Animal.FoodPoints += 1;
+                    item.PoopPoints += 5;
+                    CurrentUser.Animal.FoodPoints += 5;
                 }
                
             }

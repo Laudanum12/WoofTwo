@@ -34,7 +34,7 @@ namespace Woof.UI
             var name = _storage.GetImageHelper(animal);
             ProgressSleep.Maximum = _storage.FindSleepPoints(_storage.FindSpecies(name));
             UpdateProgressSleep();
-           // _storage.DecreaseNeeds();
+         
             TimerStart();
         }
         public void TimerStart()

@@ -26,12 +26,12 @@ namespace Woof.UI
         public DeathPage()
         {
             InitializeComponent();
+            _storage.AnimalIsDead();
         }
 
         private void tryagainButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService navigation = frame.NavigationService;
-            _storage.AnimalIsDead();
             navigation.Navigate(new PetsChoosing());
         }
     }

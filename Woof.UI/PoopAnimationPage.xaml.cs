@@ -33,7 +33,7 @@ namespace Woof.UI
             var name = _storage.GetImageHelper(animal);
             ProgressPoop.Maximum = _storage.FindPoopPoints(_storage.FindSpecies(name));
             UpdateProgressPoop();
-            _storage.DecreaseNeeds();
+            //_storage.DecreaseNeeds();
             TimerStart();
         }
         public void TimerStart()

@@ -31,17 +31,19 @@ namespace Woof.UI
         {
             InitializeComponent();
             animal = an;
-            var name = _storage.GetImageHelper(animal);
-            img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(name)) as ImageSource;
-            ProgressSleep.Maximum = _storage.FindSleepPoints(_storage.FindSpecies(name));
-            _storage.DecreaseNeeds();
+            img.Source = new ImageSourceConverter().ConvertFromString(_storage.GetAPath(_storage.GetImageHelper(animal))) as ImageSource;
+            ProgressSleep.Maximum = _storage.FindSleepPoints(_storage.FindSpecies(_storage.GetImageHelper(animal)));
+           
             UpdateProgressSleep();
             TimerStart();
         }
         private void TimerStart()
         {
             timer.Tick += new EventHandler(TimerTick);
+            timer.Tick += new EventHandler(_storage.NeedsDecrease);
+
             timer.Interval = new TimeSpan(0, 0, 30);
+
             timer.Start();
         }
         private void TimerTick(object sender, EventArgs e)
