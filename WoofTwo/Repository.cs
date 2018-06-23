@@ -315,7 +315,7 @@ namespace WoofTwo
                     }
                 }
             }
-            return 100;
+            return 0;
         }
 
         public int FindSleepPoints(Species species)
@@ -328,17 +328,13 @@ namespace WoofTwo
                     {
                         if (sleep.SleepId == item.Needs.SleepIdFK)
                         {
-
-                            
-
                             return sleep.SleepPoints;
                         }
                     }
 
                 }
             }
-            cntx.SaveChanges();
-            return 100;
+            return 0;
         }
 
         public int FindPoopPoints(Species species)
@@ -358,7 +354,7 @@ namespace WoofTwo
 
                     }
                 }
-            return 100;
+            return 0;
         }
 
         public string GetImageHelper(Animal an)

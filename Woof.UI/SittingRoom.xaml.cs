@@ -25,8 +25,6 @@ namespace Woof.UI
     {
         DispatcherTimer timer = new DispatcherTimer();
         IRepository _storage = Factory.Instance.GetStorage();
-        
-       
         public SittingRoom()
         {
             InitializeComponent();
@@ -41,7 +39,7 @@ namespace Woof.UI
             ProgressSleep.Value = _storage.CurrentUser.Animal.SleepPoints;
             ProgressPoop.Value = _storage.CurrentUser.Animal.PoopPoints;
             TimerStart();
-            if(_storage.IsAnimalDead() ==true)
+            if(_storage.IsAnimalDead()==true)
             {
                 timer.Stop();
                 NavigationService.Navigate(new DeathPage());
